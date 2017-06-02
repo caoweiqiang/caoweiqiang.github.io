@@ -268,6 +268,66 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-git-warning" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/06/02/git-warning/" class="article-date">
+      <time datetime="2017-06-02T03:00:16.236Z" itemprop="datePublished">2017-06-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/02/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm -rf .git  <span class="comment">//删除.git</span></div><div class="line">git config --global core.autocrlf <span class="literal">false</span>  <span class="comment">//禁用自动转换</span></div></pre></td></tr></table></figure>
+<p>然后重新执行： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git add .</div></pre></td></tr></table></figure>
+<p>转载：<a href="http://blog.csdn.net/unityoxb/article/details/20768687" target="_blank" rel="external">http://blog.csdn.net/unityoxb/article/details/20768687</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
