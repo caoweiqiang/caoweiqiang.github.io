@@ -72,7 +72,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -108,6 +108,13 @@
         <p class="header-subtitle">记录前端学习</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -362,11 +369,11 @@
         <div class="changyan" id="comments"> 
     <div id="SOHUCS" sid="categories" style="padding: 0px 30px 0px 46px;"></div>
     <script>
-        var appid = {short_name:"cyr2lGeJX"};
-        var conf = {short_name:"08ff174da2fd828edc0b55ca65e875f5"};
+        var appid = {changyan_appid:"cyr2lGeJX"};
+        var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
         var loadComment = function(){
             var d = document, s = d.createElement('script');
-            s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+            s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf.changyan_appkey +'&appid=' + appid.changyan_appid;
             s.async = true; s.charset = 'UTF-8';
             (d.head || d.body).appendChild(s);
         }
@@ -420,6 +427,8 @@
 </footer>
     </div>
     
+    <script src="/js/GithubRepoWidget.js"></script>
+
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
 
@@ -435,7 +444,7 @@
     // Open in New Window
     
         var oOpenInNew = {
-            
+             github: ".github-widget a", 
             
             
             
