@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://caoweiqiang.com/"/>
-  <updated>2017-06-07T09:50:41.488Z</updated>
+  <updated>2017-06-07T09:51:47.144Z</updated>
   <id>http://caoweiqiang.com/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://caoweiqiang.com/baidu-api/"/>
     <id>http://caoweiqiang.com/baidu-api/</id>
     <published>2017-06-07T07:02:52.315Z</published>
-    <updated>2017-06-07T09:50:41.488Z</updated>
+    <updated>2017-06-07T09:51:47.144Z</updated>
     
     <content type="html"><![CDATA[<h4 id="一、标注概述"><a href="#一、标注概述" class="headerlink" title="一、标注概述"></a>一、标注概述</h4><p>标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一个标注，不论地图移动、缩放，标注都会跟随一起移动，保证其始终指向正确的地理位置。</p>
 <p><img src="http://images.51cto.com/files/uploadimg/20110916/1040051.jpg" alt="img"><br>从上面的图可以看出，不论地图如何变化标注始终指向“西单商场”的位置。 </p>
 <h4 id="二、如何知道某个点的坐标？"><a href="#二、如何知道某个点的坐标？" class="headerlink" title="二、如何知道某个点的坐标？"></a>二、如何知道某个点的坐标？</h4><p>上例中我们在西单商场位置添加了一个标注，那么我是如何知道它的坐标点呢？可以通过API的事件机制来获取：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">map.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line"><span class="built_in">console</span>.log(e.point);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>我们在map对象上添加了一个click事件的监听函数，当点击地图上某个位置时，监听函数通过控制台把当前点击的位置输出出来（注意需要有控制台的支持，比如firebug，如果没有控制台则可使用alert把point的lng和lat属性输出出来）。此外，你也可以使用API提供的坐标拾取工具来完成（<a href="http://dev.baidu.com/wiki/static/map/API/tool/getPoint/" target="_blank" rel="external">http://dev.baidu.com/wiki/static/map/API/tool/getPoint/</a>），它支持检索并且点击地图上任意位置时会出现该位置的坐标。</p>
+<p>我们在map对象上添加了一个click事件的监听函数，当点击地图上某个位置时，监听函数通过控制台把当前点击的位置输出出来（注意需要有控制台的支持，比如firebug，如果没有控制台则可使用alert把point的lng和lat属性输出出来）。此外，你也可以使用API提供的坐标拾取工具来完成<a href="http://dev.baidu.com/wiki/static/map/API/tool/getPoint/" target="_blank" rel="external">http://dev.baidu.com/wiki/static/map/API/tool/getPoint/</a>，它支持检索并且点击地图上任意位置时会出现该位置的坐标。</p>
 <h4 id="三、标注元素组成"><a href="#三、标注元素组成" class="headerlink" title="三、标注元素组成"></a>三、标注元素组成</h4><p>从DOM元素构成角度看，一个完整的标注是由以下几个部分组成的：</p>
 <p>标注点击区域</p>
 <p>标注图标</p>
