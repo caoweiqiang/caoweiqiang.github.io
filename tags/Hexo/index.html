@@ -15,17 +15,15 @@
 
 
 
-<meta name="description" content="windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法：  12rm -rf .git  //删除.gitgit config --global core.autocrlf false  //禁用自动转换 然后重新执行：  12git initgit add . 转载：http://blog.csdn.net/unityoxb/articl">
-<meta name="keywords" content="warning:LF will be replaced by CRLF">
-<meta property="og:type" content="article">
-<meta property="og:title" content="windows使用git时出现：warning:LF will be replaced by CRLF">
-<meta property="og:url" content="http://caoweiqiang.com/2017/06/02/git-warning/index.html">
+<meta name="description" content="每天学一点，进步快一点">
+<meta property="og:type" content="website">
+<meta property="og:title" content="前端博客">
+<meta property="og:url" content="http://caoweiqiang.com/tags/Hexo/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法：  12rm -rf .git  //删除.gitgit config --global core.autocrlf false  //禁用自动转换 然后重新执行：  12git initgit add . 转载：http://blog.csdn.net/unityoxb/articl">
-<meta property="og:updated_time" content="2017-06-07T01:50:01.581Z">
+<meta property="og:description" content="每天学一点，进步快一点">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows使用git时出现：warning:LF will be replaced by CRLF">
-<meta name="twitter:description" content="windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法：  12rm -rf .git  //删除.gitgit config --global core.autocrlf false  //禁用自动转换 然后重新执行：  12git initgit add . 转载：http://blog.csdn.net/unityoxb/articl">
+<meta name="twitter:title" content="前端博客">
+<meta name="twitter:description" content="每天学一点，进步快一点">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +55,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>windows使用git时出现：warning:LF will be replaced by CRLF | 前端博客</title>
+<title>Tag: Hexo | 前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,9 +65,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -270,193 +268,56 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-git-warning" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/06/02/git-warning/" class="article-date">
-      <time datetime="2017-06-02T03:00:16.236Z" itemprop="datePublished">2017-06-02</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/06/01/hexo-blog/" class="archive-article-date">
+      <time datetime="2017-06-01T10:00:15.955Z" itemprop="datePublished">06-01</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      windows使用git时出现：warning:LF will be replaced by CRLF
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/06/01/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/warning-LF-will-be-replaced-by-CRLF/">warning:LF will be replaced by CRLF</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm -rf .git  <span class="comment">//删除.git</span></div><div class="line">git config --global core.autocrlf <span class="literal">false</span>  <span class="comment">//禁用自动转换</span></div></pre></td></tr></table></figure>
-<p>然后重新执行： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git add .</div></pre></td></tr></table></figure>
-<p>转载：<a href="http://blog.csdn.net/unityoxb/article/details/20768687" target="_blank" rel="external">http://blog.csdn.net/unityoxb/article/details/20768687</a></p>
 
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/06/02/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">前端笔记</a></p>
-        <p><span>发布时间:</span>2017-06-02, 11:00:16</p>
-        <p><span>最后更新:</span>2017-06-07, 09:50:01</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/06/02/git-warning/" title="windows使用git时出现：warning:LF will be replaced by CRLF">http://caoweiqiang.com/2017/06/02/git-warning/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/2017/06/02/git-warning/　　作者: 前端笔记" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建免费Hexo个人博客/">搭建免费Hexo个人博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建免费Hexo个人博客并部署到Github/">搭建免费Hexo个人博客并部署到Github</a></li></ul>
     </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/06/07/css3-js/">
-                    2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/06/01/hexo-blog/">
-                    零基础搭建免费Hexo个人博客并部署到Github
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-3 i,
-        .toc-level-3 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"windows使用git时出现：warning:LF will be replaced by CRLF　| 前端博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
-</div>
 
-
-
-
-
-
-
-    
-        <div class="changyan" id="comments"> 
-    <div id="SOHUCS" sid="windows使用git时出现：warning:LF will be replaced by CRLF" style="width:auto;padding:0 30px 0 46px;"></div>
-    <script>
-        var appid = {changyan_appid:"cyr2lGeJX"};
-        var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
-        var width = window.innerWidth || document.documentElement.clientWidth; 
-        var loadComment = function(){
-            if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid.changyan_appid + '&conf=' + conf.changyan_appkey + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid.changyan_appid,conf:conf.changyan_appkey})}); }
-        }
-        
-    </script>
-    
-    <script> loadComment(); </script>
-
-</div>
-    
-
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/06/07/css3-js/" title="上一篇: 2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/06/01/hexo-blog/" title="下一篇: 零基础搭建免费Hexo个人博客并部署到Github">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/07/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/02/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
