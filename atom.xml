@@ -1,312 +1,28 @@
-<!DOCTYPE html>
-<html >
-<head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="caoweiqiang" />
-
-
-    
-    
-
-
-<meta name="description" content="每天学一点，进步快一点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端博客">
-<meta property="og:url" content="http://caoweiqiang.com/index.html">
-<meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="每天学一点，进步快一点">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端博客">
-<meta name="twitter:description" content="每天学一点，进步快一点">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="前端博客" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="/css/style.css">
-
-
-    <style> .article { opacity: 0;} </style>
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>前端博客</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: true,
-        isPost: false,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
-    }
-</script>
-
-
-    <script>
-        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
-    </script>
-
-
-
-    <script> yiliaConfig.rootUrl = "\/";</script>
-
-
-
-
-
-
-</head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/">caoweiqiang</a></h1>
-        </hgroup>
-
-        
-        <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
-        
-
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
-        
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:1154413293@qq.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" href="https://github.com/caoweiqiang" title="GitHub"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RSS插件/">RSS插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warning-LF-will-be-replaced-by-CRLF/">warning:LF will be replaced by CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地图标注/">地图标注</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客/">搭建免费Hexo个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客并部署到Github/">搭建免费Hexo个人博客并部署到Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图API/">百度地图API</a></li></ul>
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.qdfuns.com/">前端网</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://www.css88.com/">web前端开发</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="https://juejin.im/welcome/frontend/?utm_source=css88&utm_medium=image&utm_content=juejin&utm_campaign=q3_personal">掘金</a>
-                    
-                      <a class="main-nav-link switch-friends-link" href="http://caibaojian.com">前端开发博客</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">caoweiqiang</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>                
-</div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">caoweiqiang</a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">caoweiqiang</a></h1>
-            </hgroup>
-            
-            <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:1154413293@qq.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="https://github.com/caoweiqiang" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
-</nav>
-      <div class="body-wrap">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>前端博客</title>
+  <subtitle>点点滴滴，记录前端学习笔记</subtitle>
+  <link href="/atom.xml" rel="self"/>
   
-    <article id="post-baidu-api" class="article article-type-post" itemscope itemprop="blogPost">
+  <link href="http://caoweiqiang.com/"/>
+  <updated>2017-06-07T07:17:50.762Z</updated>
+  <id>http://caoweiqiang.com/</id>
   
-    <div class="article-meta">
-      <a href="/baidu-api/" class="article-date">
-      <time datetime="2017-06-07T07:02:52.315Z" itemprop="datePublished">2017-06-07</time>
-</a>
-
-
-    </div>
+  <author>
+    <name>caoweiqiang</name>
+    
+  </author>
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+  <generator uri="http://hexo.io/">Hexo</generator>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/baidu-api/">详解百度地图API之地图标注</a>
-    </h1>
-  
-
-      </header>
-      
+  <entry>
+    <title>详解百度地图API之地图标注</title>
+    <link href="http://caoweiqiang.com/baidu-api/"/>
+    <id>http://caoweiqiang.com/baidu-api/</id>
+    <published>2017-06-07T07:02:52.315Z</published>
+    <updated>2017-06-07T07:17:50.762Z</updated>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="一、标注概述"><a href="#一、标注概述" class="headerlink" title="一、标注概述"></a>一、标注概述</h4><p>标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一个标注，不论地图移动、缩放，标注都会跟随一起移动，保证其始终指向正确的地理位置。</p>
+    <content type="html"><![CDATA[<h4 id="一、标注概述"><a href="#一、标注概述" class="headerlink" title="一、标注概述"></a>一、标注概述</h4><p>标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一个标注，不论地图移动、缩放，标注都会跟随一起移动，保证其始终指向正确的地理位置。</p>
 <p><img src="http://images.51cto.com/files/uploadimg/20110916/1040051.jpg" alt="img"><br>从上面的图可以看出，不论地图如何变化标注始终指向“西单商场”的位置。 </p>
 <h4 id="二、如何知道某个点的坐标？"><a href="#二、如何知道某个点的坐标？" class="headerlink" title="二、如何知道某个点的坐标？"></a>二、如何知道某个点的坐标？</h4><p>上例中我们在西单商场位置添加了一个标注，那么我是如何知道它的坐标点呢？可以通过API的事件机制来获取：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">map.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line"><span class="built_in">console</span>.log(e.point);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -341,66 +57,31 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkr.addEventListener(<span class="string">'dragend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">alert(e.point.lng +<span class="string">', '</span>+e.point.lat);  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h4 id="六、标注阴影"><a href="#六、标注阴影" class="headerlink" title="六、标注阴影"></a>六、标注阴影</h4><p>为了增加立体感，可以单独给标注添加阴影，当然你也可以把阴影直接画在icon所用的图片上，但是由于阴影和标注本身在一起，所以就不建议使用任何动画效果，否则会缺乏真实感。阴影可以通过MarkerOptions的shadow属性配置，类型也是一个Icon实例。具体使用方法和icon属性一样，这里就不赘述了。</p>
 <p>转载：<a href="http://developer.51cto.com/art/201109/291710.htm" target="_blank" rel="external">http://developer.51cto.com/art/201109/291710.htm</a></p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/地图标注/">地图标注</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度地图API/">百度地图API</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo-rss" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/hexo-rss/" class="article-date">
-      <time datetime="2017-06-07T06:52:50.311Z" itemprop="datePublished">2017-06-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
+      &lt;h4 id=&quot;一、标注概述&quot;&gt;&lt;a href=&quot;#一、标注概述&quot; class=&quot;headerlink&quot; title=&quot;一、标注概述&quot;&gt;&lt;/a&gt;一、标注概述&lt;/h4&gt;&lt;p&gt;标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexo-rss/">hexo博客安装RSS插件</a>
-    </h1>
-  
-
-      </header>
-      
+      <category term="百度地图" scheme="http://caoweiqiang.com/tags/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>hexo博客不能使用RSS功能，需要按照RSS插件，才能正常使用。</p>
+      <category term="百度地图API" scheme="http://caoweiqiang.com/tags/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAPI/"/>
+    
+      <category term="地图标注" scheme="http://caoweiqiang.com/tags/%E5%9C%B0%E5%9B%BE%E6%A0%87%E6%B3%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo博客安装RSS插件</title>
+    <link href="http://caoweiqiang.com/hexo-rss/"/>
+    <id>http://caoweiqiang.com/hexo-rss/</id>
+    <published>2017-06-07T06:52:50.311Z</published>
+    <updated>2017-06-07T07:01:44.949Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo博客不能使用RSS功能，需要按照RSS插件，才能正常使用。</p>
 <p>如下配置步骤：</p>
 <p>1、安装插件，进入本地hexo目录，打开GIT bash，输入一下命令。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-feed</div></pre></td></tr></table></figure>
@@ -411,66 +92,32 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rss: <span class="regexp">/atom.xml</span></div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160827093903148" alt="img"></p>
 <p>转载：<a href="http://blog.csdn.net/u011303443/article/details/52333695" target="_blank" rel="external">http://blog.csdn.net/u011303443/article/details/52333695</a></p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RSS插件/">RSS插件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-css3-js" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/css3-js/" class="article-date">
-      <time datetime="2017-06-06T23:33:45.401Z" itemprop="datePublished">2017-06-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
+      &lt;p&gt;hexo博客不能使用RSS功能，需要按照RSS插件，才能正常使用。&lt;/p&gt;
+&lt;p&gt;如下配置步骤：&lt;/p&gt;
+&lt;p&gt;1、安装插件，进入本地hexo目录，打开GIT bash，输入一下命令。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;ta
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a>
-    </h1>
-  
-
-      </header>
-      
+      <category term="hexo" scheme="http://caoweiqiang.com/tags/hexo/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>前端网页设计在过去的十年里经历了一场革命。在2007年，我们大多数人仍在设计静态杂志布局，在2017年，我们重新设计了数字机器，有成千上万的调整、协调、移动的部件。</p>
+      <category term="RSS插件" scheme="http://caoweiqiang.com/tags/RSS%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</title>
+    <link href="http://caoweiqiang.com/css3-js/"/>
+    <id>http://caoweiqiang.com/css3-js/</id>
+    <published>2017-06-06T23:33:45.401Z</published>
+    <updated>2017-06-07T01:52:50.913Z</updated>
+    
+    <content type="html"><![CDATA[<p>前端网页设计在过去的十年里经历了一场革命。在2007年，我们大多数人仍在设计静态杂志布局，在2017年，我们重新设计了数字机器，有成千上万的调整、协调、移动的部件。</p>
 <p>简单的说，<strong>很好的UI设计师还需要成为很好的动画师</strong> – 需要对网络动画技术有一个很好的理解。</p>
 <p>这是我们指南中最新更新的，帮助你为每个任务选择正确的动画库。我们将通过 9 个免费的、编码良好的动画库，最适合于UI设计，它们的优点和缺点，以及何时选择它们。</p>
 <p>请记住，我们是从一个熟悉代码的UI设计师（而不是从代精通代码的开发人员）的角度来看待每个库。这些库中有一些是纯 CSS 实现的。其他是JavaScript 的，但是，除了了解基本的 HTML/CSS 之外，使用他们你不需要更多的其他知识。链接一个动画库 – 添加一个 CSS 类 即可。</p>
@@ -617,130 +264,56 @@
 <p>如果你正在寻找一个更完整、功能强大的JavaScript选项，<strong>VelocityJS</strong> 和 <strong>Anime.JS</strong> 不分伯仲。Velocity 目前拥有更多的动画实现 和 更大的使用量基础，但是对于 Anime.JS 这样一个新项目来说是令人难以置信的完美 和 令人激动的。目前，Anime.JS 美丽的文档可能足以赢得我们的青睐。</p>
 <p>尽管在您的 web 应用程序中使用一个动画库可以提高交互性，但是过度使用它可能会违背用户的目的，并且经常使用户迷惑。请小心谨慎地使用它们。</p>
 <p>转载：<a href="http://www.css88.com/archives/7389" target="_blank" rel="external">http://www.css88.com/archives/7389</a></p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git-warning" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/git-warning/" class="article-date">
-      <time datetime="2017-06-02T03:00:16.236Z" itemprop="datePublished">2017-06-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
+      &lt;p&gt;前端网页设计在过去的十年里经历了一场革命。在2007年，我们大多数人仍在设计静态杂志布局，在2017年，我们重新设计了数字机器，有成千上万的调整、协调、移动的部件。&lt;/p&gt;
+&lt;p&gt;简单的说，&lt;strong&gt;很好的UI设计师还需要成为很好的动画师&lt;/strong&gt; – 需要对
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a>
-    </h1>
-  
-
-      </header>
-      
+      <category term="css3" scheme="http://caoweiqiang.com/tags/css3/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法： </p>
+      <category term="javaScript" scheme="http://caoweiqiang.com/tags/javaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows使用git时出现：warning:LF will be replaced by CRLF</title>
+    <link href="http://caoweiqiang.com/git-warning/"/>
+    <id>http://caoweiqiang.com/git-warning/</id>
+    <published>2017-06-02T03:00:16.236Z</published>
+    <updated>2017-06-07T01:50:01.581Z</updated>
+    
+    <content type="html"><![CDATA[<p>windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法： </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm -rf .git  <span class="comment">//删除.git</span></div><div class="line">git config --global core.autocrlf <span class="literal">false</span>  <span class="comment">//禁用自动转换</span></div></pre></td></tr></table></figure>
 <p>然后重新执行： </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git add .</div></pre></td></tr></table></figure>
 <p>转载：<a href="http://blog.csdn.net/unityoxb/article/details/20768687" target="_blank" rel="external">http://blog.csdn.net/unityoxb/article/details/20768687</a></p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/warning-LF-will-be-replaced-by-CRLF/">warning:LF will be replaced by CRLF</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/hexo-blog/" class="article-date">
-      <time datetime="2017-06-01T10:00:15.955Z" itemprop="datePublished">2017-06-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
+      &lt;p&gt;windows中的换行符为 CRLF，而在Linux下的换行符为LF，所以在执行add . 时出现提示，解决办法： &lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;d
     
-      <input type="hidden" class="isFancy" />
+    </summary>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a>
-    </h1>
-  
-
-      </header>
-      
+      <category term="warning:LF will be replaced by CRLF" scheme="http://caoweiqiang.com/tags/warning-LF-will-be-replaced-by-CRLF/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>博客系统有很多，每一个的搭建方式也各有特色，也看了不少的教程和方法，但是总觉得或多或少都有些坑，因为每个人出的问题不一样，所以侧重点也不尽相同，也可能我写的也有很多坑，但是我根据我的实际情况记录下我的过程和我可能容易忽略的地方，针对的对象是0基础的小小白，不求一语道破天机，只愿过程无缝跟进，所以我话语说的比较啰嗦点，尽量多上图，有不足之处请各位看官多多提出宝贵意见为谢！好了，其他不多说，进入正题：<br>国际惯例，简单说下Hexo：</p>
+  </entry>
+  
+  <entry>
+    <title>零基础搭建免费Hexo个人博客并部署到Github</title>
+    <link href="http://caoweiqiang.com/hexo-blog/"/>
+    <id>http://caoweiqiang.com/hexo-blog/</id>
+    <published>2017-06-01T10:00:15.955Z</published>
+    <updated>2017-06-07T06:35:49.965Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>博客系统有很多，每一个的搭建方式也各有特色，也看了不少的教程和方法，但是总觉得或多或少都有些坑，因为每个人出的问题不一样，所以侧重点也不尽相同，也可能我写的也有很多坑，但是我根据我的实际情况记录下我的过程和我可能容易忽略的地方，针对的对象是0基础的小小白，不求一语道破天机，只愿过程无缝跟进，所以我话语说的比较啰嗦点，尽量多上图，有不足之处请各位看官多多提出宝贵意见为谢！好了，其他不多说，进入正题：<br>国际惯例，简单说下Hexo：</p>
 <h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>官方给的解释是：Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <h2 id="Hexo的好处？"><a href="#Hexo的好处？" class="headerlink" title="Hexo的好处？"></a>Hexo的好处？</h2><p>在官方的文档中并没有说自己的博客系统多么多么牛XX，而是直接进入正题</p>
 <h2 id="Hexo官方文档"><a href="#Hexo官方文档" class="headerlink" title="Hexo官方文档"></a>Hexo官方文档</h2><p>英文原版文档：<br><a href="https://hexo.io/docs/index.html" target="_blank" rel="external">https://hexo.io/docs/index.html</a><br>中文文档：<br><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/index.html</a></p>
@@ -956,140 +529,23 @@
 <p>在浏览器中打开网址：“yourname.github.io”</p>
 <p><img src="/img/123258fqyhbr6a47yoobxn.jpg" alt="img"></p>
 <p>转载：<a href="http://www.qdfuns.com/notes/14464/5c9705f6721e0a1357fdf990eee64cbd.html" target="_blank" rel="external">http://www.qdfuns.com/notes/14464/5c9705f6721e0a1357fdf990eee64cbd.html</a></p>
-
-      
-    </div>
+]]></content>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建免费Hexo个人博客/">搭建免费Hexo个人博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建免费Hexo个人博客并部署到Github/">搭建免费Hexo个人博客并部署到Github</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+    <summary type="html">
     
-  </div>
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;博客系统有很多，每一个的搭建方式也各有特色，也看了不少的教程和方法，但是总觉得或多或少都有些坑，因为每个人出的问题不一样，所以侧重点也不尽相
+    
+    </summary>
+    
+      <category term="前端" scheme="http://caoweiqiang.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="Hexo" scheme="http://caoweiqiang.com/tags/Hexo/"/>
+    
+      <category term="搭建免费Hexo个人博客" scheme="http://caoweiqiang.com/tags/%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="搭建免费Hexo个人博客并部署到Github" scheme="http://caoweiqiang.com/tags/%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0Github/"/>
+    
+  </entry>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2017 caoweiqiang
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-    </div>
-    
-    <script src="/js/GithubRepoWidget.js"></script>
-
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
-
-
-    
-        <script>
-            if ($(".left-col").is(":visible")) {
-                var appid = {changyan_appid:"cyr2lGeJX"};
-                var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
-                var width = window.innerWidth || document.documentElement.clientWidth;
-                (function() {
-                    if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid.changyan_appid + '&conf=' + conf.changyan_appkey + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid.changyan_appid,conf:conf.changyan_appkey})}); }
-                })();
-
-                $(document).ready(function(){
-                    var $changyanCount = $(".ds-thread-count");
-                    $changyanCount.bind("DOMNodeInserted", function(e) {
-                        var num = $(this).text().replace(/[^0-9]/ig,"");
-                        $(this).siblings(".count-comment").text(num);
-                        $(this).remove();
-                    })
-                })
-            }
-        </script>
-    
-
-    
-
-     
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-             github: ".github-widget a", 
-             title: "a.article-title, .article-more-link a", 
-             post: ".article-entry a[href], .copyright a[href]", 
-             tags: ".article-tag a", 
-            
-             articleNav: "#article-nav a, #post-nav-button a", 
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-  </div>
-</body>
-</html>
+</feed>
