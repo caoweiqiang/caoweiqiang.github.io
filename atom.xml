@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://caoweiqiang.com/"/>
-  <updated>2017-06-08T01:55:08.193Z</updated>
+  <updated>2017-06-09T10:18:40.781Z</updated>
   <id>http://caoweiqiang.com/</id>
   
   <author>
@@ -16,42 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JS 利用appendChild对&lt;li&gt;标签进行排序</title>
+    <title>《web前端最佳实践》—高性能css</title>
     <link href="http://caoweiqiang.com/web-css/"/>
     <id>http://caoweiqiang.com/web-css/</id>
     <published>2017-06-09T09:55:20.832Z</published>
-    <updated>2017-06-08T01:55:08.193Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20160318162817435" alt="img"><br>按照从大到小排序</p>
-<p>appendChild: </p>
-<p>假设父级a中已经有子节点b，那么a.appendChild(b)的作用是：1.先将子节点b从父级a中删除；2.再将子节点b添加到a中，放在最末尾。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;button id="bt1"&gt;提交&lt;/button&gt;</div><div class="line">  &lt;ul id="ul1"&gt; </div><div class="line">      &lt;li&gt;32&lt;/li&gt;</div><div class="line">      &lt;li&gt;243&lt;/li&gt;</div><div class="line">      &lt;li&gt;43&lt;/li&gt;</div><div class="line">      &lt;li&gt;24&lt;/li&gt;</div><div class="line">      &lt;li id="t"&gt;2&lt;/li&gt;</div><div class="line">      &lt;li&gt;84&lt;/li&gt;</div><div class="line">      &lt;li&gt;84&lt;/li&gt;</div><div class="line">      &lt;li&gt;25&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  <span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> oUl1=<span class="built_in">document</span>.getElementById(<span class="string">'ul1'</span>);</div><div class="line">   <span class="keyword">var</span> oBt=<span class="built_in">document</span>.getElementById(<span class="string">'bt1'</span>);</div><div class="line"></div><div class="line">   oBt.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> oLi=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</div><div class="line"></div><div class="line">    <span class="keyword">var</span> arr=[];</div><div class="line">    <span class="comment">//将&lt;li&gt;标签放入空的arr数组中</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;oLi.length;i++)&#123;</div><div class="line">        arr[i]=oLi[i]; </div><div class="line">    &#125;</div><div class="line">    <span class="comment">//sort排序，数组中每个元素都是一个&lt;li&gt;,所以要用innerHTML</span></div><div class="line">    arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">li1,li2</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> n1=<span class="built_in">parseInt</span>(li1.innerHTML);</div><div class="line">        <span class="keyword">var</span> n2=<span class="built_in">parseInt</span>(li2.innerHTML);   </div><div class="line">        <span class="keyword">return</span> n1-n2;  </div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//通过appendChild进行排序</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">        oUl1.appendChild(arr[i]);</div><div class="line">    &#125;   </div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20160318164135961" alt="img"></p>
-<p>转载：<a href="http://blog.csdn.net/u010114513/article/details/50924869" target="_blank" rel="external">http://blog.csdn.net/u010114513/article/details/50924869</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160318162817435&quot; alt=&quot;img&quot;&gt;&lt;br&gt;按照从大到小排序&lt;/p&gt;
-&lt;p&gt;appendChild: &lt;/p&gt;
-&lt;p&gt;假设父级a中已经有子节点b，那么a.appendChild(b)
-    
-    </summary>
-    
-    
-      <category term="JS" scheme="http://caoweiqiang.com/tags/JS/"/>
-    
-      <category term="排序" scheme="http://caoweiqiang.com/tags/%E6%8E%92%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《web前端最佳实践》—高性能css</title>
-    <link href="http://caoweiqiang.com/js-sort/"/>
-    <id>http://caoweiqiang.com/js-sort/</id>
-    <published>2017-06-09T08:54:02.151Z</published>
-    <updated>2017-06-09T10:12:38.733Z</updated>
+    <updated>2017-06-09T10:18:40.781Z</updated>
     
     <content type="html"><![CDATA[<p>性能，这个词如今被炒的很热，也是每个开发者，由“知道”、“会做”之后必经的一个“怎样做好”的阶段。性能关乎用户在不同设备和不同网络状态下的体验。也被多方面因素所影响。此文说说css方面怎样做到高性能。</p>
 <h1 id="高性能css"><a href="#高性能css" class="headerlink" title="高性能css"></a>高性能css</h1><p>Html和css本身的性能问题并不突出，在提高可读性和可维护性的前提下，如果能让代码运行和解析的速度更快，则是锦上添花了。</p>
@@ -152,6 +121,50 @@
       <category term="web前端最佳实践" scheme="http://caoweiqiang.com/tags/web%E5%89%8D%E7%AB%AF%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
     
       <category term="高性能css" scheme="http://caoweiqiang.com/tags/%E9%AB%98%E6%80%A7%E8%83%BDcss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Javascript】排序算法（冒泡排序，选择排序，插入排序，归并排序，快速排序）</title>
+    <link href="http://caoweiqiang.com/js-sort/"/>
+    <id>http://caoweiqiang.com/js-sort/</id>
+    <published>2017-06-09T08:54:02.151Z</published>
+    <updated>2017-06-09T10:18:44.935Z</updated>
+    
+    <content type="html"><![CDATA[<p>回头重新刷了一遍《学习Javascript数据结构与算法》这本书，并把其中的排序算法部分亲自动手实践了一遍，包括把原书里面比较啰嗦的代码精简了一些<br>目前共整理出了五种：冒泡排序,选择排序,插入排序,归并排序，快速排序(递归)<br>经典的排序算法有十种，剩下五种再慢慢研究</p>
+<p>1、冒泡算法：比较任意两个相邻的项，如果第一个比第二个大，则交换顺序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">/*冒泡排序*/</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> j = i+<span class="number">1</span>; j &lt; a.length; j++) &#123;</div><div class="line">		<span class="keyword">if</span> (a[j] &lt; a[i]) &#123;</div><div class="line">			<span class="comment">// var t = a[i];</span></div><div class="line">			<span class="comment">// a[i] = a[j];</span></div><div class="line">			<span class="comment">// a[j] = t;</span></div><div class="line">			swap(i,j);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2、选择排序：找到数组中最小的项并将其放到第一位，找到第二小的值，并将其放到第二位，依次排列</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">/*选择排序*/</span></div><div class="line"><span class="keyword">var</span> indexMin;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; a.length<span class="number">-1</span>; i++) &#123;</div><div class="line">	<span class="comment">// 假设下标indexMin的值最小</span></div><div class="line">	indexMin = i;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> j = i+<span class="number">1</span>; j &lt; a.length; j++) &#123;</div><div class="line">		<span class="keyword">if</span> (a[indexMin] &gt; a[j]) &#123;</div><div class="line">			<span class="comment">// 交换最小值下标</span></div><div class="line">			indexMin = j;</div><div class="line">		&#125;	</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 如果找到的最小值跟原来设定的最小值不一样，交换其值</span></div><div class="line">	<span class="keyword">if</span> (i !== indexMin) &#123;</div><div class="line">		swap(i,indexMin);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3、插入排序：每次只排序一个数组项，确定它应该插入到哪个位置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">/*插入排序*/</span></div><div class="line"><span class="keyword">var</span> j,temp;</div><div class="line"><span class="comment">// 默认第一项已经排序，所以从第二项开始</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</div><div class="line">	<span class="comment">// 辅助变量和值，存储当前下标和值</span></div><div class="line">	j = i;</div><div class="line">	temp = a[i];</div><div class="line">	<span class="comment">// 一直跟前一项比较，直到找到正确的位置插入</span></div><div class="line">	<span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; a[j<span class="number">-1</span>] &gt; temp)&#123;</div><div class="line">		<span class="comment">// 移到当前位置</span></div><div class="line">		a[j] = a[j<span class="number">-1</span>];</div><div class="line">		j--;</div><div class="line">	&#125;</div><div class="line">	a[j] = temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4、归并排序（分治）：<br>   ①将数组拆分成较小的数组，直到每个数组的长度为1；<br>   ②合并和排序小数组，直到回到原始数组的长度；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">left, right</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> result = [];</div><div class="line">	<span class="keyword">while</span> (left.length &gt; <span class="number">0</span> &amp;&amp; right.length &gt; <span class="number">0</span>)&#123;</div><div class="line">		<span class="comment">// 比较左边的数组的值是否被右边的小</span></div><div class="line">		<span class="keyword">if</span> (left[<span class="number">0</span>] &lt; right[<span class="number">0</span>])&#123;</div><div class="line">			result.push(left.shift());</div><div class="line">		&#125; <span class="keyword">else</span> &#123;</div><div class="line">			result.push(right.shift());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> result.concat(left).concat(right);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mergeSort</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">	<span class="comment">// 递归的停止条件</span></div><div class="line">	<span class="keyword">if</span> (arr.length == <span class="number">1</span>) &#123;</div><div class="line">		<span class="keyword">return</span> arr;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 中间值取整，分成两个小组</span></div><div class="line">	<span class="keyword">var</span> middle = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>),</div><div class="line">		left = arr.slice(<span class="number">0</span>, middle),</div><div class="line">		right = arr.slice(middle);</div><div class="line">	<span class="comment">// 递归，对左右两部分数据进行合并排序</span></div><div class="line">	<span class="keyword">return</span> merge(mergeSort(left), mergeSort(right));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>5、快速排序（分治）<br>   ①从数组中选择中间项目作为主元<br>   ②建立左右两个数组，分别存储左边和右边的数组<br>   ③利用递归进行下次比较</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">/*快速排序*/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123;</div><div class="line">		<span class="keyword">return</span> arr;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 取中间数作为基准索引，浮点数向下取整</span></div><div class="line">	<span class="keyword">var</span> index = <span class="built_in">Math</span>.floor(arr.length/<span class="number">2</span>);</div><div class="line">	<span class="comment">// 取得该值</span></div><div class="line">	<span class="keyword">var</span> pivot = arr.splice(index,<span class="number">1</span>);</div><div class="line">	<span class="comment">// 分别建立左右空数组，作为push所用</span></div><div class="line">	<span class="keyword">var</span> left = [];</div><div class="line">	<span class="keyword">var</span> right = [];</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">		<span class="comment">// 基准左边的传到左数组,右边的传到右数组</span></div><div class="line">		<span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</div><div class="line">			left.push(arr[i]);</div><div class="line">		&#125; <span class="keyword">else</span>&#123;</div><div class="line">			right.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 不断递归重复比较</span></div><div class="line">	<span class="keyword">return</span> quickSort(left).concat(pivot,quickSort(right));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>转载：<a href="http://www.qdfuns.com/notes/43245/286de03cc9d97d5bf4a88ce3d74237b6.html" target="_blank" rel="external">http://www.qdfuns.com/notes/43245/286de03cc9d97d5bf4a88ce3d74237b6.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;回头重新刷了一遍《学习Javascript数据结构与算法》这本书，并把其中的排序算法部分亲自动手实践了一遍，包括把原书里面比较啰嗦的代码精简了一些&lt;br&gt;目前共整理出了五种：冒泡排序,选择排序,插入排序,归并排序，快速排序(递归)&lt;br&gt;经典的排序算法有十种，剩下五种再慢慢
+    
+    </summary>
+    
+    
+      <category term="Javascript" scheme="http://caoweiqiang.com/tags/Javascript/"/>
+    
+      <category term="排序算法" scheme="http://caoweiqiang.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="冒泡排序" scheme="http://caoweiqiang.com/tags/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="选择排序" scheme="http://caoweiqiang.com/tags/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="插入排序" scheme="http://caoweiqiang.com/tags/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="归并排序" scheme="http://caoweiqiang.com/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="快速排序" scheme="http://caoweiqiang.com/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
