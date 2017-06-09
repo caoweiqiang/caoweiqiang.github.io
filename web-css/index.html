@@ -15,15 +15,20 @@
 
 
 
-<meta name="description" content="每天学一点，进步快一点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端博客">
-<meta property="og:url" content="http://caoweiqiang.com/archives/index.html">
+<meta name="description" content="按照从大到小排序 appendChild:  假设父级a中已经有子节点b，那么a.appendChild(b)的作用是：1.先将子节点b从父级a中删除；2.再将子节点b添加到a中，放在最末尾。 12345678910111213&amp;lt;body&amp;gt;  &amp;lt;button id=&quot;bt1&quot;&amp;gt;提交&amp;lt;/button&amp;gt;  &amp;lt;ul id=&quot;ul1&quot;&amp;gt;       &amp;lt;">
+<meta name="keywords" content="JS,排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 利用appendChild对&lt;li&gt;标签进行排序">
+<meta property="og:url" content="http://caoweiqiang.com/web-css/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="每天学一点，进步快一点">
+<meta property="og:description" content="按照从大到小排序 appendChild:  假设父级a中已经有子节点b，那么a.appendChild(b)的作用是：1.先将子节点b从父级a中删除；2.再将子节点b添加到a中，放在最末尾。 12345678910111213&amp;lt;body&amp;gt;  &amp;lt;button id=&quot;bt1&quot;&amp;gt;提交&amp;lt;/button&amp;gt;  &amp;lt;ul id=&quot;ul1&quot;&amp;gt;       &amp;lt;">
+<meta property="og:image" content="http://img.blog.csdn.net/20160318162817435">
+<meta property="og:image" content="http://img.blog.csdn.net/20160318164135961">
+<meta property="og:updated_time" content="2017-06-08T01:55:08.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端博客">
-<meta name="twitter:description" content="每天学一点，进步快一点">
+<meta name="twitter:title" content="JS 利用appendChild对&lt;li&gt;标签进行排序">
+<meta name="twitter:description" content="按照从大到小排序 appendChild:  假设父级a中已经有子节点b，那么a.appendChild(b)的作用是：1.先将子节点b从父级a中删除；2.再将子节点b添加到a中，放在最末尾。 12345678910111213&amp;lt;body&amp;gt;  &amp;lt;button id=&quot;bt1&quot;&amp;gt;提交&amp;lt;/button&amp;gt;  &amp;lt;ul id=&quot;ul1&quot;&amp;gt;       &amp;lt;">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160318162817435">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives | 前端博客</title>
+<title>JS 利用appendChild对&lt;li&gt;标签进行排序 | 前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,8 +70,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -270,324 +275,162 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-web-css" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/web-css/" class="archive-article-date">
-      <time datetime="2017-06-09T09:55:20.832Z" itemprop="datePublished">06-09</time>
+    <div class="article-meta">
+      <a href="/web-css/" class="article-date">
+      <time datetime="2017-06-09T09:55:20.832Z" itemprop="datePublished">2017-06-09</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/web-css/">JS 利用appendChild对&lt;li&gt;标签进行排序</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS 利用appendChild对&lt;li&gt;标签进行排序
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/js-sort/" class="archive-article-date">
-      <time datetime="2017-06-09T08:54:02.151Z" itemprop="datePublished">06-09</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/js-sort/">《web前端最佳实践》—高性能css</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <p><img src="http://img.blog.csdn.net/20160318162817435" alt="img"><br>按照从大到小排序</p>
+<p>appendChild: </p>
+<p>假设父级a中已经有子节点b，那么a.appendChild(b)的作用是：1.先将子节点b从父级a中删除；2.再将子节点b添加到a中，放在最末尾。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;button id="bt1"&gt;提交&lt;/button&gt;</div><div class="line">  &lt;ul id="ul1"&gt; </div><div class="line">      &lt;li&gt;32&lt;/li&gt;</div><div class="line">      &lt;li&gt;243&lt;/li&gt;</div><div class="line">      &lt;li&gt;43&lt;/li&gt;</div><div class="line">      &lt;li&gt;24&lt;/li&gt;</div><div class="line">      &lt;li id="t"&gt;2&lt;/li&gt;</div><div class="line">      &lt;li&gt;84&lt;/li&gt;</div><div class="line">      &lt;li&gt;84&lt;/li&gt;</div><div class="line">      &lt;li&gt;25&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  <span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> oUl1=<span class="built_in">document</span>.getElementById(<span class="string">'ul1'</span>);</div><div class="line">   <span class="keyword">var</span> oBt=<span class="built_in">document</span>.getElementById(<span class="string">'bt1'</span>);</div><div class="line"></div><div class="line">   oBt.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> oLi=<span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</div><div class="line"></div><div class="line">    <span class="keyword">var</span> arr=[];</div><div class="line">    <span class="comment">//将&lt;li&gt;标签放入空的arr数组中</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;oLi.length;i++)&#123;</div><div class="line">        arr[i]=oLi[i]; </div><div class="line">    &#125;</div><div class="line">    <span class="comment">//sort排序，数组中每个元素都是一个&lt;li&gt;,所以要用innerHTML</span></div><div class="line">    arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">li1,li2</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> n1=<span class="built_in">parseInt</span>(li1.innerHTML);</div><div class="line">        <span class="keyword">var</span> n2=<span class="built_in">parseInt</span>(li2.innerHTML);   </div><div class="line">        <span class="keyword">return</span> n1-n2;  </div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//通过appendChild进行排序</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">        oUl1.appendChild(arr[i]);</div><div class="line">    &#125;   </div><div class="line">   &#125;</div><div class="line">  &#125;</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20160318164135961" alt="img"></p>
+<p>转载：<a href="http://blog.csdn.net/u010114513/article/details/50924869" target="_blank" rel="external">http://blog.csdn.net/u010114513/article/details/50924869</a></p>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web前端最佳实践/">web前端最佳实践</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高性能css/">高性能css</a></li></ul>
+      
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/html5-summary/" class="archive-article-date">
-      <time datetime="2017-06-08T02:01:21.106Z" itemprop="datePublished">06-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/html5-summary/">H5项目常见问题汇总及解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5/">H5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5常见问题汇总/">H5常见问题汇总</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/H5解决方案/">H5解决方案</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/label-sort/" class="archive-article-date">
-      <time datetime="2017-06-08T01:50:06.119Z" itemprop="datePublished">06-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/label-sort/">JS 利用appendChild对&lt;li&gt;标签进行排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/baidu-api/" class="archive-article-date">
-      <time datetime="2017-06-07T07:02:52.315Z" itemprop="datePublished">06-07</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/baidu-api/">详解百度地图API之地图标注</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/地图标注/">地图标注</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度地图API/">百度地图API</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/hexo-rss/" class="archive-article-date">
-      <time datetime="2017-06-07T06:52:50.311Z" itemprop="datePublished">06-07</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/hexo-rss/">hexo博客安装RSS插件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RSS插件/">RSS插件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/css3-js/" class="archive-article-date">
-      <time datetime="2017-06-06T23:33:45.401Z" itemprop="datePublished">06-07</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/git-warning/" class="archive-article-date">
-      <time datetime="2017-06-02T03:00:16.236Z" itemprop="datePublished">06-02</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/warning-LF-will-be-replaced-by-CRLF/">warning:LF will be replaced by CRLF</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/hexo-blog/" class="archive-article-date">
-      <time datetime="2017-06-01T10:00:15.955Z" itemprop="datePublished">06-01</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/web-css/">JS 利用appendChild对&lt;li&gt;标签进行排序</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cwq</a></p>
+        <p><span>发布时间:</span>2017-06-09, 17:55:20</p>
+        <p><span>最后更新:</span>2017-06-08, 09:55:08</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/web-css/" title="JS 利用appendChild对&lt;li&gt;标签进行排序">http://caoweiqiang.com/web-css/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/web-css/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建免费Hexo个人博客/">搭建免费Hexo个人博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/搭建免费Hexo个人博客并部署到Github/">搭建免费Hexo个人博客并部署到Github</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/js-sort/">
+                    《web前端最佳实践》—高性能css
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
 
     
+        <div class="changyan" id="comments"> 
+    <div id="SOHUCS" sid="JS 利用appendChild对&lt;li&gt;标签进行排序" style="width:auto;padding:0 30px 0 46px;"></div>
+    <script>
+        var appid = {changyan_appid:"cyr2lGeJX"};
+        var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        var loadComment = function(){
+            if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid.changyan_appid + '&conf=' + conf.changyan_appkey + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid.changyan_appid,conf:conf.changyan_appkey})}); }
+        }
+        
+    </script>
+    
+    <script> loadComment(); </script>
 
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/js-sort/" title="下一篇: 《web前端最佳实践》—高性能css">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/web-css/">JS 利用appendChild对<li>标签进行排序</a></li><li class="post-list-item"><a class="post-list-link" href="/js-sort/">《web前端最佳实践》—高性能css</a></li><li class="post-list-item"><a class="post-list-link" href="/html5-summary/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/label-sort/">JS 利用appendChild对<li>标签进行排序</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-api/">详解百度地图API之地图标注</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-rss/">hexo博客安装RSS插件</a></li><li class="post-list-item"><a class="post-list-link" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a></li><li class="post-list-item"><a class="post-list-link" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
