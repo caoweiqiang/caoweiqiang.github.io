@@ -15,27 +15,21 @@
 
 
 
-<meta name="description" content="一、标注概述标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一个标注，不论地图移动、缩放，标注都会跟随一起移动，保证其始终指向正确的地理位置。 从上面的图可以看出，不论地图如何变化标注始终指向“西单商场”的位置。  二、如何知道某个点的坐标？上例中我们在西单商场位置添加了一个标注，那么我是如何知道它的坐标点呢？可以通过API的事件机制来获取">
-<meta name="keywords" content="百度地图,百度地图API,地图标注">
+<meta name="description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。  实现方法：  123   overflow:hidden;text-overflow:ellipsis;white-space:nowrap;  效果如图：   但是这个属性只支持单行文本的溢出显示省略号，如果我们要实现多行文本溢出显示省略号呢。 接">
+<meta name="keywords" content="CSS,CSS多行文字超出隐藏加省略号">
 <meta property="og:type" content="article">
-<meta property="og:title" content="详解百度地图API之地图标注">
-<meta property="og:url" content="http://caoweiqiang.com/baidu-api/index.html">
+<meta property="og:title" content="CSS多行文字超出隐藏加省略号">
+<meta property="og:url" content="http://caoweiqiang.com/css-hidden/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="一、标注概述标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一个标注，不论地图移动、缩放，标注都会跟随一起移动，保证其始终指向正确的地理位置。 从上面的图可以看出，不论地图如何变化标注始终指向“西单商场”的位置。  二、如何知道某个点的坐标？上例中我们在西单商场位置添加了一个标注，那么我是如何知道它的坐标点呢？可以通过API的事件机制来获取">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040051.jpg">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040052.jpg">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040053.png">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040054.png">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040055.png">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040056.png">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040057.png">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040058.png">
-<meta property="og:image" content="http://images.51cto.com/files/uploadimg/20110916/1040059.png">
-<meta property="og:updated_time" content="2017-06-07T09:51:47.144Z">
+<meta property="og:description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。  实现方法：  123   overflow:hidden;text-overflow:ellipsis;white-space:nowrap;  效果如图：   但是这个属性只支持单行文本的溢出显示省略号，如果我们要实现多行文本溢出显示省略号呢。 接">
+<meta property="og:image" content="http://img.caibaojian.com/uploads/2017/05/dome1.png">
+<meta property="og:image" content="http://img.caibaojian.com/uploads/2017/05/dome2.png">
+<meta property="og:image" content="http://img.caibaojian.com/uploads/2017/05/dome3.png">
+<meta property="og:updated_time" content="2017-06-09T10:30:04.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="详解百度地图API之地图标注">
-<meta name="twitter:description" content="一、标注概述标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一个标注，不论地图移动、缩放，标注都会跟随一起移动，保证其始终指向正确的地理位置。 从上面的图可以看出，不论地图如何变化标注始终指向“西单商场”的位置。  二、如何知道某个点的坐标？上例中我们在西单商场位置添加了一个标注，那么我是如何知道它的坐标点呢？可以通过API的事件机制来获取">
-<meta name="twitter:image" content="http://images.51cto.com/files/uploadimg/20110916/1040051.jpg">
+<meta name="twitter:title" content="CSS多行文字超出隐藏加省略号">
+<meta name="twitter:description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。  实现方法：  123   overflow:hidden;text-overflow:ellipsis;white-space:nowrap;  效果如图：   但是这个属性只支持单行文本的溢出显示省略号，如果我们要实现多行文本溢出显示省略号呢。 接">
+<meta name="twitter:image" content="http://img.caibaojian.com/uploads/2017/05/dome1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -67,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>详解百度地图API之地图标注 | 前端博客</title>
+<title>CSS多行文字超出隐藏加省略号 | 前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -282,11 +276,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-baidu-api" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-css-hidden" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/baidu-api/" class="article-date">
-      <time datetime="2017-06-07T07:02:52.315Z" itemprop="datePublished">2017-06-07</time>
+      <a href="/css-hidden/" class="article-date">
+      <time datetime="2017-06-09T10:22:19.875Z" itemprop="datePublished">2017-06-09</time>
 </a>
 
 
@@ -301,7 +295,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      详解百度地图API之地图标注
+      CSS多行文字超出隐藏加省略号
     </h1>
   
 
@@ -312,7 +306,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/地图标注/">地图标注</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/百度地图API/">百度地图API</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS多行文字超出隐藏加省略号/">CSS多行文字超出隐藏加省略号</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,41 +316,42 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="一、标注概述"><a href="#一、标注概述" class="headerlink" title="一、标注概述"></a>一、标注概述</h4><p>标注（Marker）是用来表示一个点位置的可见元素，每个标注自身都包含地理信息。比如你在西单商场位置添加了一个标注，不论地图移动、缩放，标注都会跟随一起移动，保证其始终指向正确的地理位置。</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040051.jpg" alt="img"><br>从上面的图可以看出，不论地图如何变化标注始终指向“西单商场”的位置。 </p>
-<h4 id="二、如何知道某个点的坐标？"><a href="#二、如何知道某个点的坐标？" class="headerlink" title="二、如何知道某个点的坐标？"></a>二、如何知道某个点的坐标？</h4><p>上例中我们在西单商场位置添加了一个标注，那么我是如何知道它的坐标点呢？可以通过API的事件机制来获取：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">map.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line"><span class="built_in">console</span>.log(e.point);  </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>我们在map对象上添加了一个click事件的监听函数，当点击地图上某个位置时，监听函数通过控制台把当前点击的位置输出出来（注意需要有控制台的支持，比如firebug，如果没有控制台则可使用alert把point的lng和lat属性输出出来）。此外，你也可以使用API提供的坐标拾取工具来完成<a href="http://dev.baidu.com/wiki/static/map/API/tool/getPoint/" target="_blank" rel="external">http://dev.baidu.com/wiki/static/map/API/tool/getPoint/</a>，它支持检索并且点击地图上任意位置时会出现该位置的坐标。</p>
-<h4 id="三、标注元素组成"><a href="#三、标注元素组成" class="headerlink" title="三、标注元素组成"></a>三、标注元素组成</h4><p>从DOM元素构成角度看，一个完整的标注是由以下几个部分组成的：</p>
-<p>标注点击区域</p>
-<p>标注图标</p>
-<p>标注阴影</p>
-<p>下面是示意图：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040052.jpg" alt="img"></p>
-<p>在地图API实现中，这三个DOM元素分别位于不同的容器中，这些容器可以通过map.getPanes()方法获得，其中markerMouseTarget就是标注点击区域所在容器、markerPane为标注图标所在容器，markerShadow为标注阴影所在图层。你可能会在自定义覆盖物时需要这些容器对象，这里只需要知道Marker的各个部分是如何放置的即可。</p>
-<h4 id="四、自定义标注图标"><a href="#四、自定义标注图标" class="headerlink" title="四、自定义标注图标"></a>四、自定义标注图标</h4><p>标注的图标是可以自定义的，通过Icon类可以自定义标注的图标，比如我希望使用下面这个图片作为标注图标：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040053.png" alt="img"></p>
-<p>已知这个图标大小为20x32。我们初始化地图，接着定义Icon，并赋给一个Marker实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">varmap =newBMap.Map(<span class="string">'container'</span>);  </div><div class="line">map.centerAndZoom(newBMap.Point(<span class="number">116.380797</span>, <span class="number">39.918497</span>), <span class="number">18</span>);  </div><div class="line"><span class="keyword">var</span> icon = <span class="keyword">new</span> BMap.Icon(<span class="string">'pin.png'</span>, <span class="keyword">new</span> BMap.Size(<span class="number">20</span>, <span class="number">32</span>), &#123;  </div><div class="line"><span class="attr">anchor</span>: <span class="keyword">new</span> BMap.Size(<span class="number">10</span>, <span class="number">30</span>)  </div><div class="line">&#125;);varmkr =newBMap.Marker(newBMap.Point(<span class="number">116.38075</span>,<span class="number">39.918986</span>), &#123;  </div><div class="line"><span class="attr">icon</span>: icon  </div><div class="line">&#125;);  </div><div class="line">map.addOverlay(mkr);</div></pre></td></tr></table></figure>
-<p>我们给定icon所需图片的url，接着是图片的尺寸，另外我们还增加了anchor属性，这个是干什么用的呢？在自定义标注图标时有一点需要注意的就是标注的定位点（anchor），通俗的讲就是要指定图片的哪个位置是与标注真正的位置对应在一起。我们通过下面的图示来说明：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040054.png" alt="img"></p>
-<p>我们获取到地图上一个位置（上图中标注下端所在的黑色小方块），那么我也希望我标注中间下端指向这个位置，这个就需要通过anchor来调节。anchor的意义如下图所示：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040055.png" alt="img"><br>即定位点距离图片左上角的偏移量。</p>
-<p>如果不给anchor的话，API会自动获取图片中心点作为anchor位置：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040056.png" alt="img"><br>我们看到标注图片中心的位置覆盖在那个小方块区域。</p>
-<p>除了anchor之外，还有一个infoWindowAnchor属性，它是用来控制信息窗口开启的位置的（注意这里调用的是Marker的openInfoWindow方法，而不是Map的openInfoWindow方法），默认情况下它和icon的anchor是一个位置：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040057.png" alt="img"></p>
-<p>标注被InfoWindow的底角挡住了，通过infoWindowAnchor属性就可以改变开启位置：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">varicon =newBMap.Icon(<span class="string">'pin.png'</span>, newBMap.Size(<span class="number">20</span>, <span class="number">32</span>), &#123;  </div><div class="line"><span class="attr">anchor</span>: newBMap.Size(<span class="number">10</span>, <span class="number">30</span>),  </div><div class="line"><span class="attr">infoWindowAnchor</span>: newBMap.Size(<span class="number">10</span>, <span class="number">0</span>)  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>再看看效果：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040058.png" alt="img"><br>尖角位置已经发生了改变。</p>
-<h4 id="五、标注拖拽"><a href="#五、标注拖拽" class="headerlink" title="五、标注拖拽"></a>五、标注拖拽</h4><p>标注支持拖拽，并且可以配置是否有动画效果，我们修改创建标注的代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">varmkr =newBMap.Marker(newBMap.Point(<span class="number">116.38075</span>,<span class="number">39.918986</span>), &#123;  </div><div class="line"><span class="attr">icon</span>: icon,  </div><div class="line"><span class="attr">enableDragging</span>: <span class="literal">true</span>,  </div><div class="line"><span class="attr">raiseOnDrag</span>: <span class="literal">true</span>&#125;);</div></pre></td></tr></table></figure>
-<p>这里开启了拖拽功能以及响应的动画效果。如果此时拖拽地图你会得到如下效果：</p>
-<p><img src="http://images.51cto.com/files/uploadimg/20110916/1040059.png" alt="img"><br>通过监听标注的dragend事件，你可以知道拖拽结束后标注的地理位置：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkr.addEventListener(<span class="string">'dragend'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;  </div><div class="line">alert(e.point.lng +<span class="string">', '</span>+e.point.lat);  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h4 id="六、标注阴影"><a href="#六、标注阴影" class="headerlink" title="六、标注阴影"></a>六、标注阴影</h4><p>为了增加立体感，可以单独给标注添加阴影，当然你也可以把阴影直接画在icon所用的图片上，但是由于阴影和标注本身在一起，所以就不建议使用任何动画效果，否则会缺乏真实感。阴影可以通过MarkerOptions的shadow属性配置，类型也是一个Icon实例。具体使用方法和icon属性一样，这里就不赘述了。</p>
-<p>转载：<a href="http://developer.51cto.com/art/201109/291710.htm" target="_blank" rel="external">http://developer.51cto.com/art/201109/291710.htm</a></p>
+        <p>如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。</p>
+<blockquote>
+<p>实现方法：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   overflow:hidden;</div><div class="line">text-overflow:ellipsis;</div><div class="line">white-space:nowrap;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>效果如图：</p>
+</blockquote>
+<p><img src="http://img.caibaojian.com/uploads/2017/05/dome1.png" alt="img"></p>
+<p>但是这个属性只支持单行文本的溢出显示省略号，如果我们要实现多行文本溢出显示省略号呢。</p>
+<p>接下来重点说一说多行文本溢出显示省略号，如下。</p>
+<blockquote>
+<p>方法1：使用纯css3</p>
+</blockquote>
+<p>一个外国的网站实现的纯CSS多行超出隐藏加省略号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">   $font-size: <span class="number">26</span>px;</div><div class="line">$line-height: <span class="number">1.4</span>;</div><div class="line">$lines-to-show: <span class="number">3</span>;</div><div class="line"></div><div class="line">h2 &#123;</div><div class="line">  <span class="attr">display</span>: block; <span class="comment">/* Fallback for non-webkit */</span></div><div class="line">  display: -webkit-box;</div><div class="line">  max-width: <span class="number">400</span>px;</div><div class="line">  height: $font-size*$line-height*$lines-to-show; <span class="comment">/* Fallback for non-webkit */</span></div><div class="line">  margin: <span class="number">0</span> auto;</div><div class="line">  font-size: $font-size;</div><div class="line">  line-height: $line-height;</div><div class="line">  -webkit-line-clamp: $lines-to-show;</div><div class="line">  -webkit-box-orient: vertical;</div><div class="line">  overflow: hidden;</div><div class="line">  text-overflow: ellipsis;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译出来为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">h2 &#123;</div><div class="line"> <span class="attr">display</span>: block;</div><div class="line"> display: -webkit-box;</div><div class="line"> max-width: <span class="number">400</span>px;</div><div class="line"> height: <span class="number">109.2</span>px;</div><div class="line"> margin: <span class="number">0</span> auto;</div><div class="line"> font-size: <span class="number">26</span>px;</div><div class="line"> line-height: <span class="number">1.4</span>;</div><div class="line"> -webkit-line-clamp: <span class="number">3</span>;</div><div class="line"> -webkit-box-orient: vertical;</div><div class="line"> overflow: hidden;</div><div class="line"> text-overflow: ellipsis;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<p><img src="http://img.caibaojian.com/uploads/2017/05/dome2.png" alt="img"></p>
+<p>适用范围：</p>
+<p>因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；</p>
+<p>注：</p>
+<p>1、-webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：<br>2、display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。<br>3、-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。</p>
+<blockquote>
+<p>方法2：使用伪元素加绝对定位</p>
+</blockquote>
+<p>实现方法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">   p &#123;</div><div class="line">	position:relative;</div><div class="line">	line-height:20px;</div><div class="line">	max-height:40px;</div><div class="line">	overflow:hidden;</div><div class="line">&#125;</div><div class="line">p::after &#123;</div><div class="line">	content: "\02026";      // '...'</div><div class="line">	position:absolute;</div><div class="line">	bottom:0;</div><div class="line">	right:0;</div><div class="line">	padding-left:40px;</div><div class="line">	background:-webkit-linear-gradient(left,transparent,#fff 55%);</div><div class="line">	background:-o-linear-gradient(right,transparent,#fff 55%);</div><div class="line">	background:-moz-linear-gradient(right,transparent,#fff 55%);</div><div class="line">	background:linear-gradient(to right,transparent,#fff 55%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果如图：</p>
+<p><img src="http://img.caibaojian.com/uploads/2017/05/dome3.png" alt="img"></p>
+<p>适用范围：</p>
+<p>该方法适用范围广，但文字未超出行的情况下也会出现省略号,可结合js优化该方法。</p>
+<p>注：</p>
+<p>1、将height设置为line-height的整数倍，防止超出的文字露出。<br>2、给p::after添加渐变背景可避免文字只显示一半。<br>3、由于ie6-7不显示content内容，所以要添加标签兼容ie6-7（如：<span>…<span>）；兼容ie8需要将::after替换成:after。</span></span></p>
+<p>转载：<a href="http://caibaojian.com/multiline-text-with-ellipsis.html" target="_blank" rel="external">http://caibaojian.com/multiline-text-with-ellipsis.html</a></p>
 
       
     </div>
@@ -365,13 +360,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/baidu-api/">详解百度地图API之地图标注</a></p>
+        <p><span>本文标题:</span><a href="/css-hidden/">CSS多行文字超出隐藏加省略号</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">cwq</a></p>
-        <p><span>发布时间:</span>2017-06-07, 15:02:52</p>
-        <p><span>最后更新:</span>2017-06-07, 17:51:47</p>
+        <p><span>发布时间:</span>2017-06-09, 18:22:19</p>
+        <p><span>最后更新:</span>2017-06-09, 18:30:04</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/baidu-api/" title="详解百度地图API之地图标注">http://caoweiqiang.com/baidu-api/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/baidu-api/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/css-hidden/" title="CSS多行文字超出隐藏加省略号">http://caoweiqiang.com/css-hidden/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/css-hidden/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -383,16 +378,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/label-sort/">
-                    JS 利用appendChild对&lt;li&gt;标签进行排序
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/hexo-rss/">
-                    hexo博客安装RSS插件
+                <a href="/web-css/">
+                    《web前端最佳实践》—高性能css
                 </a>
             </div>
         
@@ -404,7 +393,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、标注概述"><span class="toc-number">1.</span> <span class="toc-text">一、标注概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、如何知道某个点的坐标？"><span class="toc-number">2.</span> <span class="toc-text">二、如何知道某个点的坐标？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、标注元素组成"><span class="toc-number">3.</span> <span class="toc-text">三、标注元素组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、自定义标注图标"><span class="toc-number">4.</span> <span class="toc-text">四、自定义标注图标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、标注拖拽"><span class="toc-number">5.</span> <span class="toc-text">五、标注拖拽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、标注阴影"><span class="toc-number">6.</span> <span class="toc-text">六、标注阴影</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -430,7 +419,7 @@
 
     
         <div class="changyan" id="comments"> 
-    <div id="SOHUCS" sid="详解百度地图API之地图标注" style="width:auto;padding:0 30px 0 46px;"></div>
+    <div id="SOHUCS" sid="CSS多行文字超出隐藏加省略号" style="width:auto;padding:0 30px 0 46px;"></div>
     <script>
         var appid = {changyan_appid:"cyr2lGeJX"};
         var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
@@ -452,15 +441,13 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/label-sort/" title="上一篇: JS 利用appendChild对&lt;li&gt;标签进行排序">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/hexo-rss/" title="下一篇: hexo博客安装RSS插件">
+            <a href="/web-css/" title="下一篇: 《web前端最佳实践》—高性能css">
                 <i class="fa fa-angle-right"></i>
             </a>
         
