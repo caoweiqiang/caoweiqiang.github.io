@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cwq" />
+
+
+
+<meta name="description" content="一、有点俗态的开场白  要是两年前，实现“兼容性的渐变效果”这个说法估计不会被提出来的，那个时候，说起渐变背景，想到的多半是IE的渐变滤镜，其他浏览器尚未支持，但是，在对CSS3支持日趋完善的今天，实现兼容性的渐变背景效果已经完全成为可能，本文就将展示如何实现兼容性的渐变背景效果。在众多的浏览器中，目前不支持Opera浏览器。 本文实例效果都是同样的效果，就是垂直渐变，起始颜色红色，结束颜色蓝色">
+<meta name="keywords" content="CSS,兼容性,渐变背景效果,gradient">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS实现兼容性的渐变背景(gradient)效果">
+<meta property="og:url" content="http://caoweiqiang.com/css-gradient/index.html">
+<meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="一、有点俗态的开场白  要是两年前，实现“兼容性的渐变效果”这个说法估计不会被提出来的，那个时候，说起渐变背景，想到的多半是IE的渐变滤镜，其他浏览器尚未支持，但是，在对CSS3支持日趋完善的今天，实现兼容性的渐变背景效果已经完全成为可能，本文就将展示如何实现兼容性的渐变背景效果。在众多的浏览器中，目前不支持Opera浏览器。 本文实例效果都是同样的效果，就是垂直渐变，起始颜色红色，结束颜色蓝色">
+<meta property="og:image" content="http://image.zhangxinxu.com/image/blog/201004/gradient-ie.png">
+<meta property="og:image" content="http://image.zhangxinxu.com/image/blog/201004/gradient-ff.png">
+<meta property="og:image" content="http://image.zhangxinxu.com/image/blog/201004/gradient-safari.png">
+<meta property="og:updated_time" content="2017-06-12T01:58:49.283Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS实现兼容性的渐变背景(gradient)效果">
+<meta name="twitter:description" content="一、有点俗态的开场白  要是两年前，实现“兼容性的渐变效果”这个说法估计不会被提出来的，那个时候，说起渐变背景，想到的多半是IE的渐变滤镜，其他浏览器尚未支持，但是，在对CSS3支持日趋完善的今天，实现兼容性的渐变背景效果已经完全成为可能，本文就将展示如何实现兼容性的渐变背景效果。在众多的浏览器中，目前不支持Opera浏览器。 本文实例效果都是同样的效果，就是垂直渐变，起始颜色红色，结束颜色蓝色">
+<meta name="twitter:image" content="http://image.zhangxinxu.com/image/blog/201004/gradient-ie.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="前端博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>CSS实现兼容性的渐变背景(gradient)效果 | 前端博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cwq</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:1154413293@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/caoweiqiang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS多行文字超出隐藏加省略号/">CSS多行文字超出隐藏加省略号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5常见问题汇总/">H5常见问题汇总</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5解决方案/">H5解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RSS插件/">RSS插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradient/">gradient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warning-LF-will-be-replaced-by-CRLF/">warning:LF will be replaced by CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web前端最佳实践/">web前端最佳实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/兼容性/">兼容性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/冒泡排序/">冒泡排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地图标注/">地图标注</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速排序/">快速排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序算法/">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入排序/">插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客/">搭建免费Hexo个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客并部署到Github/">搭建免费Hexo个人博客并部署到Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未知的CSS/">未知的CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/渐变背景效果/">渐变背景效果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图API/">百度地图API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/选择排序/">选择排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高性能css/">高性能css</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.qdfuns.com/">前端网</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.css88.com/">web前端开发</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://juejin.im/welcome/frontend/?utm_source=css88&utm_medium=image&utm_content=juejin&utm_campaign=q3_personal">掘金</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://caibaojian.com">前端开发博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">cwq</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cwq</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cwq</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:1154413293@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/caoweiqiang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-css-gradient" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/css-gradient/" class="article-date">
+      <time datetime="2017-06-12T01:50:46.603Z" itemprop="datePublished">2017-06-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS实现兼容性的渐变背景(gradient)效果
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradient/">gradient</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/渐变背景效果/">渐变背景效果</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>一、有点俗态的开场白</p>
+</blockquote>
+<p>要是两年前，实现“兼容性的渐变效果”这个说法估计不会被提出来的，那个时候，说起渐变背景，想到的多半是IE的渐变滤镜，其他浏览器尚未支持，但是，在对CSS3支持日趋完善的今天，实现兼容性的渐变背景效果已经完全成为可能，本文就将展示如何实现兼容性的渐变背景效果。在众多的浏览器中，目前不支持Opera浏览器。</p>
+<p>本文实例效果都是同样的效果，就是垂直渐变，起始颜色红色，结束颜色蓝色，结束的蓝色的透明度是0.5。</p>
+<blockquote>
+<p>二、IE浏览器下的渐变背景</p>
+</blockquote>
+<p>IE浏览器下渐变背景的使用需要使用IE的渐变滤镜。如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=<span class="number">1</span>);</div></pre></td></tr></table></figure>
+<p>相关说明：<br>上面的滤镜代码主要有三个参数，依次是：startcolorstr, endcolorstr, 以及gradientType。<br>其中gradientType=1代表横向渐变，gradientType=0代表纵向淅变。startcolorstr=”色彩” 代表渐变渐变起始的色彩，endcolorstr=”色彩” 代表渐变结尾的色彩。</p>
+<p>上面代码实现的是红色至蓝色的渐变，但是不含透明度变化，这是由于IE目前尚未支持opacity属性以及RGBA颜色，要实现IE下的透明度变化，还是需要使用IE滤镜，IE的透明度滤镜功能比较强大，这种强大反而与Firefox或是Safari浏览器下的css-gradient背景渐变的用法类似。例如下面的使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:alpha(opacity=<span class="number">100</span> finishopacity=<span class="number">0</span> style=<span class="number">1</span> startx=<span class="number">0</span>,starty=<span class="number">5</span>,finishx=<span class="number">90</span>,finishy=<span class="number">60</span>)</div></pre></td></tr></table></figure>
+<p>其中各个参数的含义如下：<br>opacity表示透明度，默认的范围是从0 到 100，他们其实是百分比的形式。也就是说，0代表完全透明，100代表完全不透明。<br>finishopacity 是一个可选参数，如果想要设置渐变的透明效果，就可以使用他们来指定结束时的透明度。范围也是0 到 100。<br>style用来指定透明区域的形状特征：<br>0 代表统一形状<br>1 代表线形<br>2 代表放射状<br>3 代表矩形。<br>startx 渐变透明效果开始处的 X坐标。<br>starty 渐变透明效果开始处的 Y坐标。<br>finishx 渐变透明效果结束处的 X坐标。<br>finishy 渐变透明效果结束处的 Y坐标。</p>
+<p>综合上述，实现IE下含透明度变化红蓝垂直渐变的代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   .gradient&#123;</div><div class="line">  <span class="attr">width</span>:<span class="number">300</span>px; height:<span class="number">150</span>px;</div><div class="line">  filter:alpha(opacity=<span class="number">100</span> finishopacity=<span class="number">50</span> style=<span class="number">1</span> startx=<span class="number">0</span>,starty=<span class="number">0</span>,finishx=<span class="number">0</span>,finishy=<span class="number">150</span>) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=<span class="number">1</span>);</div><div class="line">  -ms-filter:alpha(opacity=<span class="number">100</span> finishopacity=<span class="number">50</span> style=<span class="number">1</span> startx=<span class="number">0</span>,starty=<span class="number">0</span>,finishx=<span class="number">0</span>,finishy=<span class="number">150</span>) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"gradient"</span>&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>结果如下图：</p>
+<p><img src="http://image.zhangxinxu.com/image/blog/201004/gradient-ie.png" alt="img"></p>
+<blockquote>
+<p>三、Firefox浏览器下的渐变背景</p>
+</blockquote>
+<p>对于Firefox浏览器下(Firefox 3.6+)渐变背景的实现需使用CSS3渐变属性，-moz-linear-gradient属性，在之前文章我详细介绍了Firefox3.6下渐变背景的实现，您有兴趣可以狠狠地点击这里：<a href="http://www.zhangxinxu.com/wordpress/?p=727" target="_blank" rel="external">CSS渐变之CSS3 gradient在Firefox3.6下的使用</a> 。这里我就不再具体讲述了，对于本文开头提到的要实现的效果的实现可以参见下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   .gradient&#123;</div><div class="line">    <span class="attr">width</span>:<span class="number">300</span>px;</div><div class="line">    height:<span class="number">150</span>px;</div><div class="line">    background:-moz-linear-gradient(top, red, rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>, <span class="number">0.5</span>));  </div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"gradient"</span>&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>此段代码在Firefox3.6浏览器下的效果是：</p>
+<p><img src="http://image.zhangxinxu.com/image/blog/201004/gradient-ff.png" alt="img"></p>
+<blockquote>
+<p>四、chrome/Safari浏览器下的渐变背景实现</p>
+</blockquote>
+<p>对于webkit核心的浏览器，如Chrome/Safari浏览器下渐变背景的实现也是使用CSS3 渐变方法，css-gradient，具体为-webkit-gradient，使用语Firefox浏览器是有一些差异的。我在上上一篇文章对此进行了非常详细的介绍，您可以狠狠地点击这里：<a href="http://www.zhangxinxu.com/wordpress/?p=734" target="_blank" rel="external">CSS gradient渐变之webkit核心浏览器下的使用</a> 。具体使用就不详述了，参见下面的代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.gradient&#123;</div><div class="line">    width:300px;</div><div class="line">    height:150px;</div><div class="line">    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0.5)));  </div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div class="gradient"&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>此段代码在Safari 4浏览器下的效果是：</p>
+<p><img src="http://image.zhangxinxu.com/image/blog/201004/gradient-safari.png" alt="img"></p>
+<p>Opera11也支持了CSS3渐变。其用法与Firefox一致，需要使用-o-的前缀。另外，Chrome的渐变用法也开始向FireFox浏览器下的用法靠拢。</p>
+<blockquote>
+<p>五、综合 – 兼容性的渐变背景效果</p>
+</blockquote>
+<p>相关代码如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.gradient&#123;</div><div class="line">    width:300px;</div><div class="line">    height:150px;</div><div class="line">    filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=0);</div><div class="line">    -ms-filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=red,endcolorstr=blue,gradientType=0);/*IE8*/	</div><div class="line">    background:red; /* 一些不支持背景渐变的浏览器 */  </div><div class="line">    background:-moz-linear-gradient(top, red, rgba(0, 0, 255, 0.5));  </div><div class="line">    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ff0000), to(rgba(0, 0, 255, 0.5)));  </div><div class="line">    background:-o-linear-gradient(top, red, rgba(0, 0, 255, 0.5)); </div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div class="gradient"&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>效果分别为上面三个分类的截图。<br>您可以狠狠地点击这里：<a href="http://www.zhangxinxu.com/study/201004/css-gradient-cross-brower.html" target="_blank" rel="external">兼容性的渐变背景效果demo</a>。</p>
+<p>转载：<a href="http://www.zhangxinxu.com/wordpress/2010/04/css%E5%AE%9E%E7%8E%B0%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9A%84%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AFgradient%E6%95%88%E6%9E%9C/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2010/04/css%E5%AE%9E%E7%8E%B0%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9A%84%E6%B8%90%E5%8F%98%E8%83%8C%E6%99%AFgradient%E6%95%88%E6%9E%9C/</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/css-gradient/">CSS实现兼容性的渐变背景(gradient)效果</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cwq</a></p>
+        <p><span>发布时间:</span>2017-06-12, 09:50:46</p>
+        <p><span>最后更新:</span>2017-06-12, 09:58:49</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/css-gradient/" title="CSS实现兼容性的渐变背景(gradient)效果">http://caoweiqiang.com/css-gradient/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/css-gradient/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/unknown-css/">
+                    遇见未知的 CSS
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+        <div class="changyan" id="comments"> 
+    <div id="SOHUCS" sid="CSS实现兼容性的渐变背景(gradient)效果" style="width:auto;padding:0 30px 0 46px;"></div>
+    <script>
+        var appid = {changyan_appid:"cyr2lGeJX"};
+        var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        var loadComment = function(){
+            if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid.changyan_appid + '&conf=' + conf.changyan_appkey + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid.changyan_appid,conf:conf.changyan_appkey})}); }
+        }
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/unknown-css/" title="下一篇: 遇见未知的 CSS">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/css-gradient/">CSS实现兼容性的渐变背景(gradient)效果</a></li><li class="post-list-item"><a class="post-list-link" href="/unknown-css/">遇见未知的 CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/css-hidden/">CSS多行文字超出隐藏加省略号</a></li><li class="post-list-item"><a class="post-list-link" href="/web-css/">《web前端最佳实践》—高性能css</a></li><li class="post-list-item"><a class="post-list-link" href="/js-sort/">【Javascript】排序算法（冒泡排序，选择排序，插入排序，归并排序，快速排序）</a></li><li class="post-list-item"><a class="post-list-link" href="/html5-summary/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/label-sort/">JS 利用appendChild对<li>标签进行排序</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-api/">详解百度地图API之地图标注</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-rss/">hexo博客安装RSS插件</a></li><li class="post-list-item"><a class="post-list-link" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a></li><li class="post-list-item"><a class="post-list-link" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017 cwq
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+            
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
