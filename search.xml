@@ -3,6 +3,204 @@
   
     
     <entry>
+      <title><![CDATA[奇妙的 CSS shapes(CSS 图形)]]></title>
+      <url>/css-shapes/</url>
+      <content type="html"><![CDATA[<p>CSS 发展到今天已经越来越强大了。其语法的日新月异，让很多以前完成不了的事情，现在可以非常轻松的做到。今天就向大家介绍几个比较新的强大的 CSS 功能：</p>
+<ul>
+<li>clip-path</li>
+<li>shape-outside</li>
+</ul>
+<p>shape 的意思是图形，CSS shapes 也就是 CSS 图形的意思，也就是使用 CSS 生成各种图形（圆形、矩形、椭圆、多边形等几何图形）。</p>
+<p>CSS3之前，我们能做的只有矩形，四四方方，条条框框。</p>
+<blockquote>
+<p>CSS3</p>
+</blockquote>
+<p>CSS3出来后，我们有了更广阔的施展空间，通过</p>
+<ul>
+<li>border-radius</li>
+<li>border</li>
+<li>transform</li>
+<li>伪元素配合</li>
+<li>gradient 渐变</li>
+</ul>
+<p>我们能够作出非常多的几何图形。</p>
+<p>除去最常见的矩形，圆形（border-radius），下面稍微列举一些其他几何图形：</p>
+<blockquote>
+<p>三角形</p>
+</blockquote>
+<p>通常会使用透明的border模拟出一个三角形：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   .traingle &#123;</div><div class="line">    <span class="attr">width</span>: <span class="number">0</span>;</div><div class="line">    height: <span class="number">0</span>;</div><div class="line">    border-left: <span class="number">50</span>px solid transparent;</div><div class="line">    border-right: <span class="number">50</span>px solid transparent;</div><div class="line">    border-bottom: <span class="number">100</span>px solid yellowgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>切角</p>
+</blockquote>
+<p>《CSS Secret》里面的方法，采用多重线性渐变实现切角。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">   .notching &#123;</div><div class="line">    <span class="attr">width</span>: <span class="number">40</span>px;</div><div class="line">    height: <span class="number">40</span>px;</div><div class="line">    padding: <span class="number">40</span>px;</div><div class="line">    background: linear-gradient(<span class="number">135</span>deg, transparent <span class="number">15</span>px, yellowgreen <span class="number">0</span>) top left ,</div><div class="line">        linear-gradient(<span class="number">-135</span>deg, transparent <span class="number">15</span>px, yellowgreen <span class="number">0</span>) top right ,</div><div class="line">        linear-gradient(<span class="number">-45</span>deg, transparent <span class="number">15</span>px, yellowgreen <span class="number">0</span>) bottom right ,</div><div class="line">        linear-gradient(<span class="number">45</span>deg, transparent <span class="number">15</span>px, yellowgreen <span class="number">0</span>) bottom left ;</div><div class="line">    background-size: <span class="number">50</span>% <span class="number">50</span>% ;</div><div class="line">    background-repeat: no-repeat;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>梯形</p>
+</blockquote>
+<p>利用伪元素加旋转透视实现梯形：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">   .trapezoid&#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">60</span>px;</div><div class="line">    padding: <span class="number">60</span>px;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.trapezoid::before&#123;</div><div class="line">    <span class="attr">content</span>:<span class="string">""</span>;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">0</span>; right : <span class="number">0</span>; bottom: <span class="number">0</span>; left: <span class="number">0</span>;</div><div class="line">    transform: perspective(<span class="number">20</span>px) scaleY(<span class="number">1.3</span>) rotateX( <span class="number">5</span>deg);</div><div class="line">    transform-origin: bottom;</div><div class="line">    background: yellowgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当然，还有另一种更简单的方法是利用border实现，借助上面的构造三角形的方法，在矩形两侧构造两个透明的三角形：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   .trapezoid &#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">60</span>px;</div><div class="line">    border-top: <span class="number">60</span>px solid yellowgreen;</div><div class="line">    border-left: <span class="number">40</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">40</span>px solid transparent ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>五边形</p>
+</blockquote>
+<p>梯形加上三角形，很容易就组合成一个五边形，这里需要借助一个伪元素实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">   .pentagon &#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">60</span>px;</div><div class="line">    border-bottom: <span class="number">60</span>px solid yellowgreen;</div><div class="line">    border-left: <span class="number">40</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">40</span>px solid transparent ;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.pentagon::before &#123;</div><div class="line">    <span class="attr">content</span>:<span class="string">""</span>;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">60</span>px;</div><div class="line">    left: <span class="number">-40</span>px;</div><div class="line">    border-top: <span class="number">60</span>px solid yellowgreen;</div><div class="line">    border-left: <span class="number">70</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">70</span>px solid transparent ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>六边形</p>
+</blockquote>
+<p>看看上面的梯形，如果两个反方向且底边同样大小的梯形，叠加在一起，是不是就能得到一个六边形呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">   .pentagon &#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">60</span>px;</div><div class="line">    border-bottom: <span class="number">60</span>px solid yellowgreen;</div><div class="line">    border-left: <span class="number">40</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">40</span>px solid transparent ;</div><div class="line">&#125;</div><div class="line">.pentagon::before &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">""</span>;</div><div class="line">    position: absolute;</div><div class="line">    width: <span class="number">60</span>px;</div><div class="line">    height: <span class="number">0</span>px;</div><div class="line">    top: <span class="number">60</span>px;</div><div class="line">    left: <span class="number">-40</span>px;</div><div class="line">    border-top: <span class="number">60</span>px solid yellowgreen;</div><div class="line">    border-left: <span class="number">40</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">40</span>px solid transparent ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>八边形</p>
+</blockquote>
+<p>六边形都解决了，八边形也不在话下，一个矩形加上两个梯形，可以合成一个八边形。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">   .octagon &#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">40</span>px;</div><div class="line">    height: <span class="number">100</span>px;</div><div class="line">    background: yellowgreen;</div><div class="line">&#125;</div><div class="line">.octagon::before &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">""</span>;</div><div class="line">    height: <span class="number">60</span>px;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">0</span>;</div><div class="line">    left: <span class="number">40</span>px;</div><div class="line">    border-left: <span class="number">30</span>px solid yellowgreen;</div><div class="line">    border-top: <span class="number">20</span>px solid transparent ;</div><div class="line">    border-bottom: <span class="number">20</span>px solid transparent ;</div><div class="line">&#125;</div><div class="line">.octagon::after &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">""</span>;</div><div class="line">    height: <span class="number">60</span>px;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">0</span>;</div><div class="line">    left: <span class="number">-30</span>px;</div><div class="line">    border-right: <span class="number">30</span>px solid yellowgreen;</div><div class="line">    border-top: <span class="number">20</span>px solid transparent ;</div><div class="line">    border-bottom: <span class="number">20</span>px solid transparent ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>五角星</p>
+</blockquote>
+<p>好的，探索完多边形，我们继续探索X角星。</p>
+<p>先来看看五角星，要怎么实现呢？当然是直接打出来啦 – ★☆</p>
+<p>开个玩笑，这里使用 3 个三角形叠加旋转在一起实现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">   .star &#123;</div><div class="line">   <span class="attr">margin</span>: <span class="number">50</span>px <span class="number">0</span>;</div><div class="line">   position: relative;</div><div class="line">   width: <span class="number">0</span>;</div><div class="line">   border-right: <span class="number">100</span>px solid transparent ;</div><div class="line">   border-bottom: <span class="number">70</span>px  solid yellowgreen;</div><div class="line">   border-left: <span class="number">100</span>px solid transparent ;</div><div class="line">   transform: rotate(<span class="number">35</span>deg) scale(<span class="number">.6</span>);</div><div class="line">&#125;</div><div class="line">.star:before &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">''</span>;</div><div class="line">    position: absolute;</div><div class="line">    border-bottom: <span class="number">80</span>px solid yellowgreen;</div><div class="line">    border-left: <span class="number">30</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">30</span>px solid transparent ;</div><div class="line">    top: <span class="number">-45</span>px;</div><div class="line">    left: <span class="number">-65</span>px;</div><div class="line">    transform: rotate(<span class="number">-35</span>deg);</div><div class="line">&#125;</div><div class="line">.star:after &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">''</span>;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">3</span>px;</div><div class="line">    left: <span class="number">-105</span>px;</div><div class="line">    border-right: <span class="number">100</span>px solid transparent ;</div><div class="line">    border-bottom: <span class="number">70</span>px solid yellowgreen;</div><div class="line">    border-left: <span class="number">100</span>px solid transparent ;</div><div class="line">    transform: rotate(<span class="number">-70</span>deg);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>六角星</p>
+</blockquote>
+<p>六角星呢？想象一下，一个向上的三角形 ▲，叠加上一个向下的三角形 ▼，就可以得到一个六边形：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.sixstar &#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">0</span>;</div><div class="line">    border-left: <span class="number">50</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">50</span>px solid transparent ;</div><div class="line">    border-bottom: <span class="number">100</span>px solid yellowgreen;</div><div class="line">&#125;</div><div class="line">.sixstar:after &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">""</span>;</div><div class="line">    position: absolute;</div><div class="line">    border-left: <span class="number">50</span>px solid transparent ;</div><div class="line">    border-right: <span class="number">50</span>px solid transparent ;</div><div class="line">    border-top: <span class="number">100</span>px solid yellowgreen;</div><div class="line">    top: <span class="number">30</span>px;</div><div class="line">    left: <span class="number">-50</span>px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>八角星</p>
+</blockquote>
+<p>八角星呢？八个角那么多呢。其实使用两个矩形进行旋转拼接就可以了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">.eightstar &#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">100</span>px;</div><div class="line">    height: <span class="number">100</span>px;</div><div class="line">    background-color: yellowgreen;</div><div class="line">    transform: rotate(<span class="number">30</span>deg);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.eightstar::before &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">""</span>;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">0</span>;</div><div class="line">    left: <span class="number">0</span>;</div><div class="line">    width: <span class="number">100</span>px;</div><div class="line">    height: <span class="number">100</span>px;</div><div class="line">    transform: rotate(<span class="number">45</span>deg);</div><div class="line">    background-color: yellowgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十二角星</p>
+</blockquote>
+<p>好。最后多角星再来一个十二级角星。在八角星的基础上，再增加一个矩形，就能得到十二角啦。也就是要过第一个伪元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">.twelvestar &#123;</div><div class="line">    <span class="attr">position</span>: relative;</div><div class="line">    width: <span class="number">100</span>px;</div><div class="line">    height: <span class="number">100</span>px;</div><div class="line">    margin-bottom: <span class="number">100</span>px!important ;</div><div class="line">    background-color: yellowgreen;</div><div class="line">    transform: rotate(<span class="number">30</span>deg);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.twelvestar::before &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">""</span>;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">0</span>;</div><div class="line">    left: <span class="number">0</span>;</div><div class="line">    width: <span class="number">100</span>px;</div><div class="line">    height: <span class="number">100</span>px;</div><div class="line">    transform: rotate(<span class="number">30</span>deg);</div><div class="line">    background-color: yellowgreen;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">.twelvestar::after &#123;</div><div class="line">    <span class="attr">content</span>: <span class="string">""</span>;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">0</span>;</div><div class="line">    left: <span class="number">0</span>;</div><div class="line">    width: <span class="number">100</span>px;</div><div class="line">    height: <span class="number">100</span>px;</div><div class="line">    transform: rotate(<span class="number">60</span>deg);</div><div class="line">    background-color: yellowgreen;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>椭圆</p>
+</blockquote>
+<p>最后，再来使用传统的方法画一个椭圆，过去 CSS3 画椭圆，基本上只能借助 border 实现。</p>
+<p>这里使用 border 画一个蛋的形状：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.ellipse &#123;</div><div class="line">   width: 120px;</div><div class="line">   height: 160px;</div><div class="line">   background-color: yellowgreen;</div><div class="line">   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>查看效果，请点击下面链接：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FNgxNrq" target="_blank" rel="external">CodePen – CSS Shapes(CSS 几何图形)</a></p>
+<p>上面所讲述的是使用传统 CSS3 的方式绘制几何图形，接下来我们将要了解一些更高级的绘制几何图形的方法。</p>
+<blockquote>
+<p>clip-path</p>
+</blockquote>
+<p>CSS 新属性 clip-path，意味裁剪路径的意思，让我们可以很便捷的生成各种几何图形。</p>
+<p>clip-path 通过定义特殊的路径，实现我们想要的图形。而这个路径，正是 SVG 中的 path 。</p>
+<p>看看它的 API：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	/* Keyword values */</div><div class="line">	clip-path: none;</div><div class="line">	 </div><div class="line">	/* Image values */</div><div class="line">	clip-path: url(resources.svg#c1);</div><div class="line">	 </div><div class="line">	/* Box values</div><div class="line">	clip-path: fill-box;</div><div class="line">	clip-path: stroke-box;</div><div class="line">	clip-path: view-box;</div><div class="line">	clip-path: margin-box</div><div class="line">	clip-path: border-box</div><div class="line">	clip-path: padding-box</div><div class="line">	clip-path: content-box</div><div class="line">	 </div><div class="line">	/* Geometry values */</div><div class="line">	clip-path: inset(100px 50px);</div><div class="line">	clip-path: circle(50px at 0 100px);</div><div class="line">	clip-path: polygon(50% 0%, 100% 50% , 50% 100%, 0% 50%);</div><div class="line">	 </div><div class="line">	/* Box and geometry values combined */</div><div class="line">	clip-path: padding-box circle(50px at 0 100px );</div><div class="line">	 </div><div class="line">	/* Global values */</div><div class="line">	clip-path: inherit;</div><div class="line">	clip-path: initial;</div><div class="line">	clip-path: unset;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>看上去很多，其实很好理解，如果接触过 SVG 的 path，其实就是照搬 SVG 的 path 的一些定义。换言之，如果没有接触过 SVG，看完本文后再去学习 SVG 路径 ，也会十分容易上手。</p>
+<p>根据不同的语法，我们可以生成不同的图形。</p>
+<p>例如 clip-path: circle(50px at 50px 50px) 表示在元素的 （50px, 50px）处，裁剪生成一个半径为 50px 的圆。</p>
+<p>以元素的左上角为坐标起点</p>
+<p>而整个 clip-path 属性，最为重要的当属 polygon，可以利用 polygon 生成任意多边形。</p>
+<blockquote>
+<p>clip-path 示例</p>
+</blockquote>
+<p>下面分别列举使用 clip-path 生成一个圆形和一个十边形。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 圆形 */</span></div><div class="line">.circle &#123;</div><div class="line">  <span class="attr">width</span>: <span class="number">100</span>px;</div><div class="line">  height: <span class="number">100</span>px;</div><div class="line">  background-color: yellowgreen;</div><div class="line">  clip-path: circle(<span class="number">50</span>px at <span class="number">50</span>px <span class="number">50</span>px);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="comment">/* 十边形 */</span></div><div class="line">.polygon &#123;</div><div class="line">  <span class="attr">width</span>: <span class="number">100</span>px;</div><div class="line">  height: <span class="number">100</span>px;</div><div class="line">  background-color: yellowgreen;</div><div class="line">  clip-path: polygon(<span class="number">50</span>% <span class="number">0</span>%, <span class="number">80</span>% <span class="number">10</span>%, <span class="number">100</span>% <span class="number">35</span>%, <span class="number">100</span>% <span class="number">70</span>%, <span class="number">80</span>% <span class="number">90</span>%, <span class="number">50</span>% <span class="number">100</span>% , <span class="number">20</span>% <span class="number">90</span>%, <span class="number">0</span>% <span class="number">70</span>%, <span class="number">0</span>% <span class="number">35</span>%, <span class="number">20</span>% <span class="number">10</span>%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>clip-path: circle(50px at 50px 50px) 上文也讲了，表示在元素的 （50px, 50px）处，裁剪生成一个半径为 50px 的圆。</p>
+<p>而在 clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%) 中，依次列出了 10 个坐标点。我们的图形就是依次连接这 10 个坐标点形成一个裁切图形。</p>
+<p>当然，这里采用的是百分比，也可以使用具体的数值。</p>
+<blockquote>
+<p>clip-path 动画</p>
+</blockquote>
+<p>clip-path 另外一个强大之处在于可以进行 CSS transtion 与 CSS animation，也就是过渡和动画。</p>
+<p>看一个多边形的过渡切换动画。</p>
+<p>查看效果，请点击下面链接：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FLLNWyZ" target="_blank" rel="external">CodePen Demo – Clip-path 多边形过渡动画</a></p>
+<blockquote>
+<p>图形变换动画</p>
+</blockquote>
+<p>除此之外，我们还可以尝试，将一个完整的图形，分割成多个小图形，这也是 clip-path 的魅力所在，纯 CSS 的图形变换：</p>
+<p>查看效果，请点击下面链接：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FyXOjZm" target="_blank" rel="external">CodePen Demo – Clip-path triangle2rect</a></p>
+<blockquote>
+<p>clip-path 动画的局限</p>
+</blockquote>
+<p>clip-path 动画虽然美好，但是存在一定的局限性，那就是进行过渡的两个状态，坐标顶点的数量必须一致。</p>
+<p>也就是如果我希望从三角形过渡到矩形。假设三角形和矩形的 clip-path 分别为：</p>
+<ul>
+<li>三角形：clip-path: polygon(50% 0, 0 100%, 100% 0)</li>
+<li>矩形： clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)</li>
+</ul>
+<p>进行过渡动画时候，直接从 polygon(50% 0, 0 100%, 100% 0) –&gt; polygon(0 0, 100% 0, 100% 100%, 0 100%) 是不行的，因为是从 3 个坐标点变换到 4 个坐标点。</p>
+<p>因此这里需要这用一个讨巧的办法，在三角形的表示方法中，使用四个坐标点表示，其中两个坐标点进行重合即可。也就是：</p>
+<ul>
+<li>三角形：clip-path: polygon(50% 0, 0 100%, 100% 0) -&gt; clip-path: polygon(50% 0, 50% 0, 0 100%, 100% 0)</li>
+</ul>
+<blockquote>
+<p>N边形过渡动画</p>
+</blockquote>
+<p>如果脑洞够大，随机生成 N（N&gt;=1000）边形，进行变换，会是什么效果呢？</p>
+<p>查看效果，请点击下面链接：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FXgJRzO" target="_blank" rel="external">CodePen Demo – 2000边形过渡动画</a></p>
+<p>变换的瞬间很有爆炸的感觉。不过这里有个很大的问题，只是随机生成了 2000 个坐标点，然后使用 clip-path 将这些坐标点连接起来，并不是符合要求的多边形。</p>
+<p>在 <a href="https://vuefe.cn/v2/guide/transitioning-state.html#%E5%8A%A8%E6%80%81%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2" target="_blank" rel="external">VUE官网</a>，有下面这样一个例子，一个规则的多边形进行不断的过渡动画，非常酷炫：</p>
+<p>VUE官网使用的是 SVG 实现的，这里我稍微改变了下，使用 CSS clip-path 实现：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FNgqGOo" target="_blank" rel="external">CodePen Demo – clip-path N polygon</a> ，感兴趣可以看看。</p>
+<blockquote>
+<p>shape-outside</p>
+</blockquote>
+<p>最后再来看看 shape-outside，另外一个有趣的有能力生成几何图形的属性。</p>
+<p>shape-outside 是啥？它也有制造各种几何图形的能力，但是它只能和浮动 float 一起使用。</p>
+<p>虽然使用上有所限制，但是它赋予了我们一种更为自由的图文混排的能力。</p>
+<p>先看看它的 API，看上去貌似很复杂：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="comment">/* Keyword values */</span></div><div class="line">    shape-outside: none;</div><div class="line">    shape-outside: margin-box;</div><div class="line">    shape-outside: content-box;</div><div class="line">    shape-outside: border-box;</div><div class="line">    shape-outside: padding-box;</div><div class="line">     </div><div class="line">    <span class="comment">/* Function values */</span></div><div class="line">    shape-outside: circle();</div><div class="line">    shape-outside: ellipse();</div><div class="line">    shape-outside: inset(<span class="number">10</span>px <span class="number">10</span>px <span class="number">10</span>px <span class="number">10</span>px);</div><div class="line">    shape-outside: polygon(<span class="number">10</span>px <span class="number">10</span>px, <span class="number">20</span>px <span class="number">20</span>px, <span class="number">30</span>px <span class="number">30</span>px);</div><div class="line">     </div><div class="line">    <span class="comment">/* &lt;url&gt; value */</span></div><div class="line">    shape-outside: url(image.png);</div><div class="line">     </div><div class="line">    <span class="comment">/* Gradient value */</span></div><div class="line">    shape-outside: linear-gradient(<span class="number">45</span>deg, rgba(<span class="number">255</span> , <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>) <span class="number">150</span>px, red <span class="number">150</span>px);</div><div class="line">     </div><div class="line">    <span class="comment">/* Global values */</span></div><div class="line">    shape-outside: initial;</div><div class="line">    shape-outside: inherit;</div><div class="line">    shape-outside: unset;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是，其实它和 clip-path 的语法非常类似，很容易触类旁通。看看实例，更易理解：</p>
+<p>大家自行去熟悉下 API，接着假设我们有下面这样的结构存在：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"container"</span>&gt;</div><div class="line">    &lt;div class="shape-outside"&gt;</div><div class="line">      &lt;img src="image.png"&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    xxxxxxxxxxx，文字描述，xxxxxxxxx</div><div class="line">&lt;/div&gt;</div><div class="line">定义如下 CSS：</div><div class="line"> </div><div class="line">.shape-outside &#123;</div><div class="line">    <span class="attr">width</span>: <span class="number">160</span>px;</div><div class="line">    height: <span class="number">160</span>px;</div><div class="line">    shape-outside: circle(<span class="number">80</span>px at <span class="number">80</span>px <span class="number">80</span>px);</div><div class="line">    float: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，上面 .shape-outside 使用了浮动，并且定义了 shape-outside: circle(80px at 80px 80px) ，表示在元素的 (80px, 80px) 坐标处，生成一个 80px 半径的圆。</p>
+<p>如此，将会产生一种图文混排的效果：</p>
+<p>查看效果，请点击下面链接：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FowxedZ" target="_blank" rel="external">CodePen Demo – 图文混排 shape-outside</a></p>
+<p>嗯？好像没什么了不起啊？这不就是 float 的效果吗？</p>
+<p>不，不是的，看看 float 和 加上shape-outside 后的对比：</p>
+<p>看出区别了吗？使用了 shape-outside ，真正的实现了文字根据图形的轮廓，在其周围排列。</p>
+<p>上图是使用开发者工具选取了作用了 shape-outside 的元素，可以看到，使用了特殊的蓝色去标记几何图形的轮廓。在这个蓝色区域之外，文字都将可以进行排列。</p>
+<p>shape-outside 的本质</p>
+<p>划重点，划重点，划重点。</p>
+<p>所以，shape-outside 的本质其实是生成几何图形，并且裁剪掉其几何图形之外周围的区域，让文字能排列在这些被裁剪区域之内。</p>
+<p>所以，了解了这个本质之后，我们再看看一些更复杂的图文混排。</p>
+<blockquote>
+<p>平行四边形</p>
+</blockquote>
+<p>查看效果，请点击下面链接：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FNgqZqX" target="_blank" rel="external">CodePen Demo – 图文混排 shape-outside</a></p>
+<blockquote>
+<p>心形、菱形</p>
+</blockquote>
+<p>查看效果，请点击下面链接：</p>
+<p><a href="https://link.juejin.im?target=https%3A%2F%2Fcodepen.io%2FChokcoco%2Fpen%2FZyWRbQ" target="_blank" rel="external">CodePen Demo – 图文混排 shape-outside</a></p>
+<blockquote>
+<p>clip-path 与 shape-outside 的兼容性</p>
+</blockquote>
+<p>额，比较遗憾，这两个属性的兼容性目前仍处于比较尴尬的境地。感兴趣的可以看看 CANIUSE 。全面兼容使用仍需努力。</p>
+<p>所以本文所展示的 Demo 都是在 -webkit- 内核浏览器下完成的。</p>
+<p>css文章汇总：<a href="https://github.com/chokcoco/iCSS" target="_blank" rel="external">https://github.com/chokcoco/iCSS</a>。</p>
+<p>转载：<a href="https://juejin.im/entry/593e434c5c497d006b96c1dc" target="_blank" rel="external">https://juejin.im/entry/593e434c5c497d006b96c1dc</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> CSS </tag>
+            
+            <tag> CSS shapes </tag>
+            
+            <tag> CSS 图形 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[CSS实现兼容性的渐变背景(gradient)效果]]></title>
       <url>/css-gradient/</url>
       <content type="html"><![CDATA[<blockquote>
