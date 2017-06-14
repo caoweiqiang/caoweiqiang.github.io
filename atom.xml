@@ -978,11 +978,11 @@
   </entry>
   
   <entry>
-    <title>JS 利用appendChild对&lt;li&gt;标签进行排序</title>
+    <title>JS 利用appendChild对li标签进行排序</title>
     <link href="http://caoweiqiang.com/label-sort/"/>
     <id>http://caoweiqiang.com/label-sort/</id>
     <published>2017-06-08T01:50:06.119Z</published>
-    <updated>2017-06-08T01:55:08.193Z</updated>
+    <updated>2017-06-14T02:26:49.982Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20160318162817435" alt="img"><br>按照从大到小排序</p>
 <p>appendChild: </p>
