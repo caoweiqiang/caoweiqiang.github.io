@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cwq" />
+
+
+
+<meta name="description" content="整理了一份关于可以写入到HTML 标签中的内容清单-2017年最新的  元素指南，主要内容来自  cheatsheet ，让大家了解每个标签及相应属性的意义，写出满足自己需求的  头部标签，可以很有效的增强页面的可用性。  最小推荐  下面是基本的、最低限度的网站基本标签： 12345   &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&amp;lt;meta http-equiv=&quot;x-ua-">
+<meta name="keywords" content="2017,head,2017年最新的 &lt;head&gt; 元素指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017年最新的 &lt;head&gt; 元素指南">
+<meta property="og:url" content="http://caoweiqiang.com/2017-head/index.html">
+<meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="整理了一份关于可以写入到HTML 标签中的内容清单-2017年最新的  元素指南，主要内容来自  cheatsheet ，让大家了解每个标签及相应属性的意义，写出满足自己需求的  头部标签，可以很有效的增强页面的可用性。  最小推荐  下面是基本的、最低限度的网站基本标签： 12345   &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&amp;lt;meta http-equiv=&quot;x-ua-">
+<meta property="og:updated_time" content="2017-09-06T03:19:32.606Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017年最新的 &lt;head&gt; 元素指南">
+<meta name="twitter:description" content="整理了一份关于可以写入到HTML 标签中的内容清单-2017年最新的  元素指南，主要内容来自  cheatsheet ，让大家了解每个标签及相应属性的意义，写出满足自己需求的  头部标签，可以很有效的增强页面的可用性。  最小推荐  下面是基本的、最低限度的网站基本标签： 12345   &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&amp;lt;meta http-equiv=&quot;x-ua-">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="前端博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>2017年最新的 &lt;head&gt; 元素指南 | 前端博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cwq</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:1154413293@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/caoweiqiang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2017/">2017</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/2017年最新的-head-元素指南/">2017年最新的 <head> 元素指南</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS-shapes/">CSS shapes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS-图形/">CSS 图形</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS多行文字超出隐藏加省略号/">CSS多行文字超出隐藏加省略号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5常见问题汇总/">H5常见问题汇总</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5解决方案/">H5解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RSS插件/">RSS插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradient/">gradient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/head/">head</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warning-LF-will-be-replaced-by-CRLF/">warning:LF will be replaced by CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web前端最佳实践/">web前端最佳实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/兼容性/">兼容性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/冒泡排序/">冒泡排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地图标注/">地图标注</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速排序/">快速排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序算法/">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入排序/">插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客/">搭建免费Hexo个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客并部署到Github/">搭建免费Hexo个人博客并部署到Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未知的CSS/">未知的CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/渐变背景效果/">渐变背景效果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图API/">百度地图API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图点聚合/">百度地图点聚合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图点聚合提高效率/">百度地图点聚合提高效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/选择排序/">选择排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高性能css/">高性能css</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.qdfuns.com/">前端网</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.css88.com/">web前端开发</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://juejin.im/welcome/frontend/?utm_source=css88&utm_medium=image&utm_content=juejin&utm_campaign=q3_personal">掘金</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://caibaojian.com">前端开发博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">cwq</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cwq</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cwq</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:1154413293@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/caoweiqiang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2017-head" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017-head/" class="article-date">
+      <time datetime="2017-09-06T03:03:36.025Z" itemprop="datePublished">2017-09-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2017年最新的 &lt;head&gt; 元素指南
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2017/">2017</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2017年最新的-head-元素指南/">2017年最新的 <head> 元素指南</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/head/">head</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>整理了一份关于可以写入到HTML 标签中的内容清单-2017年最新的 <head> 元素指南，主要内容来自 <head> cheatsheet ，让大家了解每个标签及相应属性的意义，写出满足自己需求的 <head> 头部标签，可以很有效的增强页面的可用性。</head></head></head></p>
+<blockquote>
+<p>最小推荐</p>
+</blockquote>
+<p>下面是基本的、最低限度的网站基本标签：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">&lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;</div><div class="line">&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;</div><div class="line">&lt;!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* --&gt;</div><div class="line">&lt;title&gt;页面标题&lt;/title&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>网页元素</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 文档标题 --&gt;</div><div class="line">&lt;title&gt;页面标题&lt;/title&gt;	 </div><div class="line">&lt;!-- 基本 URL 作用于文档中所包含的所有相对 URL --&gt;</div><div class="line">&lt;base href="https://example.com/page.html"&gt;	 </div><div class="line">&lt;!-- 外部的 CSS --&gt;</div><div class="line">&lt;link rel="stylesheet" href="styles.css"&gt;	 </div><div class="line">&lt;!-- 文档内的 CSS --&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  /* ... */</div><div class="line">&lt;/style&gt;	 </div><div class="line">&lt;!-- JavaScript --&gt;</div><div class="line">&lt;script src="script.js"&gt;&lt;/script&gt;</div><div class="line">&lt;noscript&gt;&lt;!--无 JS 时的替代--&gt;&lt;/noscript&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Meta 标签</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 设置文档的字符编码 --&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;meta http-equiv="x-ua-compatible" content="ie=edge"&gt;</div><div class="line">&lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;</div><div class="line">&lt;!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* --&gt;	 </div><div class="line">&lt;!-- 允许控制资源的过度加载 --&gt;</div><div class="line">&lt;meta http-equiv="Content-Security-Policy" content="default-src 'self'"&gt;</div><div class="line">&lt;!-- 尽早地放置在文档中 --&gt;</div><div class="line">&lt;!-- 仅应用于该标签下的内容 --&gt;	 </div><div class="line">&lt;!-- Web 应用的名称（仅当网站被用作为一个应用时才使用）--&gt;</div><div class="line">&lt;meta name="application-name" content="应用名称"&gt;	 </div><div class="line">&lt;!-- 针对页面的简短描述（限制 150 字符）--&gt;</div><div class="line">&lt;!-- 在*某些*情况下，该描述是被用作搜索结果展示片段的一部分 --&gt;</div><div class="line">&lt;meta name="description" content="一个页面描述"&gt;	 </div><div class="line">&lt;!-- 控制搜索引擎的抓取和索引行为 --&gt;</div><div class="line">&lt;meta name="robots" content="index,follow"&gt;&lt;!-- 所有搜索引擎 --&gt;</div><div class="line">&lt;meta name="googlebot" content="index,follow"&gt;&lt;!-- 仅对 Google 有效 --&gt;	 </div><div class="line">&lt;!-- 告诉 Google 不显示网站链接的搜索框 --&gt;</div><div class="line">&lt;meta name="google" content="nositelinkssearchbox"&gt;	 </div><div class="line">&lt;!-- 告诉 Google 不提供此页面的翻译 --&gt;</div><div class="line">&lt;meta name="google" content="notranslate"&gt;	 </div><div class="line">&lt;!-- 验证 Google 搜索控制台的所有权 --&gt;</div><div class="line">&lt;meta name="google-site-verification" content="verification_token"&gt;	 </div><div class="line">&lt;!-- 验证 Yandex 网站管理员的所有权 --&gt;</div><div class="line">&lt;meta name="yandex-verification" content="verification_token"&gt;	 </div><div class="line">&lt;!-- 验证 Bing 网站管理员中心的所有权 --&gt;</div><div class="line">&lt;meta name="msvalidate.01" content="verification_token"&gt;	 </div><div class="line">&lt;!-- 验证 Alexa 控制台的所有权 --&gt;</div><div class="line">&lt;meta name="alexaVerifyID" content="verification_token"&gt;	 </div><div class="line">&lt;!-- 验证 Pinterest 控制台的所有权 --&gt;</div><div class="line">&lt;meta name="p:domain_verify" content="code from pinterest"&gt;	 </div><div class="line">&lt;!-- 验证 Norton 安全站点的所有权 --&gt;</div><div class="line">&lt;meta name="norton-safeweb-site-verification" content="norton code"&gt;	 </div><div class="line">&lt;!-- 用来命名软件或用于构建网页（如 - WordPress、Dreamweaver）--&gt;</div><div class="line">&lt;meta name="generator" content="program"&gt;	 </div><div class="line">&lt;!-- 关于你的网站主题的简短描述 --&gt;</div><div class="line">&lt;meta name="subject" content="你的网站主题"&gt;	 </div><div class="line">&lt;!-- 基于网站内容给出一般的年龄分级 --&gt;</div><div class="line">&lt;meta name="rating" content="General"&gt;	 </div><div class="line">&lt;!-- 允许控制 referrer 信息如何传递 --&gt;</div><div class="line">&lt;meta name="referrer" content="no-referrer"&gt;	 </div><div class="line">&lt;!-- 禁用自动检测和格式化可能的电话号码 --&gt;</div><div class="line">&lt;meta name="format-detection" content="telephone=no"&gt;	 </div><div class="line">&lt;!-- 通过设置为 “off” 完全退出 DNS 预取 --&gt;</div><div class="line">&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;	 </div><div class="line">&lt;!-- 在客户端存储 cookie，web 浏览器的客户端识别 --&gt;</div><div class="line">&lt;meta http-equiv="set-cookie" content="name=value; expires=date; path=url"&gt;	 </div><div class="line">&lt;!-- 指定要显示在一个特定框架中的页面 --&gt;</div><div class="line">&lt;meta http-equiv="Window-Target" content="_value"&gt;	 </div><div class="line">&lt;!-- 地理标签 --&gt;</div><div class="line">&lt;meta name="ICBM" content="latitude, longitude"&gt;</div><div class="line">&lt;meta name="geo.position" content="latitude;longitude"&gt;</div><div class="line">&lt;meta name="geo.region" content="country[-state]"&gt;&lt;!-- 国家代码 (ISO 3166-1): 强制性, 州代码 (ISO 3166-2): 可选; 如 content="US" / content="US-NY" --&gt;</div><div class="line">&lt;meta name="geo.placename" content="city/town"&gt;&lt;!-- 如 content="New York City" --&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>链接</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 表明一个 CSS 样式表 --&gt;</div><div class="line">&lt;link rel="stylesheet" href="https://example.com/styles.css"&gt;	 </div><div class="line">&lt;!-- 有助于防止出现内容重复的问题 --&gt;</div><div class="line">&lt;link rel="canonical" href="https://example.com/2010/06/9-things-to-do-before-entering-social-media.html"&gt;	 </div><div class="line">&lt;!-- 之前用于包含 icon 链接，但已被废弃并不再使用 --&gt;</div><div class="line">&lt;link rel="shortlink" href="https://example.com/?p=42"&gt;	 </div><div class="line">&lt;!-- 链接到当前文档的一个 AMP HTML 版本 --&gt;</div><div class="line">&lt;link rel="amphtml" href="https://example.com/path/to/amp-version.html"&gt;	 </div><div class="line">&lt;!-- 链接到一个指定 Web 应用程序“安装”证书的 JSON 文件 --&gt;</div><div class="line">&lt;link rel="manifest" href="manifest.json"&gt;	 </div><div class="line">&lt;!-- 链接到文档的作者 --&gt;</div><div class="line">&lt;link rel="author" href="humans.txt"&gt;	 </div><div class="line">&lt;!-- 指向一个适用于链接内容的版权申明 --&gt;</div><div class="line">&lt;link rel="license" href="copyright.html"&gt;	 </div><div class="line">&lt;!-- 给出可能的你的另一种语言的文档位置参考 --&gt;</div><div class="line">&lt;link rel="alternate" href="https://es.example.com/" hreflang="es"&gt;	 </div><div class="line">&lt;!-- 提供了关于作者或其他人的信息 --&gt;</div><div class="line">&lt;link rel="me" href="https://google.com/profiles/thenextweb" type="text/html"&gt;</div><div class="line">&lt;link rel="me" href="mailto:name@example.com"&gt;</div><div class="line">&lt;link rel="me" href="sms:+15035550125"&gt;	 </div><div class="line">&lt;!-- 链接到一个描述历史记录、文档或其他具有历史意义的材料的集合的文档。 --&gt;</div><div class="line">&lt;link rel="archives" href="https://example.com/archives/"&gt;	 </div><div class="line">&lt;!-- 链接到层次结构中的顶级资源 --&gt;</div><div class="line">&lt;link rel="index" href="https://example.com/"&gt;	 </div><div class="line">&lt;!-- 给出一个自我参考 - 当文档有多个可能的参考时非常有用 --&gt;</div><div class="line">&lt;link rel="self" type="application/atom+xml" href="https://example.com/atomFeed.php?page=3"&gt;	 </div><div class="line">&lt;!-- 分别是在一系列文件中的第一个、下一个、上一个和最后一个 --&gt;</div><div class="line">&lt;link rel="first" href="https://example.com/atomFeed.php"&gt;</div><div class="line">&lt;link rel="next" href="https://example.com/atomFeed.php?page=4"&gt;</div><div class="line">&lt;link rel="prev" href="https://example.com/atomFeed.php?page=2"&gt;</div><div class="line">&lt;link rel="last" href="https://example.com/atomFeed.php?page=147"&gt;	 </div><div class="line">&lt;!-- 当使用第三方服务来维护 blog 时使用 --&gt;</div><div class="line">&lt;link rel="EditURI" href="https://example.com/xmlrpc.php?rsd" type="application/rsd+xml" title="RSD"&gt;	 </div><div class="line">&lt;!-- 当另一个 WordPress 博客链接到你的 WordPress 博客或文章时形成一个自动化的评论 --&gt;</div><div class="line">&lt;link rel="pingback" href="https://example.com/xmlrpc.php"&gt;	 </div><div class="line">&lt;!-- 当你在自己的页面上链接到一个 url 时通知它 --&gt;</div><div class="line">&lt;link rel="webmention" href="https://example.com/webmention"&gt;	 </div><div class="line">&lt;!-- 加载一个外部的 HTML 文件到当前 HTML 文件中 --&gt;</div><div class="line">&lt;link rel="import" href="/path/to/component.html"&gt;	 </div><div class="line">&lt;!-- 打开搜索 --&gt;</div><div class="line">&lt;link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title"&gt;	 </div><div class="line">&lt;!-- Feeds --&gt;</div><div class="line">&lt;link rel="alternate" href="https://feeds.feedburner.com/example" type="application/rss+xml" title="RSS"&gt;</div><div class="line">&lt;link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3"&gt;	 </div><div class="line">&lt;!-- 预取，预载，预浏览 --&gt;</div><div class="line">&lt;link rel="dns-prefetch" href="//example.com/"&gt;</div><div class="line">&lt;link rel="preconnect" href="https://www.example.com/"&gt;</div><div class="line">&lt;link rel="prefetch" href="https://www.example.com/"&gt;</div><div class="line">&lt;link rel="prerender" href="https://example.com/"&gt;</div><div class="line">&lt;link rel="preload" href="image.png" as="image"&gt;</div><div class="line">&lt;!-- 更多信息：https://css-tricks.com/prefetching-preloading-prebrowsing/ --&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>网站图标</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 针对 IE <span class="number">10</span> 及以下版本 --&gt;</div><div class="line">&lt;!-- 如果将 `favicon.ico` 放在根目录下，则无需标签 --&gt;	 </div><div class="line">&lt;!-- 对于 IE 11、Chrome、Firefox、Safari 和 Opera --&gt;</div><div class="line">&lt;link rel="icon" type="image/png" sizes="16x16" href="/path/to/favicon-16x16.png"/&gt;</div><div class="line">&lt;link rel="icon" type="image/png" sizes="32x32" href="/path/to/favicon-32x32.png"/&gt;</div><div class="line">&lt;link rel="icon" type="image/png" sizes="96x96" href="/path/to/favicon-96x96.png"/&gt;</div><div class="line">&lt;!-- 更多信息: https://bitsofco.de/all-about-favicons-and-touch-icons/ --&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>社交</p>
+</blockquote>
+<p>Facebook Open Graph</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   &lt;meta property=<span class="string">"fb:app_id"</span> content=<span class="string">"123456789"</span>/&gt;</div><div class="line">&lt;meta property="og:url" content="https://example.com/page.html"/&gt;</div><div class="line">&lt;meta property="og:type" content="website"/&gt;</div><div class="line">&lt;meta property="og:title" content="Content Title"/&gt;</div><div class="line">&lt;meta property="og:image" content="https://example.com/image.jpg"/&gt;</div><div class="line">&lt;meta property="og:description" content="Description Here"/&gt;</div><div class="line">&lt;meta property="og:site_name" content="Site Name"/&gt;</div><div class="line">&lt;meta property="og:locale" content="en_US"/&gt;</div><div class="line">&lt;meta property="article:author" content=""/&gt;</div></pre></td></tr></table></figure>
+<p>Facebook Instant Articles</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   &lt;meta charset=<span class="string">"utf-8"</span>/&gt;</div><div class="line">&lt;meta property="op:markup_version" content="v1.0"/&gt;	 </div><div class="line">&lt;!-- 你的文章的 Web 版网址 --&gt;</div><div class="line">&lt;link rel="canonical" href="http://example.com/article.html"/&gt;	 </div><div class="line">&lt;!-- 用于该文章的样式 --&gt;</div><div class="line">&lt;meta property="fb:article_style" content="myarticlestyle"/&gt;</div></pre></td></tr></table></figure>
+<p>Twitter Cards</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   &lt;meta name=<span class="string">"twitter:card"</span> content=<span class="string">"summary"</span>/&gt;</div><div class="line">&lt;meta name="twitter:site" content="@site_account"/&gt;</div><div class="line">&lt;meta name="twitter:creator" content="@individual_account"/&gt;</div><div class="line">&lt;meta name="twitter:url" content="https://example.com/page.html"/&gt;</div><div class="line">&lt;meta name="twitter:title" content="Content Title"/&gt;</div><div class="line">&lt;meta name="twitter:description" content="Content description less than 200 characters"/&gt;</div><div class="line">&lt;meta name="twitter:image" content="https://example.com/image.jpg"/&gt;</div></pre></td></tr></table></figure>
+<p>Google+ / Schema.org</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   &lt;link href=<span class="string">"https://plus.google.com/+YourPage"</span> rel=<span class="string">"publisher"</span>/&gt;</div><div class="line">&lt;meta itemprop="name" content="内容标题"/&gt;</div><div class="line">&lt;meta itemprop="description" content="内容描述少于 200 个字符"/&gt;</div><div class="line">&lt;meta itemprop="image" content="https://example.com/image.jpg"/&gt;</div></pre></td></tr></table></figure>
+<p>OEmbed</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   &lt;link rel=<span class="string">"alternate"</span> type=<span class="string">"application/json+oembed"</span></div><div class="line"> href=<span class="string">"http://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;amp;format=json"</span></div><div class="line"> title=<span class="string">"oEmbed Profile: JSON"</span>/&gt;</div><div class="line">&lt;link rel="alternate" type="text/xml+oembed"</div><div class="line">  href="http://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;amp;format=xml"</div><div class="line">  title="oEmbed Profile: XML"/&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>浏览器 / 平台</p>
+</blockquote>
+<p>Apple iOS</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 智能应用 Banner --&gt;</div><div class="line">&lt;meta name="apple-itunes-app" content="app-id=APP_ID,affiliate-data=AFFILIATE_ID,app-argument=SOME_TEXT"/&gt;	 </div><div class="line">&lt;!-- 禁用自动检测和格式化可能的电话号码 --&gt;</div><div class="line">&lt;meta name="format-detection" content="telephone=no"/&gt;	 </div><div class="line">&lt;!-- 添加到主屏幕 --&gt;</div><div class="line">&lt;meta name="apple-mobile-web-app-capable" content="yes"/&gt;</div><div class="line">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black"/&gt;</div><div class="line">&lt;meta name="apple-mobile-web-app-title" content="应用标题"/&gt;	 </div><div class="line">&lt;!-- 触摸图标 --&gt;</div><div class="line">&lt;!-- 在大多数情况下，在 `&lt;head&gt;` 中，一个 180×180px 触摸图标就已经足够了 --&gt;</div><div class="line">&lt;link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png"/&gt;</div><div class="line">&lt;!-- 注意：iOS 7 上的 Safari 不会对图标产生效果。 --&gt;</div><div class="line">&lt;!-- 较早版本的 Safari 不会对以 `-precomposed.png` 后缀命名的图标文件产生效果。 --&gt;	 </div><div class="line">&lt;!-- 启动画面（已无效） --&gt;</div><div class="line">&lt;link rel="apple-touch-startup-image" href="path/to/startup.png"/&gt;	 </div><div class="line">&lt;!-- iOS 应用深层链接 --&gt;</div><div class="line">&lt;meta name="apple-itunes-app" content="app-id=APP-ID, app-argument=http/url-sample.com"/&gt;</div><div class="line">&lt;link rel="alternate" href="ios-app://APP-ID/http/url-sample.com"/&gt;</div></pre></td></tr></table></figure>
+<p>Apple Safari</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 固定网站 --&gt;</div><div class="line">&lt;link rel="mask-icon" href="path/to/icon.svg" color="red"/&gt;</div></pre></td></tr></table></figure>
+<p>Google Android</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">   &lt;meta name=<span class="string">"theme-color"</span> content=<span class="string">"#E64545"</span>/&gt; </div><div class="line">&lt;!-- 添加到主屏幕 --&gt;</div><div class="line">&lt;meta name="mobile-web-app-capable" content="yes"/&gt;</div><div class="line">&lt;!-- 更多信息：https://developer.chrome.com/multidevice/android/installtohomescreen --&gt;</div></pre></td></tr></table></figure>
+<p>Google Chrome</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">   &lt;link rel=<span class="string">"chrome-webstore-item"</span> href=<span class="string">"https://chrome.google.com/webstore/detail/APP_ID"</span>/&gt; </div><div class="line">&lt;!-- 禁用翻译提示 --&gt;</div><div class="line">&lt;meta name="google" content="notranslate"/&gt;</div></pre></td></tr></table></figure>
+<p>Microsoft Internet Explorer</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">   &lt;meta http-equiv=<span class="string">"x-ua-compatible"</span> content=<span class="string">"ie=edge"</span>/&gt;</div><div class="line">&lt;meta name="skype_toolbar" content="skype_toolbar_parser_compatible"/&gt;	 </div><div class="line">&lt;!-- IE10: 禁用链接点击高亮 (https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/) --&gt;</div><div class="line">&lt;meta name="msapplication-tap-highlight" content="no"/&gt;	 </div><div class="line">&lt;!-- 固定网站 (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) --&gt;</div><div class="line">&lt;meta name="application-name" content="Sample Title"/&gt;</div><div class="line">&lt;meta name="msapplication-tooltip" content="A description of what this site does."/&gt;</div><div class="line">&lt;meta name="msapplication-starturl" content="http://example.com/index.html?pinned=true"/&gt;</div><div class="line">&lt;meta name="msapplication-navbutton-color" content="#FF3300"/&gt;</div><div class="line">&lt;meta name="msapplication-window" content="width=800;height=600"/&gt;</div><div class="line">&lt;meta name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico"/&gt;</div><div class="line">&lt;meta name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico"/&gt;</div><div class="line">&lt;meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=http://example.com/path/to/file.xml"/&gt;</div><div class="line">&lt;meta name="msapplication-TileColor" content="#FF3300"/&gt;</div><div class="line">&lt;meta name="msapplication-TileImage" content="path/to/tileimage.jpg"/&gt;	 </div><div class="line">&lt;meta name="msapplication-config" content="http://example.com/browserconfig.xml"/&gt;</div><div class="line">&lt;meta name="msapplication-notification" content="frequency=60;polling-uri=http://example.com/livetile;polling-uri2=http://example.com/livetile2"/&gt;</div><div class="line">&lt;meta name="msapplication-task-separator" content="1"/&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>国内的浏览器</p>
+</blockquote>
+<p>360 浏览器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 选择渲染引擎 --&gt;</div><div class="line">&lt;meta name="renderer" content="webkit|ie-comp|ie-stand"/&gt;</div></pre></td></tr></table></figure>
+<p>QQ 移动浏览器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 在指定方向上锁定屏幕（锁定横/竖屏） --&gt;</div><div class="line">&lt;meta name="x5-orientation" content="landscape/portrait"/&gt;</div><div class="line">&lt;!-- 全屏显示此页面 --&gt;</div><div class="line">&lt;meta name="x5-fullscreen" content="true"/&gt;</div><div class="line">&lt;!-- 页面将以“应用模式”显示（全屏等）--&gt;</div><div class="line">&lt;meta name="x5-page-mode" content="app"/&gt;</div></pre></td></tr></table></figure>
+<p>UC 移动浏览器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- 在指定方向上锁定屏幕（锁定横/竖屏） --&gt;</div><div class="line">&lt;meta name="screen-orientation" content="landscape/portrait"/&gt;</div><div class="line">&lt;!-- 全屏显示此页面 --&gt;</div><div class="line">&lt;meta name="full-screen" content="yes"/&gt;</div><div class="line">&lt;!-- 即使在“文本模式”下，UC 浏览器也会显示图片 --&gt;</div><div class="line">&lt;meta name="imagemode" content="force"/&gt;</div><div class="line">&lt;!-- 页面将以“应用模式”显示（全屏、禁止手势等） --&gt;</div><div class="line">&lt;meta name="browsermode" content="application"/&gt;</div><div class="line">&lt;!-- 在此页面禁用 UC 浏览器的“夜间模式” --&gt;</div><div class="line">&lt;meta name="nightmode" content="disable"/&gt;</div><div class="line">&lt;!-- 简化页面，减少数据传输 --&gt;</div><div class="line">&lt;meta name="layoutmode" content="fitscreen"/&gt;</div><div class="line">&lt;!-- 禁用的 UC 浏览器的功能，“当此页面中有较多文本时缩放字体” --&gt;</div><div class="line">&lt;meta name="wap-font-scale" content="no"/&gt;</div></pre></td></tr></table></figure>
+<p>应用链接</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">   &lt;!-- iOS --&gt;</div><div class="line">&lt;meta property="al:ios:url" content="applinks://docs"/&gt;</div><div class="line">&lt;meta property="al:ios:app_store_id" content="12345"/&gt;</div><div class="line">&lt;meta property="al:ios:app_name" content="App Links"/&gt;</div><div class="line">&lt;!-- Android --&gt;</div><div class="line">&lt;meta property="al:android:url" content="applinks://docs"/&gt;</div><div class="line">&lt;meta property="al:android:app_name" content="App Links"/&gt;</div><div class="line">&lt;meta property="al:android:package" content="org.applinks"/&gt;</div><div class="line">&lt;!-- Web 回退 --&gt;</div><div class="line">&lt;meta property="al:web:url" content="http://applinks.org/documentation"/&gt;</div><div class="line">&lt;!-- 更多信息：http://applinks.org/documentation/ --&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意</p>
+</blockquote>
+<p>性能</p>
+<p>当启用 GZIP 时，移动 href 属性到该元素的开头以提高压缩，因为 href 属性被用于 a、base 和 link 标签。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link href=<span class="string">"https://fonts.googleapis.com/css?family=Open+Sans:400,700"</span> rel=<span class="string">"stylesheet"</span>/&gt;</div></pre></td></tr></table></figure>
+<p>转载：<a href="http://www.css88.com/archives/8052#recommended-minimum" target="_blank" rel="external">http://www.css88.com/archives/8052#recommended-minimum</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017-head/">2017年最新的 &lt;head&gt; 元素指南</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cwq</a></p>
+        <p><span>发布时间:</span>2017-09-06, 11:03:36</p>
+        <p><span>最后更新:</span>2017-09-06, 11:19:32</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017-head/" title="2017年最新的 &lt;head&gt; 元素指南">http://caoweiqiang.com/2017-head/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/2017-head/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/baidu-MarkerClusterer/">
+                    百度地图点聚合提高效率
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+        <div class="changyan" id="comments">
+    <div id="cyEmoji" sourceid="2017年最新的 &lt;head&gt; 元素指南" role="cylabs" data-use="emoji"></div>
+    <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyr2lGeJX"></script>
+
+    <div id="SOHUCS" sid="2017年最新的 &lt;head&gt; 元素指南" style="width:auto;padding:0 30px 0 46px;"></div>
+    <script>
+        var appid = {changyan_appid:"cyr2lGeJX"};
+        var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        var loadComment = function(){
+            if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid.changyan_appid + '&conf=' + conf.changyan_appkey + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid.changyan_appid,conf:conf.changyan_appkey})}); }
+        }
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/baidu-MarkerClusterer/" title="下一篇: 百度地图点聚合提高效率">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017-head/">2017年最新的 <head> 元素指南</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-MarkerClusterer/">百度地图点聚合提高效率</a></li><li class="post-list-item"><a class="post-list-link" href="/css-shapes/">奇妙的 CSS shapes(CSS 图形)</a></li><li class="post-list-item"><a class="post-list-link" href="/css-gradient/">CSS实现兼容性的渐变背景(gradient)效果</a></li><li class="post-list-item"><a class="post-list-link" href="/unknown-css/">遇见未知的 CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/css-hidden/">CSS多行文字超出隐藏加省略号</a></li><li class="post-list-item"><a class="post-list-link" href="/web-css/">《web前端最佳实践》—高性能css</a></li><li class="post-list-item"><a class="post-list-link" href="/js-sort/">【Javascript】排序算法（冒泡排序，选择排序，插入排序，归并排序，快速排序）</a></li><li class="post-list-item"><a class="post-list-link" href="/html5-summary/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/label-sort/">JS 利用appendChild对li标签进行排序</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-api/">详解百度地图API之地图标注</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-rss/">hexo博客安装RSS插件</a></li><li class="post-list-item"><a class="post-list-link" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a></li><li class="post-list-item"><a class="post-list-link" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017 cwq
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+            
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
