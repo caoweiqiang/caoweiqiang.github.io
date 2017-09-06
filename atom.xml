@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://caoweiqiang.com/"/>
-  <updated>2017-09-06T03:19:32.606Z</updated>
+  <updated>2017-09-06T09:00:39.247Z</updated>
   <id>http://caoweiqiang.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSON时间转换格式化</title>
+    <link href="http://caoweiqiang.com/json-time/"/>
+    <id>http://caoweiqiang.com/json-time/</id>
+    <published>2017-09-06T08:57:07.678Z</published>
+    <updated>2017-09-06T09:00:39.247Z</updated>
+    
+    <content type="html"><![CDATA[<p>通常JSON时间一般是这样的格式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/<span class="built_in">Date</span>(<span class="number">1436595149269</span>)/</div></pre></td></tr></table></figure>
+<p>通常我们用AJAX获取下来的JSON数据,如果有时间,都是这种格式的。其中，中间的一段数字”1436595149269”表示的是1970年1月1日至今的毫秒数。</p>
+<p>这种时间格式并不能够直接显示给用户查看,因为这是人类所看不懂的时间。所以我们需要将它转换为正常人能够理解的时间格式。</p>
+<blockquote>
+<p>第一步,替换掉/Date()/</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">//对外暴露的函数,替换掉/Date( )/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">convertTime</span>(<span class="params">jsonTime, format</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">parseInt</span>(jsonTime.replace(<span class="string">"/Date("</span>, <span class="string">""</span>).replace(<span class="string">")/"</span>, <span class="string">""</span>), <span class="number">10</span>));</div><div class="line">    <span class="keyword">var</span> formatDate = date.format(format);</div><div class="line">    <span class="keyword">return</span> formatDate;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>第二步，将数字时间转换为可视化的yyyy-MM-dd HH:mm:ss的格式</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">   <span class="comment">//先扩展一下javascript的Date类型,增加一个函数,用于返回我们想要的 yyyy-MM-dd HH:mm:ss 这种时间格式</span></div><div class="line"><span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span> (<span class="params">format</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> date = &#123;</div><div class="line">        <span class="string">"M+"</span>: <span class="keyword">this</span>.getMonth() + <span class="number">1</span>,</div><div class="line">        <span class="string">"d+"</span>: <span class="keyword">this</span>.getDate(),</div><div class="line">        <span class="string">"h+"</span>: <span class="keyword">this</span>.getHours(),</div><div class="line">        <span class="string">"m+"</span>: <span class="keyword">this</span>.getMinutes(),</div><div class="line">        <span class="string">"s+"</span>: <span class="keyword">this</span>.getSeconds(),</div><div class="line">        <span class="string">"q+"</span>: <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth() + <span class="number">3</span>) / <span class="number">3</span>),</div><div class="line">        <span class="string">"S+"</span>: <span class="keyword">this</span>.getMilliseconds()</div><div class="line">    &#125;;</div><div class="line">     </div><div class="line">    <span class="keyword">if</span> (<span class="regexp">/(y+)/i</span>.test(format)) &#123;</div><div class="line">        format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear() + <span class="string">''</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> date) &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span> + k + <span class="string">")"</span>).test(format)) &#123;</div><div class="line">          format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, <span class="built_in">RegExp</span>.$<span class="number">1.</span>length == <span class="number">1</span> ? date[k] : (<span class="string">"00"</span> + date[k]).substr((<span class="string">""</span> + date[k]).length));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    <span class="keyword">return</span> format;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>调用示例</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">   $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> dt = <span class="string">'/Date(1436595149269)/'</span>;</div><div class="line">    <span class="keyword">var</span> formatTime1 = convertTime(dt, <span class="string">"yyyy-MM-dd hh:mm:ss"</span>);<span class="comment">//2015-07-11 14:12:29</span></div><div class="line">    $(<span class="string">"#div1"</span>).text(formatTime1);</div><div class="line">    <span class="keyword">var</span> formatTime2 = convertTime(dt, <span class="string">"yyyy年MM月dd日 hh时mm分ss秒"</span>);<span class="comment">//2015年07月11日 14时12分29秒</span></div><div class="line">    $(<span class="string">"#div2"</span>).text(formatTime2);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>另外一个实现</p>
+</blockquote>
+<p>另外，还有一个方式，这个就不需要改原来Date原型了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">   &lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;JSON时间格式化(/Date()转换为yyyy-MM-dd HH:mm:ss)&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">//yyyy-MM-dd HH:mm:SS</div><div class="line">function getDateTime(date) &#123;</div><div class="line">    var year = date.getFullYear();</div><div class="line">    var month = date.getMonth() + 1;</div><div class="line">    var day = date.getDate();</div><div class="line">    var hh = date.getHours();</div><div class="line">    var mm = date.getMinutes();</div><div class="line">    var ss = date.getSeconds();</div><div class="line">    return year + "-" + month + "-" + day + " " + hh + ":" + mm + ":" + ss;</div><div class="line">&#125;</div><div class="line">//调用的是这个方法</div><div class="line">function ConvertJSONDateToJSDate(jsondate) &#123;</div><div class="line">    var date = new Date(parseInt(jsondate.replace("/Date(", "").replace(")/", ""), 10));</div><div class="line">    return date;</div><div class="line">&#125;</div><div class="line">var date = "/Date(1379944571737)/";</div><div class="line">alert(getDateTime(ConvertJSONDateToJSDate(date)));</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>转载：<a href="http://www.cnblogs.com/kissdodog/p/5419923.html" target="_blank" rel="external">http://www.cnblogs.com/kissdodog/p/5419923.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通常JSON时间一般是这样的格式。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td cla
+    
+    </summary>
+    
+    
+      <category term="JSON" scheme="http://caoweiqiang.com/tags/JSON/"/>
+    
+      <category term="时间转换格式化" scheme="http://caoweiqiang.com/tags/%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
+    
+      <category term="JSON时间转换格式化" scheme="http://caoweiqiang.com/tags/JSON%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>2017年最新的 &lt;head&gt; 元素指南</title>
