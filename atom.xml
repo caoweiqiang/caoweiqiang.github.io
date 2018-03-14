@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://caoweiqiang.com/"/>
-  <updated>2017-10-09T04:02:10.825Z</updated>
+  <updated>2018-03-14T07:01:04.508Z</updated>
   <id>http://caoweiqiang.com/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创建vue项目 以及引入iview</title>
+    <link href="http://caoweiqiang.com/Vue-iview/"/>
+    <id>http://caoweiqiang.com/Vue-iview/</id>
+    <published>2018-03-14T06:53:04.707Z</published>
+    <updated>2018-03-14T07:01:04.508Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><a href="https://cn.vuejs.org/v2/guide/installation.html#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-CLI" target="_blank" rel="external">官方文档</a></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 全局安装 vue-cli</div><div class="line">$ npm install --global vue-cli</div><div class="line"># 创建一个基于 webpack 模板的新项目</div><div class="line">$ vue init webpack my-project</div><div class="line"># 安装依赖，走你</div><div class="line">$ cd my-project</div><div class="line">$ npm install</div><div class="line">$ npm run dev</div></pre></td></tr></table></figure>
+<p>以上是vue官方文档中Vue.js 提供一个 官方命令行工具 创建vue项目的方法。</p>
+<blockquote>
+<p>引入iview</p>
+</blockquote>
+<p>src/main.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The Vue build version to load with the `import` command</span></div><div class="line"><span class="comment">// (runtime-only or standalone) has been set in webpack.base.conf with an alias.</span></div><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span></div><div class="line"><span class="keyword">import</span> iView <span class="keyword">from</span> <span class="string">'iview'</span></div><div class="line"><span class="comment">// 使用 CSS</span></div><div class="line"><span class="keyword">import</span> <span class="string">'iview/dist/styles/iview.css'</span></div><div class="line"></div><div class="line">Vue.config.productionTip = <span class="literal">false</span></div><div class="line">Vue.use(iView)</div><div class="line"><span class="comment">/* eslint-disable no-new */</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  router,</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;App/&gt;'</span>,</div><div class="line">  <span class="attr">components</span>: &#123; App &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>在main.js中添加了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> iView <span class="keyword">from</span> <span class="string">'iview'</span></div><div class="line"><span class="comment">// 使用 CSS</span></div><div class="line"><span class="keyword">import</span> <span class="string">'iview/dist/styles/iview.css'</span></div><div class="line">Vue.use(iView)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>iview 安装</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cnpm install --save iview</div></pre></td></tr></table></figure>
+<blockquote>
+<p>使用iview 组件</p>
+</blockquote>
+<p>创建 src/components/LoginForm.vue</p>
+<p>官方的组件代码缩进不符合要求，需要修改</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;Form ref="formInline" :model="formInline" :rules="ruleInline" inline&gt;</div><div class="line">        &lt;FormItem prop="user"&gt;</div><div class="line">            &lt;Input type="text" v-model="formInline.user" placeholder="Username"&gt;</div><div class="line">                &lt;Icon type="ios-person-outline" slot="prepend"&gt;&lt;/Icon&gt;</div><div class="line">            &lt;/Input&gt;</div><div class="line">        &lt;/FormItem&gt;</div><div class="line">        &lt;FormItem prop="password"&gt;</div><div class="line">            &lt;Input type="password" v-model="formInline.password" placeholder="Password"&gt;</div><div class="line">                &lt;Icon type="ios-locked-outline" slot="prepend"&gt;&lt;/Icon&gt;</div><div class="line">            &lt;/Input&gt;</div><div class="line">        &lt;/FormItem&gt;</div><div class="line">        &lt;FormItem&gt;</div><div class="line">            &lt;Button type="primary" @click="handleSubmit('formInline')"&gt;登录&lt;/Button&gt;</div><div class="line">        &lt;/FormItem&gt;</div><div class="line">    &lt;/Form&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;script&gt;</div><div class="line">export default &#123;</div><div class="line">  data () &#123;</div><div class="line">    return &#123;</div><div class="line">      formInline: &#123;</div><div class="line">        user: '',</div><div class="line">        password: ''</div><div class="line">      &#125;,</div><div class="line">      ruleInline: &#123;</div><div class="line">        user: [</div><div class="line">          &#123; required: true, message: '请填写用户名', trigger: 'blur' &#125;</div><div class="line">        ],</div><div class="line">        password: [</div><div class="line">          &#123; required: true, message: '请填写密码', trigger: 'blur' &#125;,</div><div class="line">          &#123; type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur' &#125;</div><div class="line">        ]</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  methods: &#123;</div><div class="line">    handleSubmit (name) &#123;</div><div class="line">      this.$refs[name].validate((valid) =&gt; &#123;</div><div class="line">        if (valid) &#123;</div><div class="line">          this.$Message.success('提交成功!')</div><div class="line">        &#125; else &#123;</div><div class="line">          this.$Message.error('表单验证失败!')</div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>src/App.vue:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;div id="app"&gt;</div><div class="line">    &lt;LoginForm&gt;&lt;/LoginForm&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">import LoginForm from './components/LoginForm'</div><div class="line">export default &#123;</div><div class="line">  name: 'app',</div><div class="line">  components: &#123;</div><div class="line">    'LoginForm': LoginForm</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">&lt;style&gt;</div><div class="line">#app &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p>转载：<a href="http://blog.csdn.net/seek_of/article/details/78387186" target="_blank" rel="external">http://blog.csdn.net/seek_of/article/details/78387186</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://cn.vuejs.org/v2/guide/installation.html#%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-CLI&quot; target=&quot;_blank&quot; 
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://caoweiqiang.com/tags/vue/"/>
+    
+      <category term="iview" scheme="http://caoweiqiang.com/tags/iview/"/>
+    
+  </entry>
   
   <entry>
     <title>纯CSS制作各种图形(多图预警)</title>
