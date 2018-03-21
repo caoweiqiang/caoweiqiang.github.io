@@ -3,6 +3,76 @@
   
     
     <entry>
+      <title><![CDATA[前端面试考点多？看这几篇文章就够了]]></title>
+      <url>/front-summary/</url>
+      <content type="html"><![CDATA[<p>前端面试考点众多，而网上各个知识点的博客文章又太多，看的眼花缭乱……所以便整理了一下常见知识点的精华文章，每个知识点的文章控制在3篇以内，尽量覆盖该知识点的下容易被面试到的所有内容，文章都是之前自己读过的，确定是精华干货。文章会一直更新，也欢迎大家推荐精华文章，大家共同学习进步！</p>
+<blockquote>
+<p>css</p>
+</blockquote>
+<h2 id="css布局"><a href="#css布局" class="headerlink" title="css布局"></a>css布局</h2><p><a href="https://juejin.im/post/5aa252ac518825558001d5de" target="_blank" rel="external">干货!各种常见布局实现+知名网站实例分析</a></p>
+<h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p><a href="https://juejin.im/post/59b73d5bf265da064618731d" target="_blank" rel="external">学习 BFC (Block Formatting Context)</a></p>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p><a href="https://juejin.im/post/58e3a5a0a0bb9f0069fc16bb" target="_blank" rel="external">一劳永逸的搞定 flex 布局</a></p>
+<h2 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h2><p><a href="https://github.com/hoosin/mobile-web-favorites" target="_blank" rel="external">腾讯移动Web前端知识库</a></p>
+<h2 id="css3综合"><a href="#css3综合" class="headerlink" title="css3综合"></a>css3综合</h2><p><a href="https://juejin.im/post/5a0c184c51882531926e4294" target="_blank" rel="external">个人总结（css3新特性）</a></p>
+<h2 id="css3动画优化"><a href="#css3动画优化" class="headerlink" title="css3动画优化"></a>css3动画优化</h2><p><a href="https://github.com/AlloyTeam/Mars/blob/master/performance/high-performance-css3-animation.md" target="_blank" rel="external">高性能 CSS3 动画</a></p>
+<h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><p><a href="https://juejin.im/post/5a954add6fb9a06348538c0d" target="_blank" rel="external">12个HTML和CSS必须知道的重点难点问题</a></p>
+<blockquote>
+<p>js</p>
+</blockquote>
+<h2 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h2><p><a href="https://juejin.im/post/59278e312f301e006c2e1510" target="_blank" rel="external">JavaScript深入系列15篇正式完结！</a></p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p><a href="https://juejin.im/post/58f1fa6a44d904006cf25d22" target="_blank" rel="external">破解前端面试（80% 应聘者不及格系列）：从闭包说起</a></p>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p><a href="https://juejin.im/post/5aa78fe66fb9a028d2079ca4" target="_blank" rel="external">深度解析原型中的各个难点</a></p>
+<h2 id="this、apply、call、bind相关问题"><a href="#this、apply、call、bind相关问题" class="headerlink" title="this、apply、call、bind相关问题"></a>this、apply、call、bind相关问题</h2><p><a href="https://juejin.im/post/59bfe84351882531b730bac2" target="_blank" rel="external">this、apply、call、bind</a></p>
+<h2 id="js执行机制"><a href="#js执行机制" class="headerlink" title="js执行机制"></a>js执行机制</h2><p><a href="https://segmentfault.com/a/1190000004322358" target="_blank" rel="external">JavaScript：彻底理解同步、异步和事件循环(Event Loop)</a></p>
+<p><a href="https://juejin.im/post/59e85eebf265da430d571f89" target="_blank" rel="external">这一次，彻底弄懂 JavaScript 执行机制</a></p>
+<h2 id="dom"><a href="#dom" class="headerlink" title="dom"></a>dom</h2><p><a href="https://juejin.im/post/58f558efac502e006c3e5c97" target="_blank" rel="external">破解前端面试（80% 应聘者不及格系列）：从 DOM 说起</a></p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p><a href="https://segmentfault.com/a/1190000011145364" target="_blank" rel="external">前端常见跨域解决方案（全）</a></p>
+<h2 id="常见工具函数手写（节流，防抖，扁平，柯里化…）"><a href="#常见工具函数手写（节流，防抖，扁平，柯里化…）" class="headerlink" title="常见工具函数手写（节流，防抖，扁平，柯里化…）"></a>常见工具函数手写（节流，防抖，扁平，柯里化…）</h2><p><a href="https://juejin.im/post/59eff1fb6fb9a044ff30a942" target="_blank" rel="external">JavaScript专题系列20篇正式完结！</a></p>
+<h2 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h2><p><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript 6 入门</a></p>
+<blockquote>
+<p>vue</p>
+</blockquote>
+<p><a href="https://juejin.im/post/5aa00229f265da239b40fc02" target="_blank" rel="external">vue常见面试题</a></p>
+<p><a href="https://juejin.im/book/5a36661851882538e2259c0f" target="_blank" rel="external">剖析 Vue.js 内部运行机制</a></p>
+<blockquote>
+<p>React</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/24856035#tipjar" target="_blank" rel="external">React 常用面试题目与分析</a></p>
+<blockquote>
+<p>webpack</p>
+</blockquote>
+<p><a href="https://juejin.im/post/59cb6307f265da064e1f65b9" target="_blank" rel="external">前端面试之webpack篇</a></p>
+<p><a href="http://jspang.com/2017/09/16/webpack3-2/" target="_blank" rel="external">Webpack3.X 成神之路</a></p>
+<blockquote>
+<p>其他</p>
+</blockquote>
+<h2 id="前端规范"><a href="#前端规范" class="headerlink" title="前端规范"></a>前端规范</h2><p><a href="https://juejin.im/post/592d4a5b0ce463006b43b6da" target="_blank" rel="external">前端开发规范：命名规范、html规范、css规范、js规范</a></p>
+<h2 id="PC端兼容性"><a href="#PC端兼容性" class="headerlink" title="PC端兼容性"></a>PC端兼容性</h2><p><a href="https://juejin.im/post/59a3f2fe6fb9a0249471cbb4" target="_blank" rel="external">浏览器兼容性问题解决方案 · 总结</a></p>
+<h2 id="移动端兼容性"><a href="#移动端兼容性" class="headerlink" title="移动端兼容性"></a>移动端兼容性</h2><p><a href="https://juejin.im/post/59c4c9d85188254f58412d17" target="_blank" rel="external">移动 Web 开发问题和优化小结</a></p>
+<h2 id="调试技巧"><a href="#调试技巧" class="headerlink" title="调试技巧"></a>调试技巧</h2><p><a href="https://juejin.im/post/59ffad656fb9a0450b65c4c0" target="_blank" rel="external">web调试优化-chrome开发者工具不完全指南</a></p>
+<h2 id="常见数据结构与算法"><a href="#常见数据结构与算法" class="headerlink" title="常见数据结构与算法"></a>常见数据结构与算法</h2><p><a href="https://juejin.im/post/5958bac35188250d892f5c91" target="_blank" rel="external">我接触过的前端数据结构与算法</a></p>
+<p><a href="https://juejin.im/post/57dcd394a22b9d00610c5ec8" target="_blank" rel="external">十大经典排序算法总结（JavaScript描述）</a></p>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><p><a href="https://www.cnblogs.com/tugenhua0707/p/5198407.html" target="_blank" rel="external">Javascript常用的设计模式详解</a></p>
+<h2 id="版本控制问题（git-svn）"><a href="#版本控制问题（git-svn）" class="headerlink" title="版本控制问题（git/svn）"></a>版本控制问题（git/svn）</h2><p><a href="https://github.com/geeeeeeeeek/git-recipes/wiki/3.5-%E5%B8%B8%E8%A7%81%E5%B7%A5%E4%BD%9C%E6%B5%81%E6%AF%94%E8%BE%83" target="_blank" rel="external">互联网公司常见工作流比较</a></p>
+<h2 id="前端部署代码问题"><a href="#前端部署代码问题" class="headerlink" title="前端部署代码问题"></a>前端部署代码问题</h2><p><a href="https://www.zhihu.com/question/20790576" target="_blank" rel="external">大公司里怎样开发和部署前端代码？</a></p>
+<h2 id="浏览器工作原理"><a href="#浏览器工作原理" class="headerlink" title="浏览器工作原理"></a>浏览器工作原理</h2><p><a href="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/" target="_blank" rel="external">浏览器的工作原理：新式网络浏览器幕后揭秘</a></p>
+<h2 id="浏览器缓存机制"><a href="#浏览器缓存机制" class="headerlink" title="浏览器缓存机制"></a>浏览器缓存机制</h2><p><a href="http://www.cnblogs.com/lyzg/p/5125934.html" target="_blank" rel="external">浏览器缓存知识小结及应用</a></p>
+<h2 id="浏览器综合"><a href="#浏览器综合" class="headerlink" title="浏览器综合"></a>浏览器综合</h2><p><a href="https://zhuanlan.zhihu.com/p/34453198?group_id=957277540147056640" target="_blank" rel="external">从输入URL到页面加载的过程？如何由一道题完善自己的前端知识体系！</a></p>
+<p>转载：<a href="https://juejin.im/post/5aae076d6fb9a028cc6100a9" target="_blank" rel="external">https://juejin.im/post/5aae076d6fb9a028cc6100a9</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端面试 </tag>
+            
+            <tag> 前端面试考点 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[js 计算时间差]]></title>
       <url>/time-difference/</url>
       <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDateDiff</span>(<span class="params">startTime,endTime</span>)</span>&#123;</div><div class="line">    <span class="comment">//修改时间格式</span></div><div class="line">    startTime = startTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line">    endTime = endTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line"></div><div class="line">    <span class="comment">//计算时间差毫秒数</span></div><div class="line">    <span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(startTime).getTime();</div><div class="line">    <span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(endTime).getTime();</div><div class="line">    <span class="keyword">var</span> dateDiff = date2- date1;</div><div class="line"></div><div class="line">    <span class="comment">//计算出相差天数</span></div><div class="line">    <span class="keyword">var</span> days = <span class="built_in">Math</span>.floor(dateDiff / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</div><div class="line"></div><div class="line">    <span class="comment">//计算出小时数</span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> leave1 = dateDiff % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>)    <span class="comment">//计算天数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> hours = <span class="built_in">Math</span>.floor(leave1 / (<span class="number">3600</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差分钟数</span></div><div class="line">    <span class="keyword">var</span> leave2 = leave1 % (<span class="number">3600</span> * <span class="number">1000</span>)        <span class="comment">//计算小时数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> minutes = <span class="built_in">Math</span>.floor(leave2 / (<span class="number">60</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差秒数</span></div><div class="line">    <span class="keyword">var</span> leave3 = leave2 % (<span class="number">60</span> * <span class="number">1000</span>)      <span class="comment">//计算分钟数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> seconds = <span class="built_in">Math</span>.round(leave3 / <span class="number">1000</span>)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> days+<span class="string">'-'</span>+hours+<span class="string">'-'</span>+minutes +<span class="string">'-'</span>+seconds;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(getDateDiff(<span class="string">'2015/05/01 00:00:00'</span>,<span class="string">'2015/05/05 03:30:30'</span>));</div></pre></td></tr></table></figure>
