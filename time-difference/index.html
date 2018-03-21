@@ -15,16 +15,17 @@
 
 
 
-<meta name="description" content="每天学一点，进步快一点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://caoweiqiang.com/about/index.html">
+<meta name="description" content="123456789101112131415161718192021222324252627function getDateDiff(startTime,endTime)&amp;#123;    //修改时间格式    startTime = startTime.replace(/\-/g, &quot;/&quot;);    endTime = endTime.replace(/\-/g, &quot;/&quot;);    //计算时间">
+<meta name="keywords" content="js,计算时间差">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js 计算时间差">
+<meta property="og:url" content="http://caoweiqiang.com/time-difference/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="每天学一点，进步快一点">
-<meta property="og:updated_time" content="2017-05-25T10:18:01.583Z">
+<meta property="og:description" content="123456789101112131415161718192021222324252627function getDateDiff(startTime,endTime)&amp;#123;    //修改时间格式    startTime = startTime.replace(/\-/g, &quot;/&quot;);    endTime = endTime.replace(/\-/g, &quot;/&quot;);    //计算时间">
+<meta property="og:updated_time" content="2018-03-21T01:30:46.396Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="每天学一点，进步快一点">
+<meta name="twitter:title" content="js 计算时间差">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627function getDateDiff(startTime,endTime)&amp;#123;    //修改时间格式    startTime = startTime.replace(/\-/g, &quot;/&quot;);    endTime = endTime.replace(/\-/g, &quot;/&quot;);    //计算时间">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>about | 前端博客</title>
+<title>js 计算时间差 | 前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,7 +67,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -273,11 +274,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-time-difference" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-      <time datetime="2017-05-25T10:18:01.000Z" itemprop="datePublished">2017-05-25</time>
+      <a href="/time-difference/" class="article-date">
+      <time datetime="2018-03-21T01:28:19.209Z" itemprop="datePublished">2018-03-21</time>
 </a>
 
 
@@ -292,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      js 计算时间差
     </h1>
   
 
@@ -302,6 +303,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算时间差/">计算时间差</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -309,36 +314,68 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDateDiff</span>(<span class="params">startTime,endTime</span>)</span>&#123;</div><div class="line">    <span class="comment">//修改时间格式</span></div><div class="line">    startTime = startTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line">    endTime = endTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line"></div><div class="line">    <span class="comment">//计算时间差毫秒数</span></div><div class="line">    <span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(startTime).getTime();</div><div class="line">    <span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(endTime).getTime();</div><div class="line">    <span class="keyword">var</span> dateDiff = date2- date1;</div><div class="line"></div><div class="line">    <span class="comment">//计算出相差天数</span></div><div class="line">    <span class="keyword">var</span> days = <span class="built_in">Math</span>.floor(dateDiff / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</div><div class="line"></div><div class="line">    <span class="comment">//计算出小时数</span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> leave1 = dateDiff % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>)    <span class="comment">//计算天数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> hours = <span class="built_in">Math</span>.floor(leave1 / (<span class="number">3600</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差分钟数</span></div><div class="line">    <span class="keyword">var</span> leave2 = leave1 % (<span class="number">3600</span> * <span class="number">1000</span>)        <span class="comment">//计算小时数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> minutes = <span class="built_in">Math</span>.floor(leave2 / (<span class="number">60</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差秒数</span></div><div class="line">    <span class="keyword">var</span> leave3 = leave2 % (<span class="number">60</span> * <span class="number">1000</span>)      <span class="comment">//计算分钟数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> seconds = <span class="built_in">Math</span>.round(leave3 / <span class="number">1000</span>)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> days+<span class="string">'-'</span>+hours+<span class="string">'-'</span>+minutes +<span class="string">'-'</span>+seconds;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(getDateDiff(<span class="string">'2015/05/01 00:00:00'</span>,<span class="string">'2015/05/05 03:30:30'</span>));</div></pre></td></tr></table></figure>
+<p>转载：<a href="https://www.qdfuns.com/article/36367/1c20a28a1185874a708b6e6d502d0db6.html" target="_blank" rel="external">https://www.qdfuns.com/article/36367/1c20a28a1185874a708b6e6d502d0db6.html</a></p>
 
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/time-difference/">js 计算时间差</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cwq</a></p>
+        <p><span>发布时间:</span>2018-03-21, 09:28:19</p>
+        <p><span>最后更新:</span>2018-03-21, 09:30:46</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/time-difference/" title="js 计算时间差">http://caoweiqiang.com/time-difference/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/time-difference/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/Vue-iview/">
+                    创建vue项目 以及引入iview
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -357,11 +394,11 @@
 
     
         <div class="changyan" id="comments">
-    <div id="cyEmoji" sourceid="about" role="cylabs" data-use="emoji"></div>
+    <div id="cyEmoji" sourceid="js 计算时间差" role="cylabs" data-use="emoji"></div>
     <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
     <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyr2lGeJX"></script>
 
-    <div id="SOHUCS" sid="about" style="width:auto;padding:0 30px 0 46px;"></div>
+    <div id="SOHUCS" sid="js 计算时间差" style="width:auto;padding:0 30px 0 46px;"></div>
     <script>
         var appid = {changyan_appid:"cyr2lGeJX"};
         var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
@@ -378,6 +415,24 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 </div>
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/Vue-iview/" title="下一篇: 创建vue项目 以及引入iview">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/time-difference/">js 计算时间差</a></li><li class="post-list-item"><a class="post-list-link" href="/Vue-iview/">创建vue项目 以及引入iview</a></li><li class="post-list-item"><a class="post-list-link" href="/shapes-of-css/">纯CSS制作各种图形(多图预警)</a></li><li class="post-list-item"><a class="post-list-link" href="/json-time/">JSON时间转换格式化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017-head/">2017年最新的 <head> 元素指南</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-MarkerClusterer/">百度地图点聚合提高效率</a></li><li class="post-list-item"><a class="post-list-link" href="/css-shapes/">奇妙的 CSS shapes(CSS 图形)</a></li><li class="post-list-item"><a class="post-list-link" href="/css-gradient/">CSS实现兼容性的渐变背景(gradient)效果</a></li><li class="post-list-item"><a class="post-list-link" href="/unknown-css/">遇见未知的 CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/css-hidden/">CSS多行文字超出隐藏加省略号</a></li><li class="post-list-item"><a class="post-list-link" href="/web-css/">《web前端最佳实践》—高性能css</a></li><li class="post-list-item"><a class="post-list-link" href="/js-sort/">【Javascript】排序算法（冒泡排序，选择排序，插入排序，归并排序，快速排序）</a></li><li class="post-list-item"><a class="post-list-link" href="/html5-summary/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/label-sort/">JS 利用appendChild对li标签进行排序</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-api/">详解百度地图API之地图标注</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-rss/">hexo博客安装RSS插件</a></li><li class="post-list-item"><a class="post-list-link" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a></li><li class="post-list-item"><a class="post-list-link" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a></li></ul>
 
 
 

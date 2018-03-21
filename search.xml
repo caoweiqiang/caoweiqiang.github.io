@@ -3,6 +3,24 @@
   
     
     <entry>
+      <title><![CDATA[js 计算时间差]]></title>
+      <url>/time-difference/</url>
+      <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDateDiff</span>(<span class="params">startTime,endTime</span>)</span>&#123;</div><div class="line">    <span class="comment">//修改时间格式</span></div><div class="line">    startTime = startTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line">    endTime = endTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line"></div><div class="line">    <span class="comment">//计算时间差毫秒数</span></div><div class="line">    <span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(startTime).getTime();</div><div class="line">    <span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(endTime).getTime();</div><div class="line">    <span class="keyword">var</span> dateDiff = date2- date1;</div><div class="line"></div><div class="line">    <span class="comment">//计算出相差天数</span></div><div class="line">    <span class="keyword">var</span> days = <span class="built_in">Math</span>.floor(dateDiff / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</div><div class="line"></div><div class="line">    <span class="comment">//计算出小时数</span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> leave1 = dateDiff % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>)    <span class="comment">//计算天数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> hours = <span class="built_in">Math</span>.floor(leave1 / (<span class="number">3600</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差分钟数</span></div><div class="line">    <span class="keyword">var</span> leave2 = leave1 % (<span class="number">3600</span> * <span class="number">1000</span>)        <span class="comment">//计算小时数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> minutes = <span class="built_in">Math</span>.floor(leave2 / (<span class="number">60</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差秒数</span></div><div class="line">    <span class="keyword">var</span> leave3 = leave2 % (<span class="number">60</span> * <span class="number">1000</span>)      <span class="comment">//计算分钟数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> seconds = <span class="built_in">Math</span>.round(leave3 / <span class="number">1000</span>)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> days+<span class="string">'-'</span>+hours+<span class="string">'-'</span>+minutes +<span class="string">'-'</span>+seconds;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(getDateDiff(<span class="string">'2015/05/01 00:00:00'</span>,<span class="string">'2015/05/05 03:30:30'</span>));</div></pre></td></tr></table></figure>
+<p>转载：<a href="https://www.qdfuns.com/article/36367/1c20a28a1185874a708b6e6d502d0db6.html" target="_blank" rel="external">https://www.qdfuns.com/article/36367/1c20a28a1185874a708b6e6d502d0db6.html</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> 计算时间差 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[创建vue项目 以及引入iview]]></title>
       <url>/Vue-iview/</url>
       <content type="html"><![CDATA[<blockquote>
