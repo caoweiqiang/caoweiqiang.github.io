@@ -15,15 +15,17 @@
 
 
 
-<meta name="description" content="每天学一点，进步快一点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端博客">
-<meta property="og:url" content="http://caoweiqiang.com/tags/css3/index.html">
+<meta name="description" content="使用ajaxStart方法定义一个全局的“加载中。。。”提示 12345678910   $(function()&amp;#123;    $(&quot;#loading&quot;).ajaxStart(function()&amp;#123;        $(this).html.(&quot;&amp;lt;img src=&apos;/jqueryStu/images/loading.gif&apos; /&amp;gt;&quot;);      &amp;#125;);">
+<meta name="keywords" content="ajax,loading加载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax加载中显示loading">
+<meta property="og:url" content="http://caoweiqiang.com/ajax-loading/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="每天学一点，进步快一点">
+<meta property="og:description" content="使用ajaxStart方法定义一个全局的“加载中。。。”提示 12345678910   $(function()&amp;#123;    $(&quot;#loading&quot;).ajaxStart(function()&amp;#123;        $(this).html.(&quot;&amp;lt;img src=&apos;/jqueryStu/images/loading.gif&apos; /&amp;gt;&quot;);      &amp;#125;);">
+<meta property="og:updated_time" content="2018-03-22T07:12:55.865Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端博客">
-<meta name="twitter:description" content="每天学一点，进步快一点">
+<meta name="twitter:title" content="Ajax加载中显示loading">
+<meta name="twitter:description" content="使用ajaxStart方法定义一个全局的“加载中。。。”提示 12345678910   $(function()&amp;#123;    $(&quot;#loading&quot;).ajaxStart(function()&amp;#123;        $(this).html.(&quot;&amp;lt;img src=&apos;/jqueryStu/images/loading.gif&apos; /&amp;gt;&quot;);      &amp;#125;);">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -55,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: css3 | 前端博客</title>
+<title>Ajax加载中显示loading | 前端博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +67,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -272,56 +274,182 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-ajax-loading" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/css3-js/" class="archive-article-date">
-      <time datetime="2017-06-06T23:33:45.401Z" itemprop="datePublished">06-07</time>
+    <div class="article-meta">
+      <a href="/ajax-loading/" class="article-date">
+      <time datetime="2018-03-22T06:35:33.257Z" itemprop="datePublished">2018-03-22</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ajax加载中显示loading
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/loading加载/">loading加载</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>使用ajaxStart方法定义一个全局的“加载中。。。”提示</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">   $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">"#loading"</span>).ajaxStart(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="keyword">this</span>).html.(<span class="string">"&lt;img src='/jqueryStu/images/loading.gif' /&gt;"</span>);</div><div class="line">      &#125;);</div><div class="line">      $(<span class="string">"#loading"</span>).ajaxSuccess(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="keyword">this</span>).html.(<span class="string">""</span>);</div><div class="line">        <span class="comment">// $(this).empty(); // 或者直接清除</span></div><div class="line">      &#125;);</div><div class="line">&#125;);</div><div class="line">&lt;div id="loading"&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>注意：</p>
+<blockquote>
+<p>所有的ajax提交都会触发ajaxStart事件，都会在你定义的<div id="loading"></div>位置上显示“加载中。。。”的图标（当然你也可以定义文字，但是一个加载中的图片比较好看）；<br>//但是一定要注意，同时要定义好ajaxSuccess事件，ajax提交成功后把这个图标隐藏起来！！！</p>
+</blockquote>
+<p>在ajax方法中定义任意位置显示的“加载中。。。”提示</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#ajax_test2'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">$.ajax(&#123;</div><div class="line">      url ---- url路径，根据你需要些啦,</div><div class="line">      <span class="attr">type</span>:<span class="string">'post'</span>,</div><div class="line">      <span class="attr">data</span>:<span class="string">'name=ZXCVB'</span>,</div><div class="line">      <span class="attr">timeout</span>:<span class="number">15000</span>,</div><div class="line">      <span class="attr">beforeSend</span>:<span class="function"><span class="keyword">function</span>(<span class="params">XMLHttpRequest</span>)</span>&#123;</div><div class="line">          <span class="comment">//alert('远程调用开始...');</span></div><div class="line">          $(<span class="string">"#loading"</span>).html.(<span class="string">"&lt;img src='/jqueryStu/images/loading.gif' /&gt;"</span>);</div><div class="line">     &#125;,</div><div class="line">     <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">data,textStatus</span>)</span>&#123;</div><div class="line">         alert(<span class="string">'开始回调，状态文本值：'</span>+textStatus+<span class="string">' 返回数据：'</span>+data);</div><div class="line">         <span class="comment">// $("#loading").empty();</span></div><div class="line">       &#125;,</div><div class="line">      <span class="attr">complete</span>:<span class="function"><span class="keyword">function</span>(<span class="params">XMLHttpRequest,textStatus</span>)</span>&#123;</div><div class="line">          <span class="comment">// alert('远程调用成功，状态文本值：'+textStatus);</span></div><div class="line">         $(<span class="string">"#loading"</span>).empty();</div><div class="line">       &#125;,</div><div class="line">       <span class="attr">error</span>:<span class="function"><span class="keyword">function</span>(<span class="params">XMLHttpRequest,textStatus,errorThrown</span>)</span>&#123;</div><div class="line">          alert(<span class="string">'error...状态文本值：'</span>+textStatus+<span class="string">" 异常信息："</span>+errorThrown);</div><div class="line">         $(<span class="string">"#loading"</span>).empty();</div><div class="line">      &#125;</div><div class="line">   &#125;);</div><div class="line">&#125;);</div><div class="line">&lt; input type.="button" id="ajax_test2" value="Ajax方式"&gt;</div><div class="line">&lt;div id="loading"&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>很明显，在beforeSend时，在指定的位置显示“加载中。。。”图标，在error、complete、success后把该图标移除掉！<br>注意：页面有多个ajax提交时候，建议使用第二种方式，因为“加载中。。。”图标可以显示在任意你需要刷新的位置上！</p>
+</blockquote>
+<p>转载：<a href="http://blog.csdn.net/u012317514/article/details/77840137" target="_blank" rel="external">http://blog.csdn.net/u012317514/article/details/77840137</a></p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/ajax-loading/">Ajax加载中显示loading</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cwq</a></p>
+        <p><span>发布时间:</span>2018-03-22, 14:35:33</p>
+        <p><span>最后更新:</span>2018-03-22, 15:12:55</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/ajax-loading/" title="Ajax加载中显示loading">http://caoweiqiang.com/ajax-loading/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/ajax-loading/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/front-summary/">
+                    前端面试考点多？看这几篇文章就够了
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
 
     
+<div class="share">
+    
 
+    
+</div>
+
+
+
+
+
+
+
+    
+        <div class="changyan" id="comments">
+    <div id="cyEmoji" sourceid="Ajax加载中显示loading" role="cylabs" data-use="emoji"></div>
+    <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyr2lGeJX"></script>
+
+    <div id="SOHUCS" sid="Ajax加载中显示loading" style="width:auto;padding:0 30px 0 46px;"></div>
+    <script>
+        var appid = {changyan_appid:"cyr2lGeJX"};
+        var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        var loadComment = function(){
+            if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid.changyan_appid + '&conf=' + conf.changyan_appkey + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid.changyan_appid,conf:conf.changyan_appkey})}); }
+        }
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/front-summary/" title="下一篇: 前端面试考点多？看这几篇文章就够了">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/ajax-loading/">Ajax加载中显示loading</a></li><li class="post-list-item"><a class="post-list-link" href="/front-summary/">前端面试考点多？看这几篇文章就够了</a></li><li class="post-list-item"><a class="post-list-link" href="/time-difference/">js 计算时间差</a></li><li class="post-list-item"><a class="post-list-link" href="/Vue-iview/">创建vue项目 以及引入iview</a></li><li class="post-list-item"><a class="post-list-link" href="/shapes-of-css/">纯CSS制作各种图形(多图预警)</a></li><li class="post-list-item"><a class="post-list-link" href="/json-time/">JSON时间转换格式化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017-head/">2017年最新的 <head> 元素指南</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-MarkerClusterer/">百度地图点聚合提高效率</a></li><li class="post-list-item"><a class="post-list-link" href="/css-shapes/">奇妙的 CSS shapes(CSS 图形)</a></li><li class="post-list-item"><a class="post-list-link" href="/css-gradient/">CSS实现兼容性的渐变背景(gradient)效果</a></li><li class="post-list-item"><a class="post-list-link" href="/unknown-css/">遇见未知的 CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/css-hidden/">CSS多行文字超出隐藏加省略号</a></li><li class="post-list-item"><a class="post-list-link" href="/web-css/">《web前端最佳实践》—高性能css</a></li><li class="post-list-item"><a class="post-list-link" href="/js-sort/">【Javascript】排序算法（冒泡排序，选择排序，插入排序，归并排序，快速排序）</a></li><li class="post-list-item"><a class="post-list-link" href="/html5-summary/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/label-sort/">JS 利用appendChild对li标签进行排序</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-api/">详解百度地图API之地图标注</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-rss/">hexo博客安装RSS插件</a></li><li class="post-list-item"><a class="post-list-link" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a></li><li class="post-list-item"><a class="post-list-link" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
