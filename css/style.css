@@ -2372,56 +2372,6 @@ pre .javascript .function {
 #footer .visit #page-visit:hover .fa {
   color: #333;
 }
-.share {
-  padding-left: 40px;
-  margin: 1em auto 0.5em;
-  opacity: 0.75;
-}
-.share:hover {
-  opacity: 1;
-}
-.bdsharebuttonbox a,
-.bdsharebuttonbox .bds_more {
-  width: 30px;
-  height: 30px !important;
-  line-height: 30px !important;
-  text-align: center;
-  padding-left: 0 !important;
-  font-size: 20.400000000000002px !important;
-  text-decoration: none;
-  color: #fff !important;
-  -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.3);
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.1), 1px 1px 1px rgba(0,0,0,0.3);
-}
-.bdsharebuttonbox a:hover,
-.bdsharebuttonbox .bds_more:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  color: #fff !important;
-}
-.bdsharebuttonbox .bds_tsina {
-  background: #db332f !important;
-}
-.bdsharebuttonbox .bds_sqq {
-  background: #1cbcef !important;
-}
-.bdsharebuttonbox .bds_copy {
-  background: #8f8f8f !important;
-}
-.bdsharebuttonbox .bds_mail {
-  background: #6fc0e4 !important;
-}
-.bdsharebuttonbox .bds_weixin {
-  background: #8cdc49 !important;
-}
-.bdsharebuttonbox .bds_more {
-  background: #8cbcf5 !important;
-}
-.bdsharebuttonbox .bds_twi {
-  background: #21abf4 !important;
-}
 #page-nav {
   text-align: center;
   margin-top: 30px;
@@ -2803,40 +2753,40 @@ pre .javascript .function {
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
-  background: #88acdb;
+  background: #ba8f6c;
 }
 .tagcloud a.color0::before {
-  border-right-color: #88acdb;
+  border-right-color: #ba8f6c;
 }
 .tagcloud a.color1 {
-  background: #ffa07a;
+  background: #ff945c;
 }
 .tagcloud a.color1::before {
-  border-right-color: #ffa07a;
+  border-right-color: #ff945c;
 }
 .tagcloud a.color2 {
-  background: #f08080;
+  background: #7b5d5f;
 }
 .tagcloud a.color2::before {
-  border-right-color: #f08080;
+  border-right-color: #7b5d5f;
 }
 .tagcloud a.color3 {
-  background: #76becc;
+  background: #f5c7b7;
 }
 .tagcloud a.color3::before {
-  border-right-color: #76becc;
+  border-right-color: #f5c7b7;
 }
 .tagcloud a.color4 {
-  background: #918597;
+  background: #cfb7c4;
 }
 .tagcloud a.color4::before {
-  border-right-color: #918597;
+  border-right-color: #cfb7c4;
 }
 .tagcloud a.color5 {
-  background: #6fc0e4;
+  background: #918597;
 }
 .tagcloud a.color5::before {
-  border-right-color: #6fc0e4;
+  border-right-color: #918597;
 }
 .tagcloud a.color6 {
   background: #bc8f8f;
@@ -3176,4 +3126,14 @@ body {
 }
 #article-nav {
   background: rgba(158,188,226,0.9);
+}
+body {
+  background: #808080;
+}
+.article-header {
+  border-left: 5px solid #666;
+}
+.article-more-link a {
+  background: #4d4d4d;
+  font-size: 0.8em;
 }
