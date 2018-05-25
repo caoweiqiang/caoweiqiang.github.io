@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="cwq" />
+
+
+
+<meta name="description" content="项目开发中用到的知识，总结如下：  一、时间戳转换具体年月日时分秒  12345function getLocalTime(nS) &amp;#123;   var dtw = new Date();   dtw.setTime(parseInt(nS) * 1000);   return dtw.format(&apos;yyyy-MM-dd hh:mm:ss&apos;);&amp;#125; 注意：使用上面的方法转换，首先需要">
+<meta name="keywords" content="web项目开发,总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web项目开发中用到的知识总结">
+<meta property="og:url" content="http://caoweiqiang.com/web-problem/index.html">
+<meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="项目开发中用到的知识，总结如下：  一、时间戳转换具体年月日时分秒  12345function getLocalTime(nS) &amp;#123;   var dtw = new Date();   dtw.setTime(parseInt(nS) * 1000);   return dtw.format(&apos;yyyy-MM-dd hh:mm:ss&apos;);&amp;#125; 注意：使用上面的方法转换，首先需要">
+<meta property="og:updated_time" content="2018-05-25T09:44:03.402Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="web项目开发中用到的知识总结">
+<meta name="twitter:description" content="项目开发中用到的知识，总结如下：  一、时间戳转换具体年月日时分秒  12345function getLocalTime(nS) &amp;#123;   var dtw = new Date();   dtw.setTime(parseInt(nS) * 1000);   return dtw.format(&apos;yyyy-MM-dd hh:mm:ss&apos;);&amp;#125; 注意：使用上面的方法转换，首先需要">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="前端博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>web项目开发中用到的知识总结 | 前端博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?2c36bd867a16ac032776275905ed2904";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">cwq</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:1154413293@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/caoweiqiang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2017/">2017</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/2017年最新的-head-元素指南/">2017年最新的 <head> 元素指南</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS-shapes/">CSS shapes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS-图形/">CSS 图形</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS制作各种图形/">CSS制作各种图形</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS多行文字超出隐藏加省略号/">CSS多行文字超出隐藏加省略号</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5/">H5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5常见问题汇总/">H5常见问题汇总</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5解决方案/">H5解决方案</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON时间转换格式化/">JSON时间转换格式化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RSS插件/">RSS插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gradient/">gradient</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/head/">head</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iview/">iview</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaScript/">javaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/loading加载/">loading加载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/warning-LF-will-be-replaced-by-CRLF/">warning:LF will be replaced by CRLF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web前端最佳实践/">web前端最佳实践</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web项目开发/">web项目开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/兼容性/">兼容性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/冒泡排序/">冒泡排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试/">前端面试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端面试考点/">前端面试考点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/地图标注/">地图标注</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速排序/">快速排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序算法/">排序算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插入排序/">插入排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客/">搭建免费Hexo个人博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建免费Hexo个人博客并部署到Github/">搭建免费Hexo个人博客并部署到Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/时间转换格式化/">时间转换格式化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未知的CSS/">未知的CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/渐变背景效果/">渐变背景效果</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图/">百度地图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图API/">百度地图API</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图点聚合/">百度地图点聚合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/百度地图点聚合提高效率/">百度地图点聚合提高效率</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算时间差/">计算时间差</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/选择排序/">选择排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高性能css/">高性能css</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.qdfuns.com/">前端网</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.css88.com/">web前端开发</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://juejin.im/welcome/frontend/?utm_source=css88&utm_medium=image&utm_content=juejin&utm_campaign=q3_personal">掘金</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://caibaojian.com/">前端开发博客</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.zhangxinxu.com/wordpress/">张鑫旭博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">cwq</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">cwq</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">点点滴滴，记录前端学习笔记</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:1154413293@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/caoweiqiang" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-web-problem" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/web-problem/" class="article-date">
+      <time datetime="2018-05-25T07:14:34.047Z" itemprop="datePublished">2018-05-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      web项目开发中用到的知识总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web项目开发/">web项目开发</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>项目开发中用到的知识，总结如下：</p>
+<blockquote>
+<p>一、时间戳转换具体年月日时分秒</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocalTime</span>(<span class="params">nS</span>) </span>&#123;</div><div class="line">   <span class="keyword">var</span> dtw = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">   dtw.setTime(<span class="built_in">parseInt</span>(nS) * <span class="number">1000</span>);</div><div class="line">   <span class="keyword">return</span> dtw.format(<span class="string">'yyyy-MM-dd hh:mm:ss'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：使用上面的方法转换，首先需要封装format，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">  <span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span>(<span class="params">format</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> date = &#123;</div><div class="line">             <span class="string">"M+"</span>: <span class="keyword">this</span>.getMonth() + <span class="number">1</span>,</div><div class="line">             <span class="string">"d+"</span>: <span class="keyword">this</span>.getDate(),</div><div class="line">             <span class="string">"h+"</span>: <span class="keyword">this</span>.getHours(),</div><div class="line">             <span class="string">"m+"</span>: <span class="keyword">this</span>.getMinutes(),</div><div class="line">             <span class="string">"s+"</span>: <span class="keyword">this</span>.getSeconds(),</div><div class="line">             <span class="string">"q+"</span>: <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth() + <span class="number">3</span>) / <span class="number">3</span>),</div><div class="line">             <span class="string">"S+"</span>: <span class="keyword">this</span>.getMilliseconds()</div><div class="line">      &#125;;</div><div class="line">      <span class="keyword">if</span> (<span class="regexp">/(y+)/i</span>.test(format)) &#123;</div><div class="line">             format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear() + <span class="string">''</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> date) &#123;</div><div class="line">             <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span> + k + <span class="string">")"</span>).test(format)) &#123;</div><div class="line">                    format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, <span class="built_in">RegExp</span>.$<span class="number">1.</span>length == <span class="number">1</span></div><div class="line">                           ? date[k] : (<span class="string">"00"</span> + date[k]).substr((<span class="string">""</span> + date[k]).length));</div><div class="line">             &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> format;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>二、简单搜索功能</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//skey 按照需求搜索的值</span></div><div class="line">$(<span class="string">"#searchBtn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> str = $(<span class="string">"#searchInput"</span>).val();</div><div class="line">    <span class="keyword">if</span> (str) &#123;</div><div class="line">        <span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line">        $(<span class="string">"#searchUl &gt; li"</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> key = $(<span class="keyword">this</span>).attr(<span class="string">"skey"</span>);</div><div class="line">            <span class="keyword">if</span> (key.indexOf(str) &gt; <span class="number">-1</span>) &#123;</div><div class="line">                $(<span class="keyword">this</span>).show();</div><div class="line">                count = <span class="number">1</span>;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                $(<span class="keyword">this</span>).hide();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</div><div class="line">            alert(<span class="string">"未查询出相关数据！"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        $(<span class="string">"#searchInput"</span>).focus();</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>三、回车事件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).keydown(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!e) e = <span class="built_in">window</span>.event;</div><div class="line">    <span class="keyword">if</span> ((e.keyCode || e.which) == <span class="number">13</span>) &#123;</div><div class="line">        $(<span class="string">"#searchBtn"</span>).trigger(<span class="string">"click"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>四、setInterval 5秒调用函数，函数内 1分钟调用数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</div><div class="line">setInterval(aa, <span class="number">5000</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    num++;</div><div class="line">    <span class="keyword">if</span>(num == <span class="number">12</span>)&#123;</div><div class="line">       <span class="comment">//需要调用的数据</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>五、使用+=来拼接函数名</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> html = <span class="string">""</span>;</div><div class="line">html += aa();</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> html = <span class="string">"数据"</span>;</div><div class="line">	<span class="keyword">return</span> html;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>六、input输入大于1的正整数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"text"</span> onkeyup=<span class="string">"this.value=this.value.replace(/\D|^0/g,'')"</span> onafterpaste=<span class="string">"this.value=this.value.replace(/\D|^0/g,'')"</span> /&gt;</div><div class="line">或者</div><div class="line">&lt;input type=<span class="string">"text"</span> onkeyup=<span class="string">"if(this.value.length==1)&#123;this.value=this.value.replace(/[^1-9]/g,'')&#125;else&#123;this.value=this.value.replace(/\D/g,'')&#125;"</span>  </div><div class="line">    onafterpaste=<span class="string">"if(this.value.length==1)&#123;this.value=this.value.replace(/[^1-9]/g,'0')&#125;else&#123;this.value=this.value.replace(/\D/g,'')&#125;"</span> /&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>七、ajax接收json字符串</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aa = &#123;&#125;;</div><div class="line">aa.name = <span class="string">"值"</span>;</div><div class="line">aa.password = <span class="string">"值"</span>;</div><div class="line">aa.bb = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aa.bb.length;i++)&#123;</div><div class="line">  <span class="keyword">var</span> cc = &#123;&#125;;</div><div class="line">  cc.time = <span class="string">"值"</span>;</div><div class="line">  cc.sex = <span class="string">"值"</span>;</div><div class="line">  aa.bb.push(cc);</div><div class="line">&#125;</div><div class="line">$.ajax(&#123;</div><div class="line">  <span class="attr">url</span>:<span class="string">""</span>,</div><div class="line">  <span class="attr">type</span>:<span class="string">"post"</span>,</div><div class="line">  <span class="attr">dataType</span>:<span class="string">"json"</span>,</div><div class="line">  <span class="attr">data</span>:&#123;<span class="string">"后台接收的字符串名"</span>:<span class="built_in">JSON</span>.stringify(aa)&#125;,</div><div class="line">  <span class="attr">success</span>:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>八、textarea 去掉多余空格</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;textarea <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"textareaNumber"</span> rows=<span class="string">"15"</span> placeholder=<span class="string">"请输入信息"</span>&gt;&lt;/textarea&gt;</div><div class="line"></div><div class="line">$(<span class="string">"#textareaNumber"</span>).val().replace(<span class="regexp">/[ ]/g</span>, <span class="string">""</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>九、获取input file 的url地址</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getObjectURL</span>(<span class="params">file</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> url = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.createObjectURL != <span class="literal">undefined</span>) &#123; <span class="comment">// basic</span></div><div class="line">        url = <span class="built_in">window</span>.createObjectURL(file);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.URL != <span class="literal">undefined</span>) &#123; <span class="comment">// mozilla(firefox)</span></div><div class="line">        url = <span class="built_in">window</span>.URL.createObjectURL(file);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.webkitURL != <span class="literal">undefined</span>) &#123; <span class="comment">// webkit or chrome</span></div><div class="line">        url = <span class="built_in">window</span>.webkitURL.createObjectURL(file);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> url;</div><div class="line">&#125;</div><div class="line"><span class="comment">//获取当前input file的值：getObjectURL(this.files[0])</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>十、判断上传文件的类型</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> array = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'png'</span>); <span class="comment">//可以上传的文件类型 </span></div><div class="line"><span class="keyword">if</span> ($(<span class="keyword">this</span>).val() == <span class="string">''</span>) &#123;</div><div class="line">    layer.msg(<span class="string">"请选择要上传的图片!"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">var</span> fileContentType = $(<span class="keyword">this</span>).val().match(<span class="regexp">/^(.*)(\.)(.&#123;1,8&#125;)$/</span>)[<span class="number">3</span>]; <span class="comment">//这个文件类型正则很有用：） </span></div><div class="line">    <span class="keyword">var</span> isExists = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> array) &#123;</div><div class="line">        <span class="keyword">if</span> (fileContentType.toLowerCase() == array[i].toLowerCase()) &#123;</div><div class="line">            isExists = <span class="literal">true</span>;</div><div class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (isExists == <span class="literal">false</span>) &#123;</div><div class="line">        $(<span class="keyword">this</span>).val(<span class="string">""</span>);</div><div class="line">        alert(<span class="string">"上传图片类型不正确!"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十一、ajax通过FormData异步上传文件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;form id=<span class="string">"uploadForm"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</div><div class="line">    &lt;a href="javascript:;" class="uploadLogo"&gt;</div><div class="line">        &lt;img src="" alt="" /&gt;</div><div class="line">        &lt;input type="file" name="pic" id="pic" accept="image/png" multiple="multiple"&gt;</div><div class="line">        &lt;input type="hidden" name="m" id="m" value="" /&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/form&gt;</div><div class="line"></div><div class="line">var formData = new FormData($("#uploadForm")[0], $("#uploadForm")[1]);               </div><div class="line">$.ajax(&#123;</div><div class="line">    url: "",</div><div class="line">    type: "post",</div><div class="line">    dataType: "json",</div><div class="line">    data: formData,</div><div class="line">    async: false,</div><div class="line">    cache: false,</div><div class="line">    contentType: false,</div><div class="line">    processData: false,</div><div class="line">    success: function (data) &#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十二、倒计时获取验证码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sendCodeObj;</div><div class="line"><span class="keyword">var</span> sendCodeTimes = <span class="number">120</span>;</div><div class="line"><span class="keyword">var</span> sendCodeCount = <span class="string">""</span>;</div><div class="line">$(<span class="string">"#sendCodeBtn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> sendCodeStr = &#123;&#125;;</div><div class="line">    sendCodeStr.user = <span class="string">""</span>;</div><div class="line"></div><div class="line">    $.ajax(&#123;</div><div class="line">        <span class="attr">url</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">type</span>: <span class="string">"post"</span>,</div><div class="line">        <span class="attr">dataType</span>: <span class="string">"json"</span>,</div><div class="line">        <span class="attr">data</span>: sendCodeStr,</div><div class="line">        <span class="attr">success</span>: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">            sendCodeCount = sendCodeTimes;</div><div class="line">            <span class="comment">// 设置按钮显示效果，倒计时   </span></div><div class="line">            $(<span class="string">"#sendCodeBtn"</span>).css(&#123; <span class="string">"background"</span>: <span class="string">"#b4b4b4"</span>, <span class="string">"cursor"</span>: <span class="string">"auto"</span> &#125;).attr(<span class="string">"disabled"</span>, <span class="string">"true"</span>);</div><div class="line">            $(<span class="string">"#sendCodeBtn"</span>).val(<span class="string">"重新发送("</span> + sendCodeCount + <span class="string">")"</span>);</div><div class="line">            sendCodeObj = <span class="built_in">window</span>.setInterval(SetSendTime, <span class="number">1000</span>); <span class="comment">// 启动计时器，1秒执行一次 </span></div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SetSendTime</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (sendCodeCount == <span class="number">0</span>) &#123;</div><div class="line">        <span class="built_in">window</span>.clearInterval(sendCodeObj);<span class="comment">// 停止计时器    </span></div><div class="line">        $(<span class="string">"#sendCodeBtn"</span>).css(<span class="string">"background"</span>, <span class="string">"#05d497"</span>).removeAttr(<span class="string">"disabled"</span>);<span class="comment">// 启用按钮    </span></div><div class="line">        $(<span class="string">"#sendCodeBtn"</span>).val(<span class="string">"获取验证码"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        sendCodeCount--;</div><div class="line">        $(<span class="string">"#sendCodeBtn"</span>).val(<span class="string">"重新发送("</span> + sendCodeCount + <span class="string">")"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十三、截取地址栏中url的参数值</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//截取地址栏中url的参数值  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryString</span>(<span class="params">name</span>) </span>&#123;  </div><div class="line">  <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span> + name + <span class="string">"=([^&amp;]*)(&amp;|$)"</span>, <span class="string">"i"</span>);  </div><div class="line">  <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);  </div><div class="line">  <span class="keyword">if</span> (r != <span class="literal">null</span>)  </div><div class="line">      <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]);  </div><div class="line">  <span class="keyword">return</span> <span class="literal">null</span>;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十四、获取当前时间</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//截取地址栏中url的参数值  </span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">currentTime</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">   <span class="comment">//获取当前年</span></div><div class="line">   <span class="keyword">var</span> year=myDate.getFullYear();</div><div class="line">   <span class="comment">//获取当前月</span></div><div class="line">   <span class="keyword">var</span> month=myDate.getMonth()+<span class="number">1</span>;</div><div class="line">   <span class="comment">//获取当前日</span></div><div class="line">   <span class="keyword">var</span> date=myDate.getDate(); </div><div class="line">   <span class="keyword">var</span> h=myDate.getHours();       <span class="comment">//获取当前小时数(0-23)</span></div><div class="line">   <span class="keyword">var</span> m=myDate.getMinutes();     <span class="comment">//获取当前分钟数(0-59)</span></div><div class="line">   <span class="keyword">var</span> s=myDate.getSeconds();</div><div class="line">   <span class="keyword">var</span> currentTime = year+<span class="string">'-'</span>+currentTimeLimit(month)+<span class="string">"-"</span>+currentTimeLimit(date)+<span class="string">" "</span>+currentTimeLimit(h)+<span class="string">':'</span>+currentTimeLimit(m)+<span class="string">":"</span>+currentTimeLimit(s);</div><div class="line">   <span class="keyword">return</span> currentTime;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">currentTimeLimit</span>(<span class="params">s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> s &lt; <span class="number">10</span> ? <span class="string">'0'</span> + s : s;</div><div class="line">&#125;</div><div class="line">currentTime();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十五、时间年-月-日转换成年/月/日</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"-"</span>,<span class="string">"gm"</span>),<span class="string">"/"</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十六、百度地图添加路况、缩放以及地图类型</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//百度地图</span></div><div class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> BMap.Map(<span class="string">"map"</span>, &#123; <span class="attr">enableAutoResize</span>: <span class="literal">false</span>, <span class="attr">enableMapClick</span>: <span class="literal">false</span> &#125;);</div><div class="line">map.centerAndZoom(<span class="keyword">new</span> BMap.Point(<span class="number">116.404</span>, <span class="number">39.915</span>), <span class="number">12</span>);</div><div class="line">map.enableScrollWheelZoom(<span class="literal">true</span>);</div><div class="line"></div><div class="line"><span class="comment">/* 路况 */</span></div><div class="line"><span class="keyword">var</span> ctrl = <span class="keyword">new</span> BMapLib.TrafficControl(&#123;</div><div class="line">   <span class="attr">showPanel</span>:<span class="literal">false</span></div><div class="line">&#125;); </div><div class="line">map.addControl(ctrl);</div><div class="line">ctrl.setAnchor(BMAP_ANCHOR_BOTTOM_RIGHT);</div><div class="line">ctrl.setOffset(<span class="keyword">new</span> BMap.Size(<span class="number">22</span>,<span class="number">220</span>));</div><div class="line"><span class="comment">/* 缩放 */</span></div><div class="line"><span class="keyword">var</span> top_right_navigation = <span class="keyword">new</span> BMap.NavigationControl(&#123;<span class="attr">anchor</span>: BMAP_ANCHOR_BOTTOM_RIGHT, <span class="attr">type</span>: BMAP_NAVIGATION_CONTROL_ZOOM, <span class="attr">offset</span>: <span class="keyword">new</span> BMap.Size(<span class="number">22</span>,<span class="number">70</span>), <span class="attr">showZoomInfo</span>:<span class="literal">true</span>&#125;);</div><div class="line">map.addControl(top_right_navigation);</div><div class="line"><span class="comment">/* 地图类型 */</span></div><div class="line"><span class="keyword">var</span> map_type = <span class="keyword">new</span> BMap.MapTypeControl(&#123;<span class="attr">type</span>:BMAP_MAPTYPE_CONTROL_MAP&#125;);    </div><div class="line">map.addControl(map_type);</div><div class="line">map_type.setAnchor(BMAP_ANCHOR_BOTTOM_RIGHT);</div><div class="line">map_type.setOffset(<span class="keyword">new</span> BMap.Size(<span class="number">18</span>,<span class="number">152</span>));</div></pre></td></tr></table></figure>
+<blockquote>
+<p>十七、jquery去除字符串中的中括号或是中括号及其中间内容</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//移除字符串中的所有[]括号（不包括其内容）</span></div><div class="line">replace(<span class="regexp">/\[|]/g</span>,<span class="string">''</span>);</div><div class="line"><span class="comment">//移除字符串中的所有[]括号（包括其内容）</span></div><div class="line">replace(<span class="regexp">/\[.*?\]/g</span>,<span class="string">''</span>);</div></pre></td></tr></table></figure>
+<p>暂时总结这么多，都是工作中用到的知识，后续会继续总结。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/web-problem/">web项目开发中用到的知识总结</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">cwq</a></p>
+        <p><span>发布时间:</span>2018-05-25, 15:14:34</p>
+        <p><span>最后更新:</span>2018-05-25, 17:44:03</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/web-problem/" title="web项目开发中用到的知识总结">http://caoweiqiang.com/web-problem/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://caoweiqiang.com/web-problem/　　作者: cwq" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/ajax-loading/">
+                    Ajax加载中显示loading
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+        <div class="changyan" id="comments">
+    <div id="cyEmoji" sourceid="web项目开发中用到的知识总结" role="cylabs" data-use="emoji"></div>
+    <script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cyr2lGeJX"></script>
+
+    <div id="SOHUCS" sid="web项目开发中用到的知识总结" style="width:auto;padding:0 30px 0 46px;"></div>
+    <script>
+        var appid = {changyan_appid:"cyr2lGeJX"};
+        var conf = {changyan_appkey:"08ff174da2fd828edc0b55ca65e875f5"};
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        var loadComment = function(){
+            if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid.changyan_appid + '&conf=' + conf.changyan_appkey + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid.changyan_appid,conf:conf.changyan_appkey})}); }
+        }
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/ajax-loading/" title="下一篇: Ajax加载中显示loading">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/web-problem/">web项目开发中用到的知识总结</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-loading/">Ajax加载中显示loading</a></li><li class="post-list-item"><a class="post-list-link" href="/front-summary/">前端面试考点多？看这几篇文章就够了</a></li><li class="post-list-item"><a class="post-list-link" href="/time-difference/">js 计算时间差</a></li><li class="post-list-item"><a class="post-list-link" href="/Vue-iview/">创建vue项目 以及引入iview</a></li><li class="post-list-item"><a class="post-list-link" href="/shapes-of-css/">纯CSS制作各种图形(多图预警)</a></li><li class="post-list-item"><a class="post-list-link" href="/json-time/">JSON时间转换格式化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017-head/">2017年最新的 <head> 元素指南</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-MarkerClusterer/">百度地图点聚合提高效率</a></li><li class="post-list-item"><a class="post-list-link" href="/css-shapes/">奇妙的 CSS shapes(CSS 图形)</a></li><li class="post-list-item"><a class="post-list-link" href="/css-gradient/">CSS实现兼容性的渐变背景(gradient)效果</a></li><li class="post-list-item"><a class="post-list-link" href="/unknown-css/">遇见未知的 CSS</a></li><li class="post-list-item"><a class="post-list-link" href="/css-hidden/">CSS多行文字超出隐藏加省略号</a></li><li class="post-list-item"><a class="post-list-link" href="/web-css/">《web前端最佳实践》—高性能css</a></li><li class="post-list-item"><a class="post-list-link" href="/js-sort/">【Javascript】排序算法（冒泡排序，选择排序，插入排序，归并排序，快速排序）</a></li><li class="post-list-item"><a class="post-list-link" href="/html5-summary/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/label-sort/">JS 利用appendChild对li标签进行排序</a></li><li class="post-list-item"><a class="post-list-link" href="/baidu-api/">详解百度地图API之地图标注</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-rss/">hexo博客安装RSS插件</a></li><li class="post-list-item"><a class="post-list-link" href="/css3-js/">2017 年用于 UI 设计的 CSS3 和 JavaScript 动画库(TOP 9)</a></li><li class="post-list-item"><a class="post-list-link" href="/git-warning/">windows使用git时出现：warning:LF will be replaced by CRLF</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-blog/">零基础搭建免费Hexo个人博客并部署到Github</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 cwq
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+            
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
