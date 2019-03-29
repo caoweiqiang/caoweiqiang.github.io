@@ -118,7 +118,7 @@
     <link href="http://caoweiqiang.com/ajax-loading/"/>
     <id>http://caoweiqiang.com/ajax-loading/</id>
     <published>2018-03-22T06:35:33.257Z</published>
-    <updated>2018-03-22T07:12:55.865Z</updated>
+    <updated>2018-03-22T07:12:55.866Z</updated>
     
     <content type="html"><![CDATA[<p>使用ajaxStart方法定义一个全局的“加载中。。。”提示</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">   $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">"#loading"</span>).ajaxStart(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="keyword">this</span>).html.(<span class="string">"&lt;img src='/jqueryStu/images/loading.gif' /&gt;"</span>);</div><div class="line">      &#125;);</div><div class="line">      $(<span class="string">"#loading"</span>).ajaxSuccess(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="keyword">this</span>).html.(<span class="string">""</span>);</div><div class="line">        <span class="comment">// $(this).empty(); // 或者直接清除</span></div><div class="line">      &#125;);</div><div class="line">&#125;);</div><div class="line">&lt;div id="loading"&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
@@ -292,7 +292,7 @@
     <link href="http://caoweiqiang.com/time-difference/"/>
     <id>http://caoweiqiang.com/time-difference/</id>
     <published>2018-03-21T01:28:19.209Z</published>
-    <updated>2018-03-21T01:30:46.396Z</updated>
+    <updated>2018-03-21T01:30:46.397Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDateDiff</span>(<span class="params">startTime,endTime</span>)</span>&#123;</div><div class="line">    <span class="comment">//修改时间格式</span></div><div class="line">    startTime = startTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line">    endTime = endTime.replace(<span class="regexp">/\-/g</span>, <span class="string">"/"</span>);</div><div class="line"></div><div class="line">    <span class="comment">//计算时间差毫秒数</span></div><div class="line">    <span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(startTime).getTime();</div><div class="line">    <span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(endTime).getTime();</div><div class="line">    <span class="keyword">var</span> dateDiff = date2- date1;</div><div class="line"></div><div class="line">    <span class="comment">//计算出相差天数</span></div><div class="line">    <span class="keyword">var</span> days = <span class="built_in">Math</span>.floor(dateDiff / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</div><div class="line"></div><div class="line">    <span class="comment">//计算出小时数</span></div><div class="line"></div><div class="line">    <span class="keyword">var</span> leave1 = dateDiff % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>)    <span class="comment">//计算天数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> hours = <span class="built_in">Math</span>.floor(leave1 / (<span class="number">3600</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差分钟数</span></div><div class="line">    <span class="keyword">var</span> leave2 = leave1 % (<span class="number">3600</span> * <span class="number">1000</span>)        <span class="comment">//计算小时数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> minutes = <span class="built_in">Math</span>.floor(leave2 / (<span class="number">60</span> * <span class="number">1000</span>))</div><div class="line">    <span class="comment">//计算相差秒数</span></div><div class="line">    <span class="keyword">var</span> leave3 = leave2 % (<span class="number">60</span> * <span class="number">1000</span>)      <span class="comment">//计算分钟数后剩余的毫秒数</span></div><div class="line">    <span class="keyword">var</span> seconds = <span class="built_in">Math</span>.round(leave3 / <span class="number">1000</span>)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> days+<span class="string">'-'</span>+hours+<span class="string">'-'</span>+minutes +<span class="string">'-'</span>+seconds;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(getDateDiff(<span class="string">'2015/05/01 00:00:00'</span>,<span class="string">'2015/05/05 03:30:30'</span>));</div></pre></td></tr></table></figure>
 <p>转载：<a href="https://www.qdfuns.com/article/36367/1c20a28a1185874a708b6e6d502d0db6.html" target="_blank" rel="external">https://www.qdfuns.com/article/36367/1c20a28a1185874a708b6e6d502d0db6.html</a></p>
@@ -363,8 +363,8 @@
     <title>纯CSS制作各种图形(多图预警)</title>
     <link href="http://caoweiqiang.com/shapes-of-css/"/>
     <id>http://caoweiqiang.com/shapes-of-css/</id>
-    <published>2017-10-09T03:07:46.744Z</published>
-    <updated>2017-10-09T04:02:10.825Z</updated>
+    <published>2017-10-09T03:07:46.745Z</published>
+    <updated>2017-10-09T04:02:10.826Z</updated>
     
     <content type="html"><![CDATA[<p>今天在国外一网站(The Shapes of CSS)看到的，看了一下 css，也不复杂，只是平时没有用心去思考~用心思考~埋头赶路~~</p>
 <h1 id="Square-正方形"><a href="#Square-正方形" class="headerlink" title="Square(正方形)"></a>Square(正方形)</h1><p><img src="/img/3090811193-555beb0db3078_articlex.png" alt="img"></p>
@@ -476,7 +476,7 @@
     <link href="http://caoweiqiang.com/json-time/"/>
     <id>http://caoweiqiang.com/json-time/</id>
     <published>2017-09-06T08:57:07.678Z</published>
-    <updated>2017-09-06T09:00:39.247Z</updated>
+    <updated>2017-09-06T09:00:39.248Z</updated>
     
     <content type="html"><![CDATA[<p>通常JSON时间一般是这样的格式。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/<span class="built_in">Date</span>(<span class="number">1436595149269</span>)/</div></pre></td></tr></table></figure>
@@ -522,8 +522,8 @@
     <title>2017年最新的 &lt;head&gt; 元素指南</title>
     <link href="http://caoweiqiang.com/2017-head/"/>
     <id>http://caoweiqiang.com/2017-head/</id>
-    <published>2017-09-06T03:03:36.025Z</published>
-    <updated>2017-09-06T03:19:32.606Z</updated>
+    <published>2017-09-06T03:03:36.026Z</published>
+    <updated>2017-09-06T03:19:32.607Z</updated>
     
     <content type="html"><![CDATA[<p>整理了一份关于可以写入到HTML 标签中的内容清单-2017年最新的 <head> 元素指南，主要内容来自 <head> cheatsheet ，让大家了解每个标签及相应属性的意义，写出满足自己需求的 <head> 头部标签，可以很有效的增强页面的可用性。</head></head></head></p>
 <blockquote>
@@ -612,8 +612,8 @@
     <title>百度地图点聚合提高效率</title>
     <link href="http://caoweiqiang.com/baidu-MarkerClusterer/"/>
     <id>http://caoweiqiang.com/baidu-MarkerClusterer/</id>
-    <published>2017-07-07T09:14:21.334Z</published>
-    <updated>2017-07-07T09:42:48.742Z</updated>
+    <published>2017-07-07T09:14:21.335Z</published>
+    <updated>2017-07-07T09:42:48.743Z</updated>
     
     <content type="html"><![CDATA[<p>百度的点聚合算法 是基于方格和距离的聚合算法，即开始的时候地图上没有任何已知的聚合点，然后遍历所有的点，去计算点的外包正方形（由gridSize指定），若此点的外包正方形与现有的聚合点的外包正方形不相交，则新建聚合点，若相交就把该点加到该聚合点，效果如下图，为了便于查看，我们特地把外包正方形画了出来。</p>
 <p><img src="http://images2015.cnblogs.com/blog/1079753/201612/1079753-20161229104208617-1485018353.png" alt="img"></p>
@@ -691,7 +691,7 @@
     <title>奇妙的 CSS shapes(CSS 图形)</title>
     <link href="http://caoweiqiang.com/css-shapes/"/>
     <id>http://caoweiqiang.com/css-shapes/</id>
-    <published>2017-06-13T02:58:25.239Z</published>
+    <published>2017-06-13T02:58:25.240Z</published>
     <updated>2017-06-13T03:25:41.450Z</updated>
     
     <content type="html"><![CDATA[<p>CSS 发展到今天已经越来越强大了。其语法的日新月异，让很多以前完成不了的事情，现在可以非常轻松的做到。今天就向大家介绍几个比较新的强大的 CSS 功能：</p>
@@ -900,8 +900,8 @@
     <title>CSS实现兼容性的渐变背景(gradient)效果</title>
     <link href="http://caoweiqiang.com/css-gradient/"/>
     <id>http://caoweiqiang.com/css-gradient/</id>
-    <published>2017-06-12T01:50:46.603Z</published>
-    <updated>2017-06-12T01:58:49.283Z</updated>
+    <published>2017-06-12T01:50:46.604Z</published>
+    <updated>2017-06-12T01:58:49.284Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>一、有点俗态的开场白</p>
@@ -1298,7 +1298,7 @@
     <link href="http://caoweiqiang.com/css-hidden/"/>
     <id>http://caoweiqiang.com/css-hidden/</id>
     <published>2017-06-09T10:22:19.875Z</published>
-    <updated>2017-06-09T10:30:04.566Z</updated>
+    <updated>2017-06-09T10:30:04.567Z</updated>
     
     <content type="html"><![CDATA[<p>如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。</p>
 <blockquote>
@@ -1468,7 +1468,7 @@
     <title>【Javascript】排序算法（冒泡排序，选择排序，插入排序，归并排序，快速排序）</title>
     <link href="http://caoweiqiang.com/js-sort/"/>
     <id>http://caoweiqiang.com/js-sort/</id>
-    <published>2017-06-09T08:54:02.151Z</published>
+    <published>2017-06-09T08:54:02.152Z</published>
     <updated>2017-06-09T10:18:44.935Z</updated>
     
     <content type="html"><![CDATA[<p>回头重新刷了一遍《学习Javascript数据结构与算法》这本书，并把其中的排序算法部分亲自动手实践了一遍，包括把原书里面比较啰嗦的代码精简了一些<br>目前共整理出了五种：冒泡排序,选择排序,插入排序,归并排序，快速排序(递归)<br>经典的排序算法有十种，剩下五种再慢慢研究</p>
@@ -1512,7 +1512,7 @@
     <title>H5项目常见问题汇总及解决方案</title>
     <link href="http://caoweiqiang.com/html5-summary/"/>
     <id>http://caoweiqiang.com/html5-summary/</id>
-    <published>2017-06-08T02:01:21.106Z</published>
+    <published>2017-06-08T02:01:21.107Z</published>
     <updated>2017-06-08T02:45:12.576Z</updated>
     
     <content type="html"><![CDATA[<h2 id="H5项目常见问题及注意事项"><a href="#H5项目常见问题及注意事项" class="headerlink" title="H5项目常见问题及注意事项"></a>H5项目常见问题及注意事项</h2><blockquote>
@@ -1654,7 +1654,7 @@
     <link href="http://caoweiqiang.com/label-sort/"/>
     <id>http://caoweiqiang.com/label-sort/</id>
     <published>2017-06-08T01:50:06.119Z</published>
-    <updated>2017-06-14T02:26:49.982Z</updated>
+    <updated>2017-06-14T02:26:49.983Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20160318162817435" alt="img"><br>按照从大到小排序</p>
 <p>appendChild: </p>
